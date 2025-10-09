@@ -1,0 +1,51 @@
+@import "tailwindcss";
+
+/* Import Adobe Fonts - Roc Grotesk */
+@import url("https://use.typekit.net/mjc4bfk.css");
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "roc-grotesk", sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #000000;
+  color: #ffffff;
+  font-family: "roc-grotesk", sans-serif;
+  line-height: 1.6;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #1a1a1a;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #333;
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+/* Smooth transitions */
+a, button {
+  transition: all 0.2s ease-in-out;
+}
+
+/* Focus styles for accessibility */
+*:focus-visible {
+  outline: 2px solid #ffffff;
+  outline-offset: 2px;
+}
