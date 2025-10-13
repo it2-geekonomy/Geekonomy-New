@@ -8,10 +8,10 @@ export default function Footer() {
     <footer className="bg-black text-white w-full flex flex-col items-center justify-center">
       <div className="max-w-7xl mx-auto px-6 py-12 w-full">
         {/* Main Footer Content */}
-        <div className="flex justify-center">
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8 w-full max-w-6xl">
+        <div className="w-full">
+          <div className="flex flex-col md:flex-row gap-8 md:gap-2 mb-8 w-full">
           {/* Column 1: Company Info */}
-          <div>
+          <div className="flex-1">
             <div className="flex items-center mb-4">
               {/* Logo Icon - Using a colorful knot-like design */}
               <div className="w-8 h-8 mr-3 bg-gradient-to-br from-purple-500 via-pink-500 to-orange-500 rounded-lg flex items-center justify-center">
@@ -21,74 +21,88 @@ export default function Footer() {
                 {COMPANY_INFO.name}
               </h3>
             </div>
-            <p className="text-gray-300 text-sm mb-3">
+            <p className="text-gray-300 text-sm mb-3 text-justify">
               Geekonomy is a team of driven and innovative individuals, blending passion with curiosity to deliver exceptional value through design.
             </p>
-            <p className="text-gray-300 text-sm">
+            <p className="text-gray-300 text-sm text-justify">
               In today's world, we embrace marketing as an integral part of life, crafting captivating experiences that seamlessly bridge the online and offline realms. Our expertise lies in empowering brands to share their unique narratives, fueling transformative growth.
             </p>
           </div>
+          {/* Outer Container for Columns 2 & 3 */}
+          <div className="flex-1 flex flex-row gap-8 md:gap-0">
+            {/* Column 2: Services and Partners */}
+            <div className="flex-1 flex flex-col gap-8 px-5 lg:px-20">
+              {/* Services Section */}
+              <div className="w-full flex flex-col items-start">
+                <h3 className="text-white text-lg font-bold mb-4 text-left">Services</h3>
+                <ul className="space-y-2 text-left">
+                  {EXPERTISE_LINKS.map((link) => (
+                    <li key={link.href}>
+                      <Link 
+                        href={link.href} 
+                        className="text-gray-300 hover:text-white transition-colors text-xs sm:text-sm whitespace-nowrap"
+                      >
+                        {link.label}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
 
-          {/* Column 2: Services and Partners */}
-          <div>
-            <h3 className="text-white text-lg font-bold mb-4">Services</h3>
-            <ul className="space-y-2 mb-6">
-              {EXPERTISE_LINKS.map((link) => (
-                <li key={link.href}>
-                  <Link 
-                    href={link.href} 
-                    className="text-gray-300 hover:text-white transition-colors text-sm"
-                  >
-                    {link.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
+              {/* Partners Section */}
+              <div className="w-full flex flex-col items-start">
+                <h3 className="text-white text-lg font-bold mb-4 text-left">Partners</h3>
+                <div className="flex flex-wrap gap-0.5 sm:gap-2 justify-start">
+                  {/* Cloud Service Icon */}
+                  <div className="w-4 h-4 sm:w-8 sm:h-8 bg-blue-600 rounded flex items-center justify-center">
+                    <span className="text-white text-xs">🌐</span>
+                  </div>
+                  {/* Trello Icon */}
+                  <div className="w-4 h-4 sm:w-8 sm:h-8 bg-red-600 rounded flex items-center justify-center">
+                    <span className="text-white text-xs font-bold">t</span>
+                  </div>
+                  {/* Google Icon */}
+                  <div className="w-4 h-4 sm:w-8 sm:h-8 bg-white rounded flex items-center justify-center">
+                    <span className="text-blue-600 text-xs font-bold">G</span>
+                  </div>
+                  {/* AWS Icon */}
+                  <div className="w-4 h-4 sm:w-8 sm:h-8 bg-orange-500 rounded flex items-center justify-center">
+                    <span className="text-white text-xs font-bold">aws</span>
+                  </div>
+                  {/* Adobe Icon */}
+                  <div className="w-4 h-4 sm:w-8 sm:h-8 bg-red-600 rounded flex items-center justify-center">
+                    <span className="text-white text-xs font-bold">A</span>
+                  </div>
+                </div>
+              </div>
+            </div>
 
-            <h3 className="text-white text-lg font-bold mb-4">Partners</h3>
-            <div className="flex space-x-2">
-              {/* Cloud Service Icon */}
-              <div className="w-8 h-8 bg-blue-600 rounded flex items-center justify-center">
-                <span className="text-white text-xs">🌐</span>
+            {/* Column 3: Company and Contact */}
+            <div className="flex-1 flex flex-col gap-8 px-5 lg:px-10">
+              {/* Company Section */}
+              <div className="w-full flex flex-col items-start">
+                <h3 className="text-white text-lg font-bold mb-4 text-left">Company</h3>
+                <ul className="flex flex-col space-y-2 text-left">
+                  <li><Link href="/about-us" className="text-gray-300 hover:text-white transition-colors text-xs sm:text-sm whitespace-nowrap">About us</Link></li>
+                  <li><Link href="/contact-us" className="text-gray-300 hover:text-white transition-colors text-xs sm:text-sm whitespace-nowrap">Contact us</Link></li>
+                  <li><Link href="/privacy-policy" className="text-gray-300 hover:text-white transition-colors text-xs sm:text-sm whitespace-nowrap">Privacy Policy</Link></li>
+                  <li><Link href="/terms-conditions" className="text-gray-300 hover:text-white transition-colors text-xs sm:text-sm whitespace-nowrap">Term & conditions</Link></li>
+                </ul>
               </div>
-              {/* Trello Icon */}
-              <div className="w-8 h-8 bg-red-600 rounded flex items-center justify-center">
-                <span className="text-white text-xs font-bold">t</span>
-              </div>
-              {/* Google Icon */}
-              <div className="w-8 h-8 bg-white rounded flex items-center justify-center">
-                <span className="text-blue-600 text-xs font-bold">G</span>
-              </div>
-              {/* AWS Icon */}
-              <div className="w-8 h-8 bg-orange-500 rounded flex items-center justify-center">
-                <span className="text-white text-xs font-bold">aws</span>
-              </div>
-              {/* Adobe Icon */}
-              <div className="w-8 h-8 bg-red-600 rounded flex items-center justify-center">
-                <span className="text-white text-xs font-bold">A</span>
+
+              {/* Contact Section */}
+              <div className="w-full flex flex-col items-start">
+                <h3 className="text-white text-lg font-bold mb-4 text-left">Contact</h3>
+                <ul className="space-y-2 text-left">
+                  <li className="text-gray-300 text-xs sm:text-sm whitespace-nowrap">{COMPANY_INFO.phone}</li>
+                  <li className="text-gray-300 text-xs sm:text-sm whitespace-nowrap">{COMPANY_INFO.email}</li>
+                </ul>
               </div>
             </div>
           </div>
 
-          {/* Column 3: Company and Contact */}
-          <div>
-            <h3 className="text-white text-lg font-bold mb-4">Company</h3>
-            <ul className="space-y-2 mb-6">
-              <li><Link href="/about-us" className="text-gray-300 hover:text-white transition-colors text-sm">About us</Link></li>
-              <li><Link href="/contact-us" className="text-gray-300 hover:text-white transition-colors text-sm">Contact us</Link></li>
-              <li><Link href="/privacy-policy" className="text-gray-300 hover:text-white transition-colors text-sm">Privacy Policy</Link></li>
-              <li><Link href="/terms-conditions" className="text-gray-300 hover:text-white transition-colors text-sm">Term & conditions</Link></li>
-            </ul>
-
-            <h3 className="text-white text-lg font-bold mb-4">Contact</h3>
-            <ul className="space-y-2">
-              <li className="text-gray-300 text-sm">{COMPANY_INFO.phone}</li>
-              <li className="text-gray-300 text-sm">{COMPANY_INFO.email}</li>
-            </ul>
-          </div>
-
           {/* Column 4: Address and Map */}
-          <div>
+          <div className="flex-1">
             <h3 className="text-white text-lg font-bold mb-4">Address</h3>
             <div className="text-gray-300 text-sm mb-4">
               <p>No. 1357, Ground Floor, 9th Cross, ITI Layout,</p>
@@ -115,8 +129,9 @@ export default function Footer() {
 
         {/* Bottom Section */}
         <div className="border-t border-gray-800 pt-6 w-full">
-          <div className="flex flex-col md:flex-row justify-between items-center">
-            <div className="flex flex-col md:flex-col items-center space-y-2 md:space-y-0 md:space-x-4">
+          <div className="flex flex-col md:flex-row justify-between items-start md:items-center">
+            {/* Left Side - Copyright and DMCA */}
+            <div className="flex flex-col md:flex-row items-start md:items-center space-y-2 md:space-y-0 md:space-x-4">
               <p className="text-gray-300 text-sm">
                 © {currentYear} Geekonomy. All rights reserved
               </p>
@@ -125,7 +140,7 @@ export default function Footer() {
               </div>
             </div>
             
-            {/* Social Media Icons */}
+            {/* Right Side - Social Media Icons */}
             <div className="flex space-x-3 mt-4 md:mt-0">
               <a href="#" className="w-8 h-8 bg-white rounded-full flex items-center justify-center hover:bg-gray-200 transition-colors">
                 <span className="text-black text-xs font-bold">f</span>
