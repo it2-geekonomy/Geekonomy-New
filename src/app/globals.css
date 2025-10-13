@@ -1,7 +1,7 @@
-@import "tailwindcss";
-
 /* Import Adobe Fonts - Roc Grotesk */
 @import url("https://use.typekit.net/mjc4bfk.css");
+
+@import "tailwindcss";
 
 *,
 *::before,

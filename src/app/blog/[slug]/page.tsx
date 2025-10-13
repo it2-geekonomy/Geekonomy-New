@@ -6,12 +6,13 @@ import { formatDate } from '@/lib/utils';
 import { BLOG_POSTS } from '@/constants/blog';
 
 type Props = {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 };
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   // In a real application, fetch the post data
-  const post = BLOG_POSTS.find(p => p.slug === params.slug);
+  const { slug } = await params;
+  const post = BLOG_POSTS.find(p => p.slug === slug);
   
   return {
     title: post ? `${post.title} - Geekonomy Blog` : 'Blog Post - Geekonomy',
@@ -19,9 +20,10 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   };
 }
 
-export default function BlogPostPage({ params }: Props) {
+export default async function BlogPostPage({ params }: Props) {
   // Find the blog post based on slug
-  const post = BLOG_POSTS.find(p => p.slug === params.slug);
+  const { slug } = await params;
+  const post = BLOG_POSTS.find(p => p.slug === slug);
 
   // If post not found, show default content
   if (!post) {
