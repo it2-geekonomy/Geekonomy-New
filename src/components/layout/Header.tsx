@@ -57,7 +57,7 @@ export default function Header() {
         </Link>
 
         {/* Desktop Navigation - Center */}
-        <ul className="hidden xl:flex items-center gap-8 xl:gap-16 2xl:gap-32 list-none">
+        <ul className="hidden lg:flex items-center gap-8 xl:gap-16 2xl:gap-32 list-none">
           <li className="relative group">
             <Link
               href="/"
@@ -152,48 +152,11 @@ export default function Header() {
         {/* Contact Button - Right Side */}
         <Link
           href="/contact-us"
-          className="hidden xl:flex bg-black border border-white text-white w-[120px] xl:w-[140px] h-[32px] xl:h-[36px] rounded-full hover:bg-white hover:text-black transition-all duration-300 text-sm xl:text-base font-medium no-underline shadow-[0_0_10px_rgba(255,255,255,0.3)] items-center justify-center"
+          className="hidden lg:flex bg-black border border-white text-white w-[120px] xl:w-[140px] h-[32px] xl:h-[36px] rounded-full hover:bg-white hover:text-black transition-all duration-300 text-sm xl:text-base font-medium no-underline shadow-[0_0_10px_rgba(255,255,255,0.3)] items-center justify-center"
           onClick={handleNavLinkClick}
         >
           Contact Us
         </Link>
-
-        {/* Tablet Navigation - Hidden on mobile */}
-        <ul className="hidden lg:flex xl:hidden items-center gap-6 list-none">
-          <li>
-            <Link
-              href="/"
-              className={`text-lg font-light no-underline inline-block pb-2 ${
-                pathname === '/' ? 'text-[#FFC700]' : 'text-white hover:text-[#FFC700]'
-              }`}
-              onClick={handleNavLinkClick}
-            >
-              Home
-            </Link>
-          </li>
-          <li>
-            <Link
-              href="/about-us"
-              className={`text-lg font-light no-underline inline-block pb-2 ${
-                pathname === '/about-us' ? 'text-[#FFC700]' : 'text-white hover:text-[#FFC700]'
-              }`}
-              onClick={handleNavLinkClick}
-            >
-              About
-            </Link>
-          </li>
-          <li>
-            <Link
-              href="/blog"
-              className={`text-lg font-light no-underline inline-block pb-2 ${
-                pathname === '/blog' ? 'text-[#FFC700]' : 'text-white hover:text-[#FFC700]'
-              }`}
-              onClick={handleNavLinkClick}
-            >
-              Blog
-            </Link>
-          </li>
-        </ul>
 
         {/* Mobile Menu Button */}
         <button
@@ -205,10 +168,10 @@ export default function Header() {
       </div>
 
       {/* Mobile Navigation */}
-      <div className={`absolute top-full left-0 w-full bg-black/80 backdrop-blur-2xl lg:hidden transition-all duration-300 ease-in-out transform origin-top  h-[30vh] shadow-[0_10px_30px_rgba(0,0,0,0.8)] ${
+      <div className={`absolute top-full left-0 w-full bg-black/80 backdrop-blur-2xl lg:hidden transition-all duration-300 ease-in-out transform origin-top shadow-[0_10px_30px_rgba(0,0,0,0.8)] ${
         click ? 'opacity-100 scale-y-100 translate-y-0' : 'opacity-0 scale-y-0 -translate-y-2 pointer-events-none'
       }`}>
-          <div className="px-4 py-6 flex flex-col space-y-4 text-center h-full justify-evenly items-center">
+          <div className="px-4 py-6 flex flex-col gap-6 text-center items-center">
             <div className={`transition-all duration-300 ease-in-out ${
               mobileExpertiseOpen ? 'opacity-30' : 'opacity-100'
             }`}>
@@ -241,9 +204,9 @@ export default function Header() {
                 Expertise <span className="text-sm">{mobileExpertiseOpen ? '▲' : '▼'}</span>
               </button>
               <div className={`transition-all duration-500 ease-in-out overflow-hidden ${
-                mobileExpertiseOpen ? 'max-h-[200px] opacity-100' : 'max-h-0 opacity-0'
+                mobileExpertiseOpen ? 'max-h-[300px] opacity-100' : 'max-h-0 opacity-0'
               }`}>
-                <div className="space-y-6 pt-4 pb-4">
+                <div className="space-y-4 pt-2">
                   <Link
                     href="/branding-solutions"
                     className="block text-gray-300 hover:text-[#FFC700] transition-colors no-underline py-2"
