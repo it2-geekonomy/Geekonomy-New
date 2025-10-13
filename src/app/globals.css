@@ -55,3 +55,73 @@ a, button {
   outline: 2px solid #ffffff;
   outline-offset: 2px;
 }
+/* Hero Section Styles */
+.hero-headline {
+  font-size: 4.5rem;
+  font-weight: 800;
+  line-height: 1.1;
+  margin-bottom: 2.5rem;
+  transition: all 0.3s ease;
+}
+
+.hero-text-yellow {
+  color: #facc15; /* Solid golden yellow fill */
+  cursor: pointer; /* Make it look clickable */
+  transition: all 0.3s ease;
+}
+
+.hero-text-outline {
+  color: #000000; /* Black text */
+  text-shadow: 
+    -1px -1px 0 #ffffff,
+     1px -1px 0 #ffffff,
+    -1px  1px 0 #ffffff,
+     1px  1px 0 #ffffff; /* White shadow/outline effect */
+  -webkit-text-stroke: none;
+  cursor: pointer; /* Make it look clickable */
+  transition: all 0.3s ease;
+}
+
+.hero-button {
+  background-color: #facc15; /* Yellow background */
+  color: #000000; /* Black text */
+  font-weight: 700;
+  font-size: 1.125rem;
+  padding: 0.75rem 15rem; /* Increased horizontal padding for wider button */
+  border-radius: 9999px; /* Fully rounded */
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: "roc-grotesk", sans-serif;
+}
+
+.hero-button:hover {
+  background-color: #000000; /* Black background on hover */
+  color: #facc15; /* Yellow text on hover */
+  transform: translateY(-2px);
+}
+
+/* Hover effects - different effects for each text part */
+.hero-text-yellow:hover {
+  color: #eab308; /* Less dark yellow when hovering on Shaping Brands */
+  filter: brightness(0.9); /* Make it less dark */
+}
+
+.hero-text-outline:hover {
+  color: #facc15; /* Change to yellow when hovering on Building Solutions */
+  text-shadow: none; /* Remove shadow */
+  -webkit-text-stroke: none;
+}
+
+/* When hovering on Building Solutions, also change Shaping Brands */
+.hero-headline:has(.hero-text-outline:hover) .hero-text-yellow {
+  color: #000000; /* Black text */
+  text-shadow: 
+    -1px -1px 0 #ffffff,
+     1px -1px 0 #ffffff,
+    -1px  1px 0 #ffffff,
+     1px  1px 0 #ffffff; /* White shadow/outline effect */
+  -webkit-text-stroke: none;
+  filter: none; /* Remove brightness filter */
+}
+

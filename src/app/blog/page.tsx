@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import Card from '@/components/ui/Card';
+import Image from 'next/image';
 import { formatDate } from '@/lib/utils';
 import { BLOG_POSTS, BLOG_CATEGORIES } from '@/constants/blog';
 
@@ -13,86 +13,70 @@ export default function BlogPage() {
   return (
     <main>
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-blue-600 to-blue-800 text-white py-20">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto text-center">
-            <h1 className="text-4xl md:text-5xl font-bold mb-6">
-              Our Blog
-            </h1>
-            <p className="text-xl text-blue-100">
-              Insights, tutorials, and updates from the world of technology
-            </p>
-          </div>
-        </div>
-      </section>
+     
 
       {/* Categories */}
-      <section className="py-8 bg-white border-b">
-        <div className="container mx-auto px-4">
-          <div className="flex flex-wrap gap-4 justify-center">
-            {BLOG_CATEGORIES.map((category) => (
-              <button
-                key={category}
-                className="px-6 py-2 rounded-full bg-gray-100 hover:bg-blue-600 hover:text-white transition-colors font-medium"
-              >
-                {category}
-              </button>
-            ))}
-          </div>
-        </div>
-      </section>
+      
 
       {/* Blog Posts Grid */}
       <section className="py-20">
-        <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {BLOG_POSTS.map((post) => (
-              <Link key={post.id} href={`/blog/${post.slug}`}>
-                <Card hover className="h-full flex flex-col">
-                  <div className="text-6xl mb-4 text-center">{post.image}</div>
-                  <div className="text-sm text-blue-600 font-semibold mb-2">
-                    {post.category}
-                  </div>
-                  <h3 className="text-2xl font-bold text-gray-900 mb-3 hover:text-blue-600 transition-colors">
-                    {post.title}
-                  </h3>
-                  <p className="text-gray-600 mb-4 flex-grow">
-                    {post.excerpt}
-                  </p>
-                  <div className="border-t pt-4 flex items-center justify-between text-sm text-gray-500">
-                    <span>{post.author}</span>
-                    <span>{formatDate(post.date)}</span>
-                  </div>
-                </Card>
-              </Link>
-            ))}
+  <div className="max-w-full mx-auto px-16 lg:px-24 xl:px-32">
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+      {BLOG_POSTS.map((post) => (
+        <Link key={post.id} href={`/blog/${post.slug}`}>
+          <div className="relative aspect-[10/7] rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+            <Image 
+              src={post.image} 
+              alt={post.title}
+              fill
+              className="object-cover"
+            />
+            <div className="absolute inset-0 flex flex-col justify-end p-6">
+              <div className="text-sm text-blue-600 font-semibold mb-2">
+                {post.category}
+              </div>
+              <h3 className="text-xl font-bold text-black mb-3 hover:text-blue-600 transition-colors">
+                {post.title}
+              </h3>
+              <p className="text-gray-700 text-sm mb-4">
+                {post.excerpt}
+              </p>
+              <div className="flex items-center justify-between text-xs text-gray-600">
+                <span>{post.author}</span>
+                <span>{formatDate(post.date)}</span>
+              </div>
+            </div>
           </div>
-        </div>
-      </section>
+        </Link>
+      ))}
+    </div>
+  </div>
+</section>
 
-      {/* Newsletter Signup */}
-      <section className="py-20 bg-gray-50">
-        <div className="container mx-auto px-4">
-          <div className="max-w-2xl mx-auto text-center">
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">
-              Subscribe to Our Newsletter
-            </h2>
-            <p className="text-xl text-gray-600 mb-8">
-              Get the latest articles and insights delivered to your inbox
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4">
-              <input
-                type="email"
-                placeholder="Enter your email"
-                className="flex-grow px-6 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
-              />
-              <button className="px-8 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors font-semibold">
-                Subscribe
-              </button>
+
+      {/* CTA Section */}
+      <section className="bg-black py-20">
+        <div className="max-w-full mx-auto px-12 lg:px-14 xl:px-18">
+          <div className="flex flex-col items-center">
+            <div className="text-center mb-8">
+              <h2 className="hero-headline">
+                <span className="hero-text-yellow">Shaping Brands,</span>
+                <span className="hero-text-outline">Building Solutions.</span>
+              </h2>
+            </div>
+            <div className="flex flex-col items-center">
+              <Link href="/contact-us">
+                <button className="hero-button">
+                  Get In Touch
+                </button>
+              </Link>
             </div>
           </div>
         </div>
       </section>
+
+
+
     </main>
   );
 }

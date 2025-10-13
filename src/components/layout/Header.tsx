@@ -34,7 +34,7 @@ export default function Header() {
 
   return (
     <nav className="bg-transparent h-[90px] flex justify-center items-center sticky top-0 z-20 backdrop-blur-[10px]">
-      <div className="flex justify-between items-center w-full">
+      <div className="w-full px-12 lg:px-14 xl:px-18 flex justify-between items-center">
         {/* Logo - Left Side */}
         <Link 
           href="/" 
