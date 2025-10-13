@@ -42,7 +42,7 @@ export default function Home() {
 
       {/* 1. We are A to Z */}
       <div>
-        <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-3 sm:mb-4 text-left">
+        <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-3 sm:mb-4 text-center md:text-left">
           We are A to Z.
         </h2>
         <p className="font-roc text-white/60 text-sm sm:text-base md:text-[1.3rem] leading-relaxed mb-3 sm:mb-4 text-justify">
@@ -53,7 +53,7 @@ export default function Home() {
 
       {/* 2. Our Vision */}
       <div>
-        <h2 className="text-xl sm:text-2xl md:text-3xl font-bold mb-3 sm:mb-4 text-left">
+        <h2 className="text-xl sm:text-2xl md:text-3xl font-bold mb-3 sm:mb-4 text-center md:text-left">
           Our Vision
         </h2>
         <p className="font-roc text-white/60 text-sm sm:text-base md:text-[1.3rem] leading-relaxed text-justify">
@@ -63,7 +63,7 @@ export default function Home() {
 
       {/* 3. Our Mission */}
       <div>
-        <h2 className="text-xl sm:text-2xl md:text-3xl font-bold mb-3 sm:mb-4 text-left">
+        <h2 className="text-xl sm:text-2xl md:text-3xl font-bold mb-3 sm:mb-4 text-center md:text-left">
           Our Mission
         </h2>
         <p className="font-roc text-white/60 text-sm sm:text-base md:text-[1.3rem] leading-relaxed text-justify">

@@ -70,7 +70,7 @@ export default function InfiniteScroll() {
 
   return (
     <div className="space-y-8 bg-black"> 
-    <h2 className="text-[1.7rem] sm:text-[2rem] md:text-[2.2rem] lg:text-[2.5rem] font-bold text-white mb-12 ml-10 sm:ml-20 md:ml-30 lg:ml-40">
+    <h2 className="text-[1.5rem] sm:text-[1.8rem] md:text-[2.2rem] lg:text-[2.5rem] font-bold text-white mb-8 sm:mb-12 px-4 sm:px-6 md:px-8 lg:px-12 text-center md:text-left">
           Our Experience Through Time
           </h2>
       {/* First Row - Left Direction */}
