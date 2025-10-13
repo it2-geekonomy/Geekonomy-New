@@ -46,7 +46,7 @@ type ExpertiseDataProps = {
 const ExpertiseData: React.FC<ExpertiseDataProps> = ({ sections }) => {
   return (
     <div className="bg-black text-gray-200 font-thin w-full flex justify-center">
-      <div className="max-w-[clamp(300px,86%,1300px)] mx-auto px-6 text-left">
+      <div className="max-w-[clamp(300px,86%,1300px)] px-10 md:px-6 text-left">
         {sections?.map((section, index) => (
           <div key={index} className="space-y-5">
             <p className="text-[clamp(1rem,2.5vw,1.2rem)] leading-loose !mb-5">
