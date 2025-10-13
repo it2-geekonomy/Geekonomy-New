@@ -58,6 +58,7 @@ export default function Header() {
 
         {/* Desktop Navigation - Center */}
         <ul className="hidden lg:flex items-center gap-8 xl:gap-16 2xl:gap-32 list-none">
+
           <li className="relative group">
             <Link
               href="/"
@@ -153,6 +154,7 @@ export default function Header() {
         <Link
           href="/contact-us"
           className="hidden lg:flex bg-black border border-white text-white w-[120px] xl:w-[140px] h-[32px] xl:h-[36px] rounded-full hover:bg-white hover:text-black transition-all duration-300 text-sm xl:text-base font-medium no-underline shadow-[0_0_10px_rgba(255,255,255,0.3)] items-center justify-center"
+
           onClick={handleNavLinkClick}
         >
           Contact Us
@@ -250,6 +252,7 @@ export default function Header() {
                 Blog
               </Link>
             </div>
+
 
             <div className={`transition-all duration-300 ease-in-out ${
               mobileExpertiseOpen ? 'opacity-30' : 'opacity-100'
