@@ -2,71 +2,70 @@
 import Image from "next/image";
 
 export default function InfiniteScroll() {
-  // Row 1 logos (scrolling left)
+  // Row 1 logos (scrolling left) - each item can include per-logo outer/inner size classes
   const logosRow1 = [
-    "/client.webp",
-    "/client1.webp",
-    "/client2.webp",
-    "/client3.webp",
-    "/client4.webp",
-    "/client5.webp",
-    "/client6.webp",
-    //"/client7.webp",
-    "/client8.webp",
-    "/client9.webp",
-    "/client10.webp",
-    "/client11.webp",
-    "/client12.webp",
-    "/client13.webp",
-    "/client14.webp",
-    "/client15.webp",
-    "/client16.webp",
-    "/client17.webp",
-    "/client18.webp",
-    "/client19.webp",
-    "/client20.webp",
-    "/client21.webp",
-    "/client22.webp",
-    "/client23.webp",
-    "/client24.webp",
-    "/client25.webp",
-    "/client26.webp",
-    "/client27.webp",
-    "/client28.webp",
-    
+    { src: "/client.webp", outer: 'w-36 h-28', inner: 'w-32 h-20' },
+    { src: "/client1.webp", outer: 'w-36 h-28', inner: 'w-32 h-20' },
+    { src: "/client2.webp", outer: 'w-36 h-28', inner: 'w-32 h-20' },
+    { src: "/client3.webp", outer: 'w-44 h-28', inner: 'w-40 h-20' },
+  { src: "/client4.webp", outer: 'w-36 h-28', inner: 'w-44 h-22' },
+  { src: "/client5.webp", outer: 'w-36 h-28', inner: 'w-44 h-22' },
+    { src: "/client6.webp", outer: 'w-36 h-28', inner: 'w-32 h-20' },
+    //{ src: "/client7.webp" },
+    { src: "/client8.webp", outer: 'w-36 h-28', inner: 'w-32 h-20' },
+    { src: "/client9.webp", outer: 'w-36 h-28', inner: 'w-32 h-20' },
+    { src: "/client10.webp", outer: 'w-36 h-28', inner: 'w-32 h-20' },
+    { src: "/client11.webp", outer: 'w-36 h-28', inner: 'w-32 h-20' },
+    { src: "/client12.webp", outer: 'w-36 h-28', inner: 'w-32 h-20' },
+    { src: "/client13.webp", outer: 'w-36 h-28', inner: 'w-32 h-20' },
+    { src: "/client14.webp", outer: 'w-36 h-28', inner: 'w-32 h-20' },
+    { src: "/client15.webp", outer: 'w-36 h-28', inner: 'w-32 h-20' },
+    { src: "/client16.webp", outer: 'w-36 h-28', inner: 'w-32 h-20' },
+    { src: "/client17.webp", outer: 'w-36 h-28', inner: 'w-32 h-20' },
+    { src: "/client18.webp", outer: 'w-36 h-28', inner: 'w-32 h-20' },
+    { src: "/client19.webp", outer: 'w-36 h-28', inner: 'w-32 h-20' },
+    { src: "/client20.webp", outer: 'w-36 h-28', inner: 'w-32 h-20' },
+    { src: "/client21.webp", outer: 'w-36 h-28', inner: 'w-32 h-20' },
+    { src: "/client22.webp", outer: 'w-36 h-28', inner: 'w-32 h-20' },
+    { src: "/client23.webp", outer: 'w-36 h-28', inner: 'w-32 h-20' },
+    { src: "/client24.webp", outer: 'w-36 h-28', inner: 'w-32 h-20' },
+    { src: "/client25.webp", outer: 'w-36 h-28', inner: 'w-32 h-20' },
+    { src: "/client26.webp", outer: 'w-36 h-28', inner: 'w-32 h-20' },
+    { src: "/client27.webp", outer: 'w-36 h-28', inner: 'w-32 h-20' },
+    { src: "/client28.webp", outer: 'w-36 h-28', inner: 'w-32 h-20' },
   ];
 
   // Row 2 logos (scrolling right)
   const logosRow2 = [
-    "/client.webp",
-    "/client1.webp",
-    "/client2.webp",
-    "/client3.webp",
-    "/client4.webp",
-    "/client5.webp",
-    "/client6.webp",
-    //"/client7.webp",
-    "/client8.webp",
-    "/client9.webp",
-    "/client10.webp",
-    "/client11.webp",
-    "/client12.webp",
-    "/client13.webp",
-    "/client14.webp",
-    "/client15.webp",
-    "/client16.webp",
-    "/client17.webp",
-    "/client18.webp",
-    "/client19.webp",
-    "/client20.webp",
-    "/client21.webp",
-    "/client22.webp",
-    "/client23.webp",
-    "/client24.webp",
-    "/client25.webp",
-    "/client26.webp",
-    "/client27.webp",
-    "/client28.webp",
+    { src: "/client.webp", outer: 'w-36 h-28', inner: 'w-32 h-20' },
+    { src: "/client1.webp", outer: 'w-36 h-28', inner: 'w-32 h-20' },
+    { src: "/client2.webp", outer: 'w-36 h-28', inner: 'w-32 h-20' },
+    { src: "/client3.webp", outer: 'w-44 h-28', inner: 'w-40 h-20' },
+  { src: "/client4.webp", outer: 'w-36 h-28', inner: 'w-44 h-22' },
+  { src: "/client5.webp", outer: 'w-36 h-28', inner: 'w-44 h-22' },
+    { src: "/client6.webp", outer: 'w-36 h-28', inner: 'w-32 h-20' },
+    //{ src: "/client7.webp" },
+    { src: "/client8.webp", outer: 'w-36 h-28', inner: 'w-32 h-20' },
+    { src: "/client9.webp", outer: 'w-36 h-28', inner: 'w-32 h-20' },
+    { src: "/client10.webp", outer: 'w-36 h-28', inner: 'w-32 h-20' },
+    { src: "/client11.webp", outer: 'w-36 h-28', inner: 'w-32 h-20' },
+    { src: "/client12.webp", outer: 'w-36 h-28', inner: 'w-32 h-20' },
+    { src: "/client13.webp", outer: 'w-36 h-28', inner: 'w-32 h-20' },
+    { src: "/client14.webp", outer: 'w-36 h-28', inner: 'w-32 h-20' },
+    { src: "/client15.webp", outer: 'w-36 h-28', inner: 'w-32 h-20' },
+    { src: "/client16.webp", outer: 'w-36 h-28', inner: 'w-32 h-20' },
+    { src: "/client17.webp", outer: 'w-36 h-28', inner: 'w-32 h-20' },
+    { src: "/client18.webp", outer: 'w-36 h-28', inner: 'w-32 h-20' },
+    { src: "/client19.webp", outer: 'w-36 h-28', inner: 'w-32 h-20' },
+    { src: "/client20.webp", outer: 'w-36 h-28', inner: 'w-32 h-20' },
+    { src: "/client21.webp", outer: 'w-36 h-28', inner: 'w-32 h-20' },
+    { src: "/client22.webp", outer: 'w-36 h-28', inner: 'w-32 h-20' },
+    { src: "/client23.webp", outer: 'w-36 h-28', inner: 'w-32 h-20' },
+    { src: "/client24.webp", outer: 'w-36 h-28', inner: 'w-32 h-20' },
+    { src: "/client25.webp", outer: 'w-36 h-28', inner: 'w-32 h-20' },
+    { src: "/client26.webp", outer: 'w-36 h-28', inner: 'w-32 h-20' },
+    { src: "/client27.webp", outer: 'w-36 h-28', inner: 'w-32 h-20' },
+    { src: "/client28.webp", outer: 'w-36 h-28', inner: 'w-32 h-20' },
   ];
 
   return (
@@ -78,8 +77,11 @@ export default function InfiniteScroll() {
       <div className="w-full inline-flex flex-nowrap overflow-hidden [mask-image:_linear-gradient(to_right,transparent_0,_black_128px,_black_calc(100%-128px),transparent_100%)]">
         <ul className="flex items-center justify-center md:justify-start [&_li]:mx-12 [&_img]:max-w-none animate-infinite-scroll">
           {logosRow1.map((logo, i) => (
-            <li key={`row1-${i}`}>
-              <Image src={logo} alt={`Logo-${i}`} width={100} height={100} />
+            // outer is fixed to keep spacing consistent; only inner controls logo size
+            <li key={`row1-${i}`} className={`relative w-36 h-28 flex-shrink-0 flex items-center justify-center`}>
+              <div className={`relative ${logo.inner ?? 'w-32 h-20'}`}>
+                <Image src={logo.src} alt={`Logo-${i}`} fill style={{ objectFit: 'contain' }} />
+              </div>
             </li>
           ))}
         </ul>
@@ -90,8 +92,10 @@ export default function InfiniteScroll() {
   aria-hidden="true"
 >
           {logosRow1.map((logo, i) => (
-            <li key={`row1-dup-${i}`}>
-              <Image src={logo} alt={`Logo-${i}`} width={100} height={100} />
+            <li key={`row1-dup-${i}`} className={`relative w-36 h-28 flex-shrink-0 flex items-center justify-center`}>
+              <div className={`relative ${logo.inner ?? 'w-32 h-20'}`}>
+                <Image src={logo.src} alt={`Logo-${i}`} fill style={{ objectFit: 'contain' }} />
+              </div>
             </li>
           ))}
         </ul>
@@ -101,8 +105,10 @@ export default function InfiniteScroll() {
       <div className="w-full inline-flex flex-nowrap overflow-hidden [mask-image:_linear-gradient(to_right,transparent_0,_black_128px,_black_calc(100%-128px),transparent_100%)]">
         <ul className="flex items-center justify-center md:justify-start [&_li]:mx-12 [&_img]:max-w-none animate-infinite-scroll-reverse">
           {logosRow2.map((logo, i) => (
-            <li key={`row2-${i}`}>
-              <Image src={logo} alt={`Logo-${i}`} width={100} height={100} />
+            <li key={`row2-${i}`} className={`relative w-36 h-28 flex-shrink-0 flex items-center justify-center`}>
+              <div className={`relative ${logo.inner ?? 'w-32 h-20'}`}>
+                <Image src={logo.src} alt={`Logo-${i}`} fill style={{ objectFit: 'contain' }} />
+              </div>
             </li>
           ))}
         </ul>
@@ -113,8 +119,10 @@ export default function InfiniteScroll() {
   aria-hidden="true"
 >
           {logosRow2.map((logo, i) => (
-            <li key={`row2-dup-${i}`}>
-              <Image src={logo} alt={`Logo-${i}`} width={100} height={100} />
+            <li key={`row2-dup-${i}`} className={`relative w-36 h-28 flex-shrink-0 flex items-center justify-center`}>
+              <div className={`relative ${logo.inner ?? 'w-32 h-20'}`}>
+                <Image src={logo.src} alt={`Logo-${i}`} fill style={{ objectFit: 'contain' }} />
+              </div>
             </li>
           ))}
         </ul>
