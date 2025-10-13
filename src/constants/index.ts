@@ -18,6 +18,7 @@ export const EXPERTISE_LINKS: NavLink[] = [
 ];
 
 export const COMPANY_INFO = {
+
   name: 'Geekonomy',
   description: 'Transforming businesses through cutting-edge technology and innovative solutions.',
   email: 'info@geekonomytech.com',
