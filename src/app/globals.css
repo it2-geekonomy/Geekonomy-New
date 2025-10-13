@@ -1,7 +1,7 @@
-@import "tailwindcss";
-
 /* Import Adobe Fonts - Roc Grotesk */
 @import url("https://use.typekit.net/mjc4bfk.css");
+
+@import "tailwindcss";
 
 *,
 *::before,
@@ -55,3 +55,31 @@ a, button {
   outline: 2px solid #ffffff;
   outline-offset: 2px;
 }
+/* Left scroll (default) */
+@keyframes infinite-scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+/* Right scroll (reverse) */
+@keyframes infinite-scroll-reverse {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+.animate-infinite-scroll {
+  animation: infinite-scroll 60s linear infinite;
+}
+
+.animate-infinite-scroll-reverse {
+  animation: infinite-scroll-reverse 60s linear infinite;
+}
+
