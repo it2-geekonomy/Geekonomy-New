@@ -1,6 +1,9 @@
 import type { Metadata } from 'next';
+import Image from 'next/image'; // Import Image for the logo
 import Card from '@/components/ui/Card';
 import { COMPANY_INFO, COMPANY_STATS } from '@/constants';
+import InfiniteScroll from '@/components/infinteScroll';
+
 
 export const metadata: Metadata = {
   title: 'About Us - Geekonomy',
@@ -10,141 +13,88 @@ export const metadata: Metadata = {
 export default function AboutPage() {
   return (
     <main>
-      {/* Hero Section */}
-      <section className="bg-gradient-to-br from-blue-600 to-blue-800 text-white py-20">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto text-center">
-            <h1 className="text-4xl md:text-5xl font-bold mb-6">
-              About Geekonomy
-            </h1>
-            <p className="text-xl text-blue-100">
-              Pioneering technology solutions since 2014
-            </p>
-          </div>
+      {/* Hero Section - UPDATED for Background Image */}
+      <section 
+        className="relative h-[40vh] md:h-[80vh] text-white flex items-center justify-center overflow-hidden"
+      >
+        {/* Background Image Container */}
+        <div 
+          className="absolute inset-0 bg-cover bg-center" 
+          style={{ backgroundImage: "url('/about_us_banner.webp')" }}
+        >
+           {/* Optional: Add a subtle overlay to ensure text is readable */}
+          <div className="absolute inset-0 bg-black/40"></div>
+        </div>
+        
+        {/* Hero Text Content */}
+        <div className="text-[3rem] sm:text-[3.5rem] md:text-[4rem] lg:text-[4.8rem] font-[650] text-white text-center relative z-10 p-4">
+          A 360° Service Agency.
         </div>
       </section>
+{/* Stats/About Content Section */}
+{/* Stats/About Content Section */}
+{/* Stats/About Content Section */}
+<section className="relative py-16 min-h-[40vh] md:min-h-[90vh] bg-black text-white overflow-hidden">
 
-      {/* Mission & Vision */}
-      <section className="py-20">
-        <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
-            <Card>
-              <h2 className="text-3xl font-bold text-gray-900 mb-4">
-                Our Mission
-              </h2>
-              <p className="text-gray-600 text-lg leading-relaxed">
-                To empower businesses with innovative technology solutions that drive growth, 
-                efficiency, and competitive advantage in the digital age. We believe in creating 
-                technology that makes a real difference.
-              </p>
-            </Card>
+  {/* Background Image - hidden on small screens */}
+  <div 
+    className="hidden md:block absolute top-0 right-0 w-[42%] lg:w-[40%] xl:w-[30%] h-full bg-no-repeat bg-right bg-contain"
+    style={{ 
+      backgroundImage: "url('/about_us_circle.webp')",
+      backgroundSize: 'auto 100%',
+      backgroundPosition: 'right center',
+      filter: 'brightness(2)',
+    }}
+  >
+    {/* Overlay for smooth blending */}
+    <div className="absolute inset-0 bg-gradient-to-l from-black/80 to-transparent"></div>
+  </div>
 
-            <Card>
-              <h2 className="text-3xl font-bold text-gray-900 mb-4">
-                Our Vision
-              </h2>
-              <p className="text-gray-600 text-lg leading-relaxed">
-                To be the global leader in technology innovation, recognized for our exceptional 
-                solutions, outstanding customer service, and commitment to excellence in everything 
-                we do.
-              </p>
-            </Card>
-          </div>
-        </div>
-      </section>
+  {/* Content Wrapper — using your original left margins */}
+  <div className="relative z-10 container ml-10 sm:ml-15 md:ml-20 lg:ml-25">
 
-      {/* Stats */}
-      <section className="py-16 bg-blue-600 text-white">
-        <div className="container mx-auto px-4">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-            {COMPANY_STATS.map((stat, index) => (
-              <div key={index} className="text-center">
-                <div className="text-4xl mb-2">{stat.icon}</div>
-                <div className="text-4xl md:text-5xl font-bold mb-2">
-                  {stat.value}
-                </div>
-                <div className="text-blue-100 text-lg">
-                  {stat.label}
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+    {/* Content Grid */}
+    <div className="flex flex-col gap-12 md:gap-20 sm:w-2/5 md:w-3/5 lg:w-8/10 xl:w-9/10">
 
-      {/* Our Story */}
-      <section className="py-20">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto">
-            <h2 className="text-4xl font-bold text-gray-900 mb-8 text-center">
-              Our Story
-            </h2>
-            <div className="prose prose-lg max-w-none text-gray-600">
-              <p className="text-lg leading-relaxed mb-6">
-                Founded in 2014, Geekonomy began with a simple yet powerful vision: to bridge 
-                the gap between business needs and technology solutions. What started as a 
-                small team of passionate developers has grown into a full-service technology 
-                company serving clients worldwide.
-              </p>
-              <p className="text-lg leading-relaxed mb-6">
-                Over the years, we&apos;ve had the privilege of working with startups, 
-                enterprises, and everything in between. Each project has been an opportunity 
-                to learn, innovate, and push the boundaries of what&apos;s possible with technology.
-              </p>
-              <p className="text-lg leading-relaxed">
-                Today, we&apos;re proud to be trusted partners to over 200 companies, helping 
-                them navigate digital transformation, build innovative products, and achieve 
-                their business goals through technology.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
+      {/* 1. We are A to Z */}
+      <div>
+        <h2 className="text-3xl md:text-4xl font-bold mb-4">We are A to Z.</h2>
+        <p className="text-base md:text-[1.2rem] leading-relaxed mb-4">
+          As seasoned branding, marketing and development experts, we provide a comprehensive suite of services tailored for your brand's success.
+        </p>
+        <p className="text-base md:text-[1.2rem] leading-relaxed">
+          From strategic product promotion to cultivating an enduring brand image, we are dedicated to delivering excellence at every turn. Rest assured, we will be your steadfast partner, ensuring your customers' needs are not just met but exceeded, just as we exceed your expectations.
+        </p>
+      </div>
+
+      {/* 2. Our Vision */}
+      <div>
+        <h2 className="text-2xl md:text-3xl font-bold mb-4">Our Vision</h2>
+        <p className="text-base md:text-[1.2rem] leading-relaxed">
+          Geekonomy's vision is to be a customer-centric 360-degree solution provider, leading through advanced technologies and innovation across all service verticals.
+        </p>
+      </div>
+
+      {/* 3. Our Mission */}
+      <div>
+        <h2 className="text-2xl md:text-3xl font-bold mb-4">Our Mission</h2>
+        <p className="text-base md:text-[1.2rem] leading-relaxed">
+          Our mission is to deliver unparalleled value by empowering businesses with data-driven insights and cutting-edge solutions, fostering sustainable growth and success.
+        </p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
 
       {/* Values */}
-      <section className="py-20 bg-gray-50">
-        <div className="container mx-auto px-4">
-          <h2 className="text-4xl font-bold text-gray-900 mb-12 text-center">
-            Our Values
-          </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {[
-              {
-                icon: '🎯',
-                title: 'Excellence',
-                description: 'We strive for excellence in every project, delivering quality that exceeds expectations',
-              },
-              {
-                icon: '🤝',
-                title: 'Integrity',
-                description: 'We conduct business with honesty, transparency, and ethical practices',
-              },
-              {
-                icon: '💡',
-                title: 'Innovation',
-                description: 'We embrace change and continuously seek innovative solutions',
-              },
-              {
-                icon: '👥',
-                title: 'Collaboration',
-                description: 'We believe in the power of teamwork and strong partnerships',
-              },
-            ].map((value, index) => (
-              <Card key={index} hover>
-                <div className="text-4xl mb-4">{value.icon}</div>
-                <h3 className="text-xl font-semibold text-gray-900 mb-2">
-                  {value.title}
-                </h3>
-                <p className="text-gray-600">
-                  {value.description}
-                </p>
-              </Card>
-            ))}
-          </div>
+      <section className="py-20 bg-black">
+        <div>
+          <InfiniteScroll/>
         </div>
       </section>
     </main>
   );
 }
-
-
