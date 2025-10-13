@@ -5,12 +5,9 @@ import { COMPANY_INFO, COMPANY_STATS } from '@/constants';
 import InfiniteScroll from '@/components/infinteScroll';
 
 
-export const metadata: Metadata = {
-  title: 'About Us - Geekonomy',
-  description: 'Learn more about Geekonomy and our mission to transform businesses through innovative technology solutions',
-};
 
-export default function AboutPage() {
+
+export default function Home() {
   return (
     <main>
       {/* Hero Section - UPDATED for Background Image */}
@@ -91,5 +88,6 @@ export default function AboutPage() {
         </div>
       </section>
     </main>
+
   );
 }

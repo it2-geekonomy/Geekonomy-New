@@ -1,5 +1,6 @@
 import InfiniteScroll from "@/components/infinteScroll";
 
+
 export default function Home() {
   return (
     <div>
@@ -9,6 +10,7 @@ export default function Home() {
                 <InfiniteScroll/>
               </div>
             </section>
+
     </div>
   );
 }

@@ -27,7 +27,7 @@ export function truncate(text: string, length: number): string {
   return text.slice(0, length).trim() + '...';
 }
 
-export function debounce<T extends (...args: any[]) => any>(
+export function debounce<T extends (...args: never[]) => unknown>(
   func: T,
   wait: number
 ): (...args: Parameters<T>) => void {
