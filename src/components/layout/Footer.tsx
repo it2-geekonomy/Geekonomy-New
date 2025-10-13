@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import { COMPANY_INFO, EXPERTISE_LINKS } from '@/constants';
 
 export default function Footer() {
@@ -54,24 +55,21 @@ export default function Footer() {
                 <h3 className="text-white text-lg font-bold mb-4 text-left">Partners</h3>
                 <div className="flex flex-wrap gap-0.5 sm:gap-2 justify-start">
                   {/* Cloud Service Icon */}
-                  <div className="w-4 h-4 sm:w-8 sm:h-8 bg-blue-600 rounded flex items-center justify-center">
-                    <span className="text-white text-xs">🌐</span>
+                  {/* Partner logos from /public/images - swap filenames as needed */}
+                  <div className="w-6 h-6 sm:w-6 sm:h-6 relative">
+                    <Image src="/images/leadspotting.f44ee491ee208bf68bba.webp" alt="partner-1" fill style={{ objectFit: 'contain' }} />
                   </div>
-                  {/* Trello Icon */}
-                  <div className="w-4 h-4 sm:w-8 sm:h-8 bg-red-600 rounded flex items-center justify-center">
-                    <span className="text-white text-xs font-bold">t</span>
+                  <div className="w-6 h-6 sm:w-6 sm:h-6 relative">
+                    <Image src="/images/teraffic.1280028d6e80727f7c3b.webp" alt="partner-2" fill style={{ objectFit: 'contain' }} />
                   </div>
-                  {/* Google Icon */}
-                  <div className="w-4 h-4 sm:w-8 sm:h-8 bg-white rounded flex items-center justify-center">
-                    <span className="text-blue-600 text-xs font-bold">G</span>
+                  <div className="w-6 h-6 sm:w-6 sm:h-6 relative">
+                    <Image src="/images/google.9d3d6c7cde3f1f4a5591.webp" alt="partner-3" fill style={{ objectFit: 'contain' }} />
                   </div>
-                  {/* AWS Icon */}
-                  <div className="w-4 h-4 sm:w-8 sm:h-8 bg-orange-500 rounded flex items-center justify-center">
-                    <span className="text-white text-xs font-bold">aws</span>
+                  <div className="w-6 h-6 sm:w-6 sm:h-6 relative">
+                    <Image src="/images/amazon.af965e29b6fcd290c2e6.webp" alt="partner-4" fill style={{ objectFit: 'contain' }} />
                   </div>
-                  {/* Adobe Icon */}
-                  <div className="w-4 h-4 sm:w-8 sm:h-8 bg-red-600 rounded flex items-center justify-center">
-                    <span className="text-white text-xs font-bold">A</span>
+                  <div className="w-6 h-6 sm:w-6 sm:h-6 relative">
+                    <Image src="/images/adobe.dedd8b5de418b59824b5.webp" alt="partner-5" fill style={{ objectFit: 'contain' }} />
                   </div>
                 </div>
               </div>
