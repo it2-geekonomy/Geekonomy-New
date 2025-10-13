@@ -18,19 +18,27 @@ export const EXPERTISE_LINKS: NavLink[] = [
 ];
 
 export const COMPANY_INFO = {
-  name: 'GEEKONOMY',
-  description: 'Geekonomy is a team of driven and innovative individuals, blending passion with curiosity to deliver exceptional value through design. In today\'s world, we embrace marketing as an integral part of life, crafting captivating experiences that seamlessly bridge the online and offline realms. Our expertise lies in empowering brands to share their unique narratives, fueling transformative growth.',
-  email: 'info@geekonomy.in',
-  phone: '+91- 76248 18717',
-  address: 'No. 1357, Ground Floor, 9th Cross, ITI Layout, JP Nagar 1st Phase, Bengaluru, Karnataka - 560 078.',
-  website: 'https://geekonomy.in',
+
+  name: 'Geekonomy',
+  description: 'Transforming businesses through cutting-edge technology and innovative solutions.',
+  email: 'info@geekonomytech.com',
+  phone: '+1 (555) 123-4567',
+  address: '123 Tech Street, Innovation City, IC 12345',
+  website: 'https://geekonomytech.com',
+  social: {
+    linkedin: 'https://linkedin.com/company/geekonomy',
+    twitter: 'https://twitter.com/geekonomy',
+    facebook: 'https://facebook.com/geekonomy',
+    instagram: 'https://instagram.com/geekonomy',
+    github: 'https://github.com/geekonomy',
+  },
 };
 
 export const COMPANY_STATS = [
-  { number: '500+', label: 'Projects Completed' },
-  { number: '200+', label: 'Happy Clients' },
-  { number: '50+', label: 'Team Members' },
-  { number: '10+', label: 'Years Experience' },
+  { icon: '🚀', value: '500+', label: 'Projects Completed' },
+  { icon: '😊', value: '200+', label: 'Happy Clients' },
+  { icon: '👥', value: '50+', label: 'Team Members' },
+  { icon: '⭐', value: '10+', label: 'Years Experience' },
 ];
 
 export const SERVICES = [
