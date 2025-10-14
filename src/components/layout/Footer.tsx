@@ -14,13 +14,10 @@ export default function Footer() {
           {/* Column 1: Company Info */}
           <div className="flex-1">
             <div className="flex items-center mb-4">
-              {/* Logo Icon - Using a colorful knot-like design */}
-              <div className="w-8 h-8 mr-3 bg-gradient-to-br from-purple-500 via-pink-500 to-orange-500 rounded-lg flex items-center justify-center">
-                <div className="w-6 h-6 bg-gradient-to-br from-purple-400 via-pink-400 to-orange-400 rounded transform rotate-45"></div>
+              {/* Footer logo (replace decorative knot and text) */}
+              <div className="w-64 h-10 mr-3 relative">
+                <Image src="/logo2.png" alt="Geekonomy logo" fill style={{ objectFit: 'contain' }} />
               </div>
-              <h3 className="text-white text-xl font-bold uppercase">
-                {COMPANY_INFO.name}
-              </h3>
             </div>
             <p className="text-gray-300 text-sm md:text-base mb-3 text-justify">
               Geekonomy is a team of driven and innovative individuals, blending passion with curiosity to deliver exceptional value through design.
@@ -52,7 +49,7 @@ export default function Footer() {
 
               {/* Partners Section */}
               <div className="w-full flex flex-col items-start">
-                <h3 className="text-white text-lg md:text-xl font-bold mb-4 text-left">Partners</h3>
+                <h3 className="text-white text-lg font-bold mb-4 text-left">Partners</h3>
                 <div className="flex flex-wrap gap-0.5 sm:gap-2 justify-start">
                   {/* Cloud Service Icon */}
                   {/* Partner logos from /public/images - swap filenames as needed */}
