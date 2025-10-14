@@ -1,7 +1,3 @@
-import type { Metadata } from 'next';
-import Image from 'next/image'; // Import Image for the logo
-import Card from '@/components/ui/Card';
-import { COMPANY_INFO, COMPANY_STATS } from '@/constants';
 import InfiniteScroll from '@/components/infinteScroll';
 
 
@@ -44,8 +40,8 @@ export default function Home() {
           We are A to Z.
         </h2>
         <p className="font-roc text-[#c5c4c3] text-sm sm:text-base md:text-[1.3rem] leading-relaxed mb-3 sm:mb-4 text-justify">
-          As seasoned branding, marketing and development experts, we provide a comprehensive suite of services tailored for your brand's success.
-          From strategic product promotion to cultivating an enduring brand image, we are dedicated to delivering excellence at every turn. Rest assured, we will be your steadfast partner, ensuring your customers' needs are not just met but exceeded, just as we exceed your expectations.
+          As seasoned branding, marketing and development experts, we provide a comprehensive suite of services tailored for your brand&apos;s success.
+          From strategic product promotion to cultivating an enduring brand image, we are dedicated to delivering excellence at every turn. Rest assured, we will be your steadfast partner, ensuring your customers&apos; needs are not just met but exceeded, just as we exceed your expectations.
         </p>
       </div>
 
@@ -55,7 +51,7 @@ export default function Home() {
           Our Vision
         </h2>
         <p className="font-roc text-[#c5c4c3] text-sm sm:text-base md:text-[1.3rem] leading-relaxed text-justify">
-          Geekonomy's vision is to be a customer-centric 360-degree solution provider, leading through advanced technologies and innovation across all service verticals.
+          Geekonomy&apos;s vision is to be a customer-centric 360-degree solution provider, leading through advanced technologies and innovation across all service verticals.
         </p>
       </div>
 

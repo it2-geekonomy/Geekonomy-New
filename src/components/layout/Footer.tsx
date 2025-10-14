@@ -23,7 +23,7 @@ export default function Footer() {
               Geekonomy is a team of driven and innovative individuals, blending passion with curiosity to deliver exceptional value through design.
             </p>
             <p className="text-gray-300 text-sm md:text-base text-justify">
-              In today's world, we embrace marketing as an integral part of life, crafting captivating experiences that seamlessly bridge the online and offline realms. Our expertise lies in empowering brands to share their unique narratives, fueling transformative growth.
+              In today&apos;s world, we embrace marketing as an integral part of life, crafting captivating experiences that seamlessly bridge the online and offline realms. Our expertise lies in empowering brands to share their unique narratives, fueling transformative growth.
             </p>
           </div>
           {/* Outer Container for Columns 2 & 3 */}
