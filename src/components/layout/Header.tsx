@@ -39,7 +39,7 @@ export default function Header() {
                            pathname.startsWith('/customer-retention');
 
   return (
-    <nav className="bg-black/80 h-[90px] flex justify-center items-center fixed top-0 left-0 right-0 z-[60] backdrop-blur-2xl">
+    <nav className="bg-black/20 h-[90px] flex justify-center items-center fixed top-0 left-0 right-0 z-[60] backdrop-blur-2xl">
       <div className="flex justify-between items-center w-full max-w-[95%] mx-auto px-4 sm:px-6 lg:px-8">
         {/* Logo - Left Side */}
         <Link 
@@ -153,7 +153,7 @@ export default function Header() {
         {/* Contact Button - Right Side */}
         <Link
           href="/contact-us"
-          className="hidden lg:flex bg-black border border-white text-white w-[120px] xl:w-[140px] h-[32px] xl:h-[36px] rounded-full hover:bg-white hover:text-black transition-all duration-300 text-sm xl:text-base font-medium no-underline shadow-[0_0_10px_rgba(255,255,255,0.3)] items-center justify-center"
+          className="hidden lg:flex bg-black border border-white text-white w-[120px] xl:w-[140px] h-[32px] xl:h-[36px] rounded-full hover:bg-[#ffC700] hover:text-black transition-all duration-300 text-sm xl:text-base font-medium no-underline shadow-[0_0_10px_rgba(255,255,255,0.3)] items-center justify-center"
 
           onClick={handleNavLinkClick}
         >
@@ -259,7 +259,7 @@ export default function Header() {
             }`}>
               <Link
                 href="/contact-us"
-                className="text-white px-6 py-2 rounded-full hover:bg-[#FFC700] hover:text-black transition-all duration-300 text-center mt-4 no-underline inline-block mx-auto"
+                className="text-white px-6 py-2 rounded-full hover:bg-[#ffC700] hover:text-black transition-all duration-300 text-center mt-4 no-underline inline-block mx-auto"
                 onClick={handleNavLinkClick}
               >
                 Contact Us
