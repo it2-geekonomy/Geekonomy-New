@@ -22,10 +22,10 @@ export default function Footer() {
                 {COMPANY_INFO.name}
               </h3>
             </div>
-            <p className="text-gray-300 text-sm mb-3 text-justify">
+            <p className="text-gray-300 text-sm md:text-base mb-3 text-justify">
               Geekonomy is a team of driven and innovative individuals, blending passion with curiosity to deliver exceptional value through design.
             </p>
-            <p className="text-gray-300 text-sm text-justify">
+            <p className="text-gray-300 text-sm md:text-base text-justify">
               In today's world, we embrace marketing as an integral part of life, crafting captivating experiences that seamlessly bridge the online and offline realms. Our expertise lies in empowering brands to share their unique narratives, fueling transformative growth.
             </p>
           </div>
@@ -35,13 +35,13 @@ export default function Footer() {
             <div className="flex-1 flex flex-col gap-8 px-5 lg:px-20">
               {/* Services Section */}
               <div className="w-full flex flex-col items-start">
-                <h3 className="text-white text-lg font-bold mb-4 text-left">Services</h3>
+                <h3 className="text-white text-lg md:text-xl font-bold mb-4 text-left">Services</h3>
                 <ul className="space-y-2 text-left">
                   {EXPERTISE_LINKS.map((link) => (
                     <li key={link.href}>
                       <Link 
                         href={link.href} 
-                        className="text-gray-300 hover:text-white transition-colors text-xs sm:text-sm whitespace-nowrap"
+                        className="text-gray-300 hover:text-white transition-colors text-xs sm:text-sm md:text-base whitespace-nowrap"
                       >
                         {link.label}
                       </Link>
@@ -52,7 +52,7 @@ export default function Footer() {
 
               {/* Partners Section */}
               <div className="w-full flex flex-col items-start">
-                <h3 className="text-white text-lg font-bold mb-4 text-left">Partners</h3>
+                <h3 className="text-white text-lg md:text-xl font-bold mb-4 text-left">Partners</h3>
                 <div className="flex flex-wrap gap-0.5 sm:gap-2 justify-start">
                   {/* Cloud Service Icon */}
                   {/* Partner logos from /public/images - swap filenames as needed */}
@@ -79,21 +79,21 @@ export default function Footer() {
             <div className="flex-1 flex flex-col gap-8 px-5 lg:px-10">
               {/* Company Section */}
               <div className="w-full flex flex-col items-start">
-                <h3 className="text-white text-lg font-bold mb-4 text-left">Company</h3>
+                <h3 className="text-white text-lg md:text-xl font-bold mb-4 text-left">Company</h3>
                 <ul className="flex flex-col space-y-2 text-left">
-                  <li><Link href="/about-us" className="text-gray-300 hover:text-white transition-colors text-xs sm:text-sm whitespace-nowrap">About us</Link></li>
-                  <li><Link href="/contact-us" className="text-gray-300 hover:text-white transition-colors text-xs sm:text-sm whitespace-nowrap">Contact us</Link></li>
-                  <li><Link href="/privacy-policy" className="text-gray-300 hover:text-white transition-colors text-xs sm:text-sm whitespace-nowrap">Privacy Policy</Link></li>
-                  <li><Link href="/terms-conditions" className="text-gray-300 hover:text-white transition-colors text-xs sm:text-sm whitespace-nowrap">Term & conditions</Link></li>
+                  <li><Link href="/about-us" className="text-gray-300 hover:text-white transition-colors text-xs sm:text-sm md:text-base whitespace-nowrap">About us</Link></li>
+                  <li><Link href="/contact-us" className="text-gray-300 hover:text-white transition-colors text-xs sm:text-sm md:text-base whitespace-nowrap">Contact us</Link></li>
+                  <li><Link href="/privacy-policy" className="text-gray-300 hover:text-white transition-colors text-xs sm:text-sm md:text-base whitespace-nowrap">Privacy Policy</Link></li>
+                  <li><Link href="/terms-conditions" className="text-gray-300 hover:text-white transition-colors text-xs sm:text-sm md:text-base whitespace-nowrap">Term & conditions</Link></li>
                 </ul>
               </div>
 
               {/* Contact Section */}
               <div className="w-full flex flex-col items-start">
-                <h3 className="text-white text-lg font-bold mb-4 text-left">Contact</h3>
+                <h3 className="text-white text-lg md:text-xl font-bold mb-4 text-left">Contact</h3>
                 <ul className="space-y-2 text-left">
-                  <li className="text-gray-300 text-xs sm:text-sm whitespace-nowrap">{COMPANY_INFO.phone}</li>
-                  <li className="text-gray-300 text-xs sm:text-sm whitespace-nowrap">{COMPANY_INFO.email}</li>
+                  <li className="text-gray-300 text-xs sm:text-sm md:text-base whitespace-nowrap">{COMPANY_INFO.phone}</li>
+                  <li className="text-gray-300 text-xs sm:text-sm md:text-base whitespace-nowrap">{COMPANY_INFO.email}</li>
                 </ul>
               </div>
             </div>
@@ -101,8 +101,8 @@ export default function Footer() {
 
           {/* Column 4: Address and Map */}
           <div className="flex-1">
-            <h3 className="text-white text-lg font-bold mb-4">Address</h3>
-            <div className="text-gray-300 text-sm mb-4">
+            <h3 className="text-white text-lg md:text-xl font-bold mb-4">Address</h3>
+            <div className="text-gray-300 text-sm md:text-base mb-4">
               <p>No. 1357, Ground Floor, 9th Cross, ITI Layout,</p>
               <p>JP Nagar 1st Phase, Bengaluru, Karnataka -</p>
               <p>560 078.</p>
@@ -130,7 +130,7 @@ export default function Footer() {
           <div className="flex flex-col md:flex-row justify-between items-start md:items-center">
             {/* Left Side - Copyright and DMCA */}
             <div className="flex flex-col md:flex-row items-start md:items-center space-y-2 md:space-y-0 md:space-x-4">
-              <p className="text-gray-300 text-sm">
+              <p className="text-gray-300 text-sm md:text-base">
                 © {currentYear} Geekonomy. All rights reserved
               </p>
               <div className="bg-black border border-gray-600 px-2 py-1 rounded text-xs text-white font-bold uppercase">
