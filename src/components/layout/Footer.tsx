@@ -100,13 +100,16 @@ export default function Footer() {
           <div className="flex-1">
             <h3 className="text-white text-lg lg:text-xl font-bold mb-4">Address</h3>
             <div className="text-gray-300 text-sm lg:text-base mb-4">
-              <p>No. 1357, Ground Floor, 9th Cross, ITI Layout,</p>
-              <p>JP Nagar 1st Phase, Bengaluru, Karnataka -</p>
-              <p>560 078.</p>
+              <p className="lg:hidden">No. 1357, Ground Floor, 9th Cross, ITI Layout, JP Nagar 1st Phase, Bengaluru, Karnataka - 560 078.</p>
+              <div className="hidden lg:block">
+                <p>No. 1357, Ground Floor, 9th Cross, ITI Layout,</p>
+                <p>JP Nagar 1st Phase, Bengaluru, Karnataka -</p>
+                <p>560 078.</p>
+              </div>
             </div>
             
             {/* Google Maps Embed */}
-            <div className="w-full h-40 bg-gray-800 rounded overflow-hidden">
+            <div className="w-[80%] sm:w-[50%] lg:w-[100%] 2xl:w-[100%] h-60 lg:h-50 xl:h-60 bg-gray-800 rounded overflow-hidden">
               <iframe
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3888.1234567890123!2d77.5845!3d12.9063!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae15c5f5c5c5c5%3A0x5c5c5c5c5c5c5c5c!2sITI%20Layout%2C%20JP%20Nagar%201st%20Phase%2C%20Bengaluru%2C%20Karnataka%20560078!5e0!3m2!1sen!2sin!4v1234567890123!5m2!1sen!2sin"
                 width="100%"
