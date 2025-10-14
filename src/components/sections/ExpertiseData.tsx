@@ -11,7 +11,7 @@ type ExpertiseDataProps = {
 
 const ExpertiseData: React.FC<ExpertiseDataProps> = ({ sections }) => {
   return (
-    <div className="bg-black text-gray-200 font-thin w-full flex justify-center">
+    <div className="bg-black text-gray-200 font-thin w-full flex !mt-8 md:!mt-12 justify-center">
       <div className="lg:max-w-[clamp(320px,88%,1397px)] px-6  sm:px-19 md:px-7 text-left">
         {sections?.map((section, index) => (
           <div key={index} className="space-y-5">
