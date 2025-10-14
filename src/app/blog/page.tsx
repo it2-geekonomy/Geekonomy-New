@@ -20,7 +20,7 @@ export default function BlogPage() {
       {/* Blog Posts Grid */}
       <section className="pt-4 md:pt-6 lg:pt-0 pb-8 md:pb-12 lg:pb-1">
   <div className="w-full mx-auto px-6 sm:px-8 md:px-10 lg:px-24 xl:px-32">
-    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-6 lg:gap-3">
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-10 lg:gap-8">
       {BLOG_POSTS.map((post) => (
         <Link key={post.id} href={`/blog/${post.slug}`} className="w-full">
           <div className="relative aspect-[10/7] rounded-2xl md:rounded-3xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 w-full scale-95 md:scale-100 group">
