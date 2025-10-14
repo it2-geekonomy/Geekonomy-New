@@ -100,34 +100,34 @@ export default function Header() {
             <span className="absolute -bottom-3 left-0 h-[3px] w-0 bg-[#FFC700] transition-all duration-700 ease-in-out group-hover:w-full"></span>
             
             {/* Dropdown Menu */}
-            <div className={`absolute top-full left-1/2 transform -translate-x-1/2 mt-1 bg-[#040509] w-[200px] h-[150px] rounded-lg shadow-2xl border transition-all duration-300 ease-in-out origin-top ${
+            <div className={`absolute top-full left-1/2 transform -translate-x-1/2 mt-0 bg-[#040509] w-[200px] rounded-lg shadow-2xl border transition-all duration-300 ease-in-out origin-top ${
               dropdownOpen ? 'opacity-100 scale-y-100 translate-y-0 ' : 'opacity-0 scale-y-0 -translate-y-2 pointer-events-none border-gray-800'
             }`}>
-                <div className="h-full flex flex-col justify-evenly">
+                <div className="py-4 flex flex-col gap-2">
                   <Link
                     href="/branding-solutions"
-                    className="text-white px-10 py-4 no-underline hover:bg-[#FFC700] hover:text-black transition-all duration-200 text-base font-light rounded-lg mx-4 text-center flex items-center justify-center"
+                    className="text-white px-6 py-3 whitespace-nowrap no-underline hover:bg-[#FFC700] hover:text-black transition-all duration-200 text-base font-light rounded-lg mx-2 text-center flex items-center justify-center"
                     onClick={handleNavLinkClick}
                   >
                     Branding Solutions
                   </Link>
                   <Link
                     href="/custom-development"
-                    className="text-white px-10 py-4 no-underline hover:bg-[#FFC700] hover:text-black transition-all duration-200 text-base font-light rounded-lg mx-4 text-center flex items-center justify-center"
+                    className="text-white px-6 py-3 whitespace-nowrap no-underline hover:bg-[#FFC700] hover:text-black transition-all duration-200 text-base font-light rounded-lg mx-2 text-center flex items-center justify-center"
                     onClick={handleNavLinkClick}
                   >
                     Custom Development
                   </Link>
                   <Link
                     href="/digital-marketing"
-                    className="text-white px-10 py-4 no-underline hover:bg-[#FFC700] hover:text-black transition-all duration-200 text-base font-light rounded-lg mx-4 text-center flex items-center justify-center"
+                    className="text-white px-6 py-3 whitespace-nowrap no-underline hover:bg-[#FFC700] hover:text-black transition-all duration-200 text-base font-light rounded-lg mx-2 text-center flex items-center justify-center"
                     onClick={handleNavLinkClick}
                   >
                     Digital Marketing
                   </Link>
                   <Link
                     href="/customer-retention"
-                    className="text-white px-10 py-4 no-underline hover:bg-[#FFC700] hover:text-black transition-all duration-200 text-base font-light rounded-lg mx-4 text-center flex items-center justify-center"
+                    className="text-white px-6 py-3 whitespace-nowrap no-underline hover:bg-[#FFC700] hover:text-black transition-all duration-200 text-base font-light rounded-lg mx-2 text-center flex items-center justify-center"
                     onClick={handleNavLinkClick}
                   >
                     Customer Retention

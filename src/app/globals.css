@@ -14,6 +14,8 @@ body {
   margin: 0;
   padding: 0;
   font-family: "roc-grotesk", sans-serif;
+  width: 100%;
+  overflow-x: hidden;
 }
 
 html {
@@ -25,6 +27,7 @@ body {
   color: #ffffff;
   font-family: "roc-grotesk", sans-serif;
   line-height: 1.6;
+ 
 }
 
 /* Custom Scrollbar */
@@ -55,3 +58,39 @@ a, button {
   outline: 2px solid #ffffff;
   outline-offset: 2px;
 }
+/* Left scroll (default) */
+@keyframes infinite-scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+/* Right scroll (reverse) */
+@keyframes infinite-scroll-reverse {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+.animate-infinite-scroll {
+  animation: infinite-scroll 60s linear infinite;
+}
+
+.animate-infinite-scroll-reverse {
+  animation: infinite-scroll-reverse 60s linear infinite;
+}
+
+/* Pause on hover - parent container controls all children */
+.scroll-container:hover .animate-infinite-scroll,
+.scroll-container:hover .animate-infinite-scroll-reverse {
+  animation-play-state: paused !important;
+}
+
+
+
