@@ -101,5 +101,120 @@ a, button {
   animation-play-state: paused !important;
 }
 
+/* Hero Section Styles */
+.hero-headline {
+  font-size: 2rem; /* Mobile: 32px */
+  font-weight: 800;
+  line-height: 1.1;
+  margin-bottom: 1.5rem;
+  transition: all 0.3s ease;
+}
+
+/* Tablet */
+@media (min-width: 768px) {
+  .hero-headline {
+    font-size: 2.75rem; /* Tablet: 44px */
+    margin-bottom: 1.75rem;
+  }
+}
+
+/* iPad Pro (1024px - 1366px) */
+@media (min-width: 1024px) {
+  .hero-headline {
+    font-size: 3rem; /* iPad Pro: 48px */
+    margin-bottom: 2rem;
+  }
+}
+
+/* Desktop */
+@media (min-width: 1280px) {
+  .hero-headline {
+    font-size: 4.5rem; /* Desktop: 72px */
+    margin-bottom: 2.5rem;
+  }
+}
+
+.hero-text-yellow {
+  color: #facc15; /* Solid golden yellow fill */
+  cursor: pointer; /* Make it look clickable */
+  transition: all 0.3s ease;
+}
+
+.hero-text-outline {
+  color: #000000; /* Black text */
+  text-shadow: 
+    -1px -1px 0 #ffffff,
+     1px -1px 0 #ffffff,
+    -1px  1px 0 #ffffff,
+     1px  1px 0 #ffffff; /* White shadow/outline effect */
+  -webkit-text-stroke: none;
+  cursor: pointer; /* Make it look clickable */
+  transition: all 0.3s ease;
+}
+
+.hero-button {
+  background-color: #facc15; /* Yellow background */
+  color: #000000; /* Black text */
+  font-weight: 700;
+  font-size: 0.875rem; /* Mobile: 14px */
+  padding: 0.625rem 2.5rem; /* Mobile: Smaller padding */
+  border-radius: 9999px; /* Fully rounded */
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: "roc-grotesk", sans-serif;
+}
+
+/* Tablet */
+@media (min-width: 768px) {
+  .hero-button {
+    font-size: 0.9375rem; /* Tablet: 15px */
+    padding: 0.7rem 4rem;
+  }
+}
+
+/* iPad Pro (1024px - 1366px) */
+@media (min-width: 1024px) {
+  .hero-button {
+    font-size: 1rem; /* iPad Pro: 16px */
+    padding: 0.75rem 6rem;
+  }
+}
+
+/* Desktop */
+@media (min-width: 1280px) {
+  .hero-button {
+    font-size: 1.125rem; /* Desktop: 18px */
+    padding: 0.75rem 15rem;
+  }
+}
+
+.hero-button:hover {
+  transform: translateY(-2px);
+}
+
+/* Hover effects - different effects for each text part */
+.hero-text-yellow:hover {
+  color: #eab308; /* Less dark yellow when hovering on Shaping Brands */
+  filter: brightness(0.9); /* Make it less dark */
+}
+
+.hero-text-outline:hover {
+  color: #facc15; /* Change to yellow when hovering on Building Solutions */
+  text-shadow: none; /* Remove shadow */
+  -webkit-text-stroke: none;
+}
+
+/* When hovering on Building Solutions, also change Shaping Brands */
+.hero-headline:has(.hero-text-outline:hover) .hero-text-yellow {
+  color: #000000; /* Black text */
+  text-shadow: 
+    -1px -1px 0 #ffffff,
+     1px -1px 0 #ffffff,
+    -1px  1px 0 #ffffff,
+     1px  1px 0 #ffffff; /* White shadow/outline effect */
+  -webkit-text-stroke: none;
+  filter: none; /* Remove brightness filter */
+}
 
 
