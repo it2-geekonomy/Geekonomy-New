@@ -1,4 +1,6 @@
 import InfiniteScroll from "@/components/infinteScroll";
+import InspirationStation from "@/components/sections/InspirationStation";
+
 
 export default function Home() {
   return (
@@ -9,6 +11,7 @@ export default function Home() {
                 <InfiniteScroll/>
               </div>
             </section>
+    <InspirationStation/>
     </div>
   );
 }
