@@ -17,7 +17,7 @@ const Banner: React.FC = () => {
   }, []);
 
   return (
-    <section className="relative w-full min-h-[100vh] overflow-hidden  flex justify-center items-start" >
+    <section className="relative w-full h-full overflow-hidden  flex justify-center items-start" >
       {/* Banner container to fix overlay and marquee positions */}
       <div className="relative w-full  h-full flex flex-col justify-end items-center">
         {/* Background image */}
