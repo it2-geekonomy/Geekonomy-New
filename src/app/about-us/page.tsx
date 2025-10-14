@@ -12,19 +12,17 @@ export default function Home() {
     <main>
       {/* Hero Section - UPDATED for Background Image */}
       <section 
-        className="relative h-[40vh] md:h-[80vh] text-white flex items-center justify-center overflow-hidden"
+        className="relative h-[40vh] md:h-[90vh] text-white flex items-center justify-center overflow-hidden"
       >
         {/* Background Image Container */}
         <div 
           className="absolute inset-0 bg-cover bg-center" 
           style={{ backgroundImage: "url('/about_us_banner.webp')" }}
         >
-           {/* Optional: Add a subtle overlay to ensure text is readable */}
-          <div className="absolute inset-0 bg-black/40"></div>
         </div>
         
         {/* Hero Text Content */}
-        <div className="text-[2rem] sm:text-[2.5rem] md:text-[3.5rem] lg:text-[4rem] xl:text-[4.8rem] font-[650] text-white text-center relative z-10 p-4">
+        <div className="text-[2rem] sm:text-[2.5rem] md:text-[3.5rem] lg:text-[4rem] xl:text-[4.8rem] font-[450] text-white text-center relative z-10 p-4">
           A 360° Service Agency.
         </div>
         
@@ -38,14 +36,14 @@ export default function Home() {
   <div className="flex flex-col md:flex-row items-center md:items-start justify-between h-auto md:h-full">
 
     {/* Text Content */}
-    <div className="w-[90%] sm:w-[80%] md:w-[58%] lg:w-[60%] xl:w-[65%] px-4 sm:px-6 md:px-20 lg:px-25 xl:px-25 relative z-10 flex flex-col gap-8 sm:gap-12 md:gap-20">
+    <div className="w-[90%] sm:w-[80%] md:w-[100%]  px-4 sm:px-6 md:px-20 lg:px-25 xl:px-25 relative z-10 flex flex-col gap-8 sm:gap-12 md:gap-20">
 
       {/* 1. We are A to Z */}
       <div>
         <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-3 sm:mb-4 text-center md:text-left">
           We are A to Z.
         </h2>
-        <p className="font-roc text-white/60 text-sm sm:text-base md:text-[1.3rem] leading-relaxed mb-3 sm:mb-4 text-justify">
+        <p className="font-roc text-[#c5c4c3] text-sm sm:text-base md:text-[1.3rem] leading-relaxed mb-3 sm:mb-4 text-justify">
           As seasoned branding, marketing and development experts, we provide a comprehensive suite of services tailored for your brand's success.
           From strategic product promotion to cultivating an enduring brand image, we are dedicated to delivering excellence at every turn. Rest assured, we will be your steadfast partner, ensuring your customers' needs are not just met but exceeded, just as we exceed your expectations.
         </p>
@@ -56,7 +54,7 @@ export default function Home() {
         <h2 className="text-xl sm:text-2xl md:text-3xl font-bold mb-3 sm:mb-4 text-center md:text-left">
           Our Vision
         </h2>
-        <p className="font-roc text-white/60 text-sm sm:text-base md:text-[1.3rem] leading-relaxed text-justify">
+        <p className="font-roc text-[#c5c4c3] text-sm sm:text-base md:text-[1.3rem] leading-relaxed text-justify">
           Geekonomy's vision is to be a customer-centric 360-degree solution provider, leading through advanced technologies and innovation across all service verticals.
         </p>
       </div>
@@ -66,7 +64,7 @@ export default function Home() {
         <h2 className="text-xl sm:text-2xl md:text-3xl font-bold mb-3 sm:mb-4 text-center md:text-left">
           Our Mission
         </h2>
-        <p className="font-roc text-white/60 text-sm sm:text-base md:text-[1.3rem] leading-relaxed text-justify">
+        <p className="font-roc text-[#c5c4c3] text-sm sm:text-base md:text-[1.3rem] leading-relaxed text-justify">
           Our mission is to deliver unparalleled value by empowering businesses with data-driven insights and cutting-edge solutions, fostering sustainable growth and success.
         </p>
       </div>
@@ -79,7 +77,7 @@ export default function Home() {
         backgroundImage: "url('/about_us_circle.webp')",
         backgroundSize: 'contain',
         backgroundPosition: 'center right',
-        filter: 'brightness(1.3)',
+        filter: 'brightness(2)',
       }}
     >
       {/* Overlay */}

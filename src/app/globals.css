@@ -86,3 +86,11 @@ a, button {
   animation: infinite-scroll-reverse 60s linear infinite;
 }
 
+/* Pause on hover - parent container controls all children */
+.scroll-container:hover .animate-infinite-scroll,
+.scroll-container:hover .animate-infinite-scroll-reverse {
+  animation-play-state: paused !important;
+}
+
+
+
