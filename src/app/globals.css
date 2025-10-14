@@ -18,6 +18,15 @@ body {
   overflow-x: hidden;
 }
 
+:root {
+  --site-header-height: 90px;
+}
+
+/* Add top padding to body equal to header height so content isn't hidden under fixed header */
+body {
+  padding-top: var(--site-header-height);
+}
+
 html {
   scroll-behavior: smooth;
 }
