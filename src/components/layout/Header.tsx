@@ -39,7 +39,7 @@ export default function Header() {
                            pathname.startsWith('/customer-retention');
 
   return (
-    <nav className="bg-black/80 h-[90px] flex justify-center items-center sticky top-0 z-20 backdrop-blur-2xl">
+    <nav className="bg-black/80 h-[90px] flex justify-center items-center fixed top-0 left-0 right-0 z-[60] backdrop-blur-2xl">
       <div className="flex justify-between items-center w-full max-w-[95%] mx-auto px-4 sm:px-6 lg:px-8">
         {/* Logo - Left Side */}
         <Link 
