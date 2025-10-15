@@ -1,6 +1,6 @@
+import HeroSection from '@/components/common/getintouch';
 import InfiniteScroll from '@/components/infinteScroll';
-
-
+import Link from 'next/link';
 
 
 export default function Home() {
@@ -89,6 +89,13 @@ export default function Home() {
         <div>
           <InfiniteScroll/>
         </div>
+
+        <HeroSection
+      text="Together, let's embark on a journey of creating an unforgettable brand legacy through thorough research, design, marketing and code."
+      buttonText="Contact Us"
+      buttonLink="/contact-us"
+    />
+
       </section>
     </main>
 
