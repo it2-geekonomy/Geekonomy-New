@@ -1,6 +1,7 @@
 import Banner from "@/components/home/Banner";
 import Solutionize from "@/components/home/Solutionize";
 import InfiniteScroll from "@/components/infinteScroll";
+import ExpertiseData from "@/components/home/Expertise";
 import InspirationStation from "@/components/sections/InspirationStation";
 import TerrificSection from "@/components/sections/TerrificSection";
 
