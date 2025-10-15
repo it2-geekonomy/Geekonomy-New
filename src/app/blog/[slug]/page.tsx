@@ -53,7 +53,7 @@ export default async function BlogPostPage({ params }: Props) {
     <main className="min-h-screen bg-black text-white">
       {/* Hero Image */}
       <section className="w-full px-8 sm:px-12 md:px-16 lg:px-20 xl:px-24 pt-8 md:pt-10 lg:pt-14 xl:pt-16">
-        <div className="relative aspect-[2/1] overflow-hidden rounded-lg max-w-[81rem] mx-auto">
+        <div className="relative aspect-[2/1] overflow-hidden max-w-[81rem] mx-auto">
           <Image 
             src={post.image} 
             alt={post.title}
@@ -66,10 +66,13 @@ export default async function BlogPostPage({ params }: Props) {
       {/* Content */}
       <section className="w-full px-8 sm:px-12 md:px-16 lg:px-20 xl:px-24 py-8 md:py-10 lg:py-12">
         <div className="max-w-[81rem] mx-auto">
-          <div className="text-center mb-8 md:mb-12">
+          <div className="text-left md:text-center mb-8 md:mb-12">
             <h1 className="text-2xl md:text-3xl lg:text-3xl xl:text-4xl font-bold leading-tight">
-              {post.title} {post.detailPageCategory || post.category}
+              {post.title}
             </h1>
+            <p className="text-2xl md:text-3xl lg:text-3xl xl:text-4xl font-bold leading-tight">
+              {post.detailPageCategory || post.category}
+            </p>
           </div>
           
           <article className="w-full">
@@ -82,7 +85,7 @@ export default async function BlogPostPage({ params }: Props) {
           {/* Next Button */}
           <div className="text-center mt-12 md:mt-16 lg:mt-20 mb-0">
             <Link href={`/blog/${nextPost.slug}`}>
-              <button className="bg-[#facc15] text-gray-950 px-8 md:px-10 lg:px-12 py-2 md:py-2 lg:py-2 rounded-full text-base md:text-lg lg:text-xlt hover:bg-[#eab308] transition-colors duration-300">
+              <button className="bg-[#facc15] text-gray-950 px-8 md:px-10 lg:px-12 py-2.5 sm:py-2 md:py-2 lg:py-2 rounded-full text-base md:text-lg lg:text-xlt hover:bg-[#eab308] transition-colors duration-300">
                 Next
               </button>
             </Link>
