@@ -97,7 +97,7 @@ export default function Footer() {
           </div>
 
           {/* Column 4: Address and Map */}
-          <div className="flex-1 px-10 lg:px-0">
+          <div className="flex-1 px-5 md:px-10 lg:px-0">
             <h3 className="text-white text-lg lg:text-xl font-bold mb-4">Address</h3>
             <div className="text-gray-300 text-sm lg:text-base mb-4">
               <p className="lg:hidden">No. 1357, Ground Floor, 9th Cross, ITI Layout, JP Nagar 1st Phase, Bengaluru, Karnataka - 560 078.</p>

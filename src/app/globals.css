@@ -101,5 +101,14 @@ a, button {
   animation-play-state: paused !important;
 }
 
+/* Terrific Section Animations - Slower speed */
+.animate-terrific-scroll {
+  animation: infinite-scroll 40s linear infinite;
+}
+
+.animate-terrific-scroll-reverse {
+  animation: infinite-scroll-reverse 40s linear infinite;
+}
+
 
 
