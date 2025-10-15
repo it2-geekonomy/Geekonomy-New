@@ -82,7 +82,7 @@ export default async function BlogPostPage({ params }: Props) {
           {/* Next Button */}
           <div className="text-center mt-12 md:mt-16 lg:mt-20 mb-0">
             <Link href={`/blog/${nextPost.slug}`}>
-              <button className="bg-[#facc15] text-gray-950 px-8 md:px-10 lg:px-12 py-2 md:py-2 lg:py-2 rounded-full text-base md:text-lg lg:text-xl font-light hover:bg-[#eab308] transition-colors duration-300">
+              <button className="bg-[#facc15] text-gray-950 px-8 md:px-10 lg:px-12 py-2 md:py-2 lg:py-2 rounded-full text-base md:text-lg lg:text-xlt hover:bg-[#eab308] transition-colors duration-300">
                 Next
               </button>
             </Link>
