@@ -76,8 +76,8 @@ export default async function BlogPostPage({ params }: Props) {
           <article className="w-full">
             <div 
               className="
-                max-w-none text-[#C5C4C3]
-                [&_p]:text-left [&_p]:mb-4 [&_p]:leading-[1.7] [&_p]:text-[0.9375rem] [&_p]:text-[#C5C4C3] [&_p]:break-words
+                max-w-full text-[#C5C4C3] break-words overflow-wrap-break-word
+                [&_p]:text-left [&_p]:mb-4 [&_p]:leading-[1.7] [&_p]:text-[0.9375rem] [&_p]:text-[#C5C4C3] [&_p]:hyphens-auto [&_p]:tracking-[0.05em]
                 [&_h2]:text-left [&_h2]:font-bold [&_h2]:mt-6 [&_h2]:mb-3 [&_h2]:text-[#C5C4C3] [&_h2]:leading-[1.3] [&_h2]:text-[1.375rem]
                 [&_ul]:mt-4 [&_ul]:mb-4 [&_ul]:pl-5
                 [&_ol]:mt-4 [&_ol]:mb-4 [&_ol]:pl-5
