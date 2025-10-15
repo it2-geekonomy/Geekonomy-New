@@ -8,7 +8,7 @@ export default function Home() {
   return (
     <div>
       <Banner />
-      {/* <Solutionize /> */}
+      <Solutionize />
       <section className="py-20 bg-black">
               <div>
                 <InfiniteScroll/>
