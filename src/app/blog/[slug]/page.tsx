@@ -68,16 +68,37 @@ export default async function BlogPostPage({ params }: Props) {
         <div className="max-w-[81rem] mx-auto">
           <div className="text-left md:text-center mb-8 md:mb-12">
             <h1 className="text-2xl md:text-3xl lg:text-3xl xl:text-4xl font-bold leading-tight">
-              {post.title}
+              <span className="block md:inline">{post.title}</span>
+              <span className="block md:inline md:ml-2">{post.detailPageCategory || post.category}</span>
             </h1>
-            <p className="text-2xl md:text-3xl lg:text-3xl xl:text-4xl font-bold leading-tight">
-              {post.detailPageCategory || post.category}
-            </p>
           </div>
           
           <article className="w-full">
             <div 
-              className="prose prose-invert max-w-none"
+              className="
+                max-w-none text-[#C5C4C3]
+                [&_p]:text-left [&_p]:mb-4 [&_p]:leading-[1.7] [&_p]:text-[0.9375rem] [&_p]:text-[#C5C4C3] [&_p]:break-words
+                [&_h2]:text-left [&_h2]:font-bold [&_h2]:mt-6 [&_h2]:mb-3 [&_h2]:text-[#C5C4C3] [&_h2]:leading-[1.3] [&_h2]:text-[1.375rem]
+                [&_ul]:mt-4 [&_ul]:mb-4 [&_ul]:pl-5
+                [&_ol]:mt-4 [&_ol]:mb-4 [&_ol]:pl-5
+                [&_li]:mb-[0.375rem] [&_li]:leading-[1.6] [&_li]:text-[#C5C4C3] [&_li]:text-[0.9375rem]
+                [&_strong]:text-[#C5C4C3] [&_strong]:font-bold
+                md:[&_p]:text-justify md:[&_p]:mb-[1.125rem] md:[&_p]:leading-[1.75] md:[&_p]:text-base
+                md:[&_h2]:mt-7 md:[&_h2]:mb-[0.875rem] md:[&_h2]:text-2xl
+                md:[&_ul]:mb-5 md:[&_ul]:pl-6
+                md:[&_ol]:mb-5 md:[&_ol]:pl-6
+                md:[&_li]:mb-2 md:[&_li]:leading-[1.65] md:[&_li]:text-base
+                lg:[&_p]:text-justify lg:[&_p]:mb-5 lg:[&_p]:leading-[1.8] lg:[&_p]:text-lg
+                lg:[&_h2]:mt-8 lg:[&_h2]:mb-4 lg:[&_h2]:text-[1.75rem]
+                lg:[&_ul]:mb-6 lg:[&_ul]:pl-7
+                lg:[&_ol]:mb-6 lg:[&_ol]:pl-7
+                lg:[&_li]:mb-2 lg:[&_li]:leading-[1.7] lg:[&_li]:text-lg
+                xl:[&_p]:text-justify xl:[&_p]:mb-6 xl:[&_p]:leading-[1.85] xl:[&_p]:text-xl
+                xl:[&_h2]:mt-10 xl:[&_h2]:mb-5 xl:[&_h2]:text-[2rem]
+                xl:[&_ul]:mb-7 xl:[&_ul]:pl-8
+                xl:[&_ol]:mb-7 xl:[&_ol]:pl-8
+                xl:[&_li]:mb-[0.625rem] xl:[&_li]:leading-[1.75] xl:[&_li]:text-xl
+              "
               dangerouslySetInnerHTML={{ __html: post.content }}
             />
           </article>
