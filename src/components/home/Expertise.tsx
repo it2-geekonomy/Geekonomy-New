@@ -4,7 +4,7 @@ import Link from "next/link";
 
 export default function ExpertiseSection() {
   return (
-    <section className="bg-black text-white py-16">
+    <section className="bg-black text-white">
       {/* Title */}
       <div className="px-4 sm:px-6 lg:px-8 text-center">
   {/* Heading */}
@@ -16,7 +16,7 @@ export default function ExpertiseSection() {
 
   {/* Subtitle */}
   <div className="mt-4 mb-8">
-    <p className="text-gray-300 max-w-7xl mx-auto leading-relaxed text-sm sm:text-base md:text-lg">
+    <p className="text-gray-300 max-w-7xl mx-auto leading-relaxed text-sm sm:text-base md:text-lg text-left">
       Our expertise in international and local markets pivot us as a powerful mixture
       of strategists and pragmatists with an extensive network all across India, UAE, London, and USA.
     </p>
