@@ -90,14 +90,14 @@ export default function Footer() {
                 <h3 className="text-white text-lg lg:text-xl font-bold mb-4 text-left">Contact</h3>
                 <ul className="space-y-2 text-left">
                   <li className="text-gray-300 text-xs sm:text-sm lg:text-base whitespace-nowrap">{COMPANY_INFO.phone}</li>
-                  <li className="text-gray-300 text-xs sm:text-sm lg:text-base whitespace-nowrap">{COMPANY_INFO.email}</li>
+                  <li className="text-gray-300 text-[0.65rem] sm:text-[0.7rem] lg:text-sm whitespace-nowrap tracking-tighter">{COMPANY_INFO.email}</li>
                 </ul>
               </div>
             </div>
           </div>
 
           {/* Column 4: Address and Map */}
-          <div className="flex-1">
+          <div className="flex-1 px-10 lg:px-0">
             <h3 className="text-white text-lg lg:text-xl font-bold mb-4">Address</h3>
             <div className="text-gray-300 text-sm lg:text-base mb-4">
               <p className="lg:hidden">No. 1357, Ground Floor, 9th Cross, ITI Layout, JP Nagar 1st Phase, Bengaluru, Karnataka - 560 078.</p>
@@ -127,29 +127,57 @@ export default function Footer() {
 
         {/* Bottom Section */}
         <div className="border-t border-gray-800 pt-6 w-full">
-          <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center">
+          <div className="flex flex-nowrap lg:flex-row justify-between items-start lg:items-center">
             {/* Left Side - Copyright and DMCA */}
-            <div className="flex flex-col lg:flex-row items-start lg:items-center space-y-2 lg:space-y-0 lg:space-x-4">
+            <div className="flex flex-col lg:flex-col items-start space-y-2 lg:space-y-0 lg:space-x-4">
               <p className="text-gray-300 text-sm lg:text-base">
                 © {currentYear} Geekonomy. All rights reserved
               </p>
-              <div className="bg-black border border-gray-600 px-2 py-1 rounded text-xs text-white font-bold uppercase">
-                DMCA PROTECTED
-              </div>
+                  <a href="//www.dmca.com/Protection/Status.aspx?ID=eea71184-71ee-4c73-a959-5852051246f6" title="DMCA.com Protection Status" className="dmca-badge"> <img src="https://images.dmca.com/Badges/dmca_protected_sml_120n.png?ID=eea71184-71ee-4c73-a959-5852051246f6" alt="DMCA.com Protection Status" /></a> <script src="https://images.dmca.com/Badges/DMCABadgeHelper.min.js"> </script>
             </div>
             
             {/* Right Side - Social Media Icons */}
-            <div className="flex space-x-3 mt-4 lg:mt-0">
-              <a href="#" className="w-8 h-8 bg-white rounded-full flex items-center justify-center hover:bg-gray-200 transition-colors">
-                <span className="text-black text-xs font-bold">f</span>
-              </a>
-              <a href="#" className="w-8 h-8 bg-white rounded-full flex items-center justify-center hover:bg-gray-200 transition-colors">
-                <span className="text-black text-xs font-bold">in</span>
-              </a>
-              <a href="#" className="w-8 h-8 bg-white rounded-full flex items-center justify-center hover:bg-gray-200 transition-colors">
-                <span className="text-black text-xs">📷</span>
-              </a>
-            </div>
+<div className="flex space-x-3 mt-4 lg:mt-0">
+  <a
+    href="https://www.facebook.com/geekonomytechpvtltd"
+    target="_blank"
+    rel="noopener noreferrer"
+  >
+    <img
+      src="/facebook.webp"
+      alt="facebook"
+      className="social-icon"
+      style={{ width: '24px', height: '24px', borderRadius: '4px' }}
+    />
+  </a>
+
+  <a
+    href="https://www.linkedin.com/company/geekonomy-technology-private-limited/"
+    target="_blank"
+    rel="noopener noreferrer"
+  >
+    <img
+      src="/linkedin.webp"
+      alt="linkedin"
+      className="social-icon"
+      style={{ width: '24px', height: '24px' }}
+    />
+  </a>
+
+  <a
+    href="https://www.instagram.com/geekonomy_tech"
+    target="_blank"
+    rel="noopener noreferrer"
+  >
+    <img
+      src="/instagram.webp"
+      alt="instagram"
+      className="social-icon"
+      style={{ width: '24px', height: '24px', borderRadius: '4px' }}
+    />
+  </a>
+</div>
+
           </div>
         </div>
       </div>
