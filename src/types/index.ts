@@ -43,6 +43,7 @@ export interface BlogPost {
   date: string;
   image: string;
   category: string;
+  detailPageCategory?: string; // Optional: Different category for individual post page
   tags: string[];
   slug: string;
 }

@@ -1,8 +1,8 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import Card from '@/components/ui/Card';
-import { formatDate } from '@/lib/utils';
-import { BLOG_POSTS, BLOG_CATEGORIES } from '@/constants/blog';
+import Image from 'next/image';
+import { BLOG_POSTS, BLOG_CATEGORIES } from '@/lib/blog';
+import CTASection from '@/components/sections/CTASection';
 
 export const metadata: Metadata = {
   title: 'Blog - Geekonomy',
@@ -13,86 +13,47 @@ export default function BlogPage() {
   return (
     <main>
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-blue-600 to-blue-800 text-white py-20">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto text-center">
-            <h1 className="text-4xl md:text-5xl font-bold mb-6">
-              Our Blog
-            </h1>
-            <p className="text-xl text-blue-100">
-              Insights, tutorials, and updates from the world of technology
-            </p>
-          </div>
-        </div>
-      </section>
+     
 
       {/* Categories */}
-      <section className="py-8 bg-white border-b">
-        <div className="container mx-auto px-4">
-          <div className="flex flex-wrap gap-4 justify-center">
-            {BLOG_CATEGORIES.map((category) => (
-              <button
-                key={category}
-                className="px-6 py-2 rounded-full bg-gray-100 hover:bg-blue-600 hover:text-white transition-colors font-medium"
-              >
-                {category}
-              </button>
-            ))}
-          </div>
-        </div>
-      </section>
+      
 
       {/* Blog Posts Grid */}
-      <section className="py-20">
-        <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {BLOG_POSTS.map((post) => (
-              <Link key={post.id} href={`/blog/${post.slug}`}>
-                <Card hover className="h-full flex flex-col">
-                  <div className="text-6xl mb-4 text-center">{post.image}</div>
-                  <div className="text-sm text-blue-600 font-semibold mb-2">
-                    {post.category}
-                  </div>
-                  <h3 className="text-2xl font-bold text-gray-900 mb-3 hover:text-blue-600 transition-colors">
-                    {post.title}
-                  </h3>
-                  <p className="text-gray-600 mb-4 flex-grow">
-                    {post.excerpt}
-                  </p>
-                  <div className="border-t pt-4 flex items-center justify-between text-sm text-gray-500">
-                    <span>{post.author}</span>
-                    <span>{formatDate(post.date)}</span>
-                  </div>
-                </Card>
-              </Link>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Newsletter Signup */}
-      <section className="py-20 bg-gray-50">
-        <div className="container mx-auto px-4">
-          <div className="max-w-2xl mx-auto text-center">
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">
-              Subscribe to Our Newsletter
-            </h2>
-            <p className="text-xl text-gray-600 mb-8">
-              Get the latest articles and insights delivered to your inbox
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4">
-              <input
-                type="email"
-                placeholder="Enter your email"
-                className="flex-grow px-6 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
-              />
-              <button className="px-8 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors font-semibold">
-                Subscribe
-              </button>
+      <section className="pt-[16px] md:pt-[24px] lg:pt-[0px] pb-[32px] md:pb-[48px] lg:pb-[4px]">
+  <div className="w-full mx-auto px-6 sm:px-8 md:px-10 lg:px-24 xl:px-32">
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-10 lg:gap-8">
+      {BLOG_POSTS.map((post) => (
+        <Link key={post.id} href={`/blog/${post.slug}`} className="w-full">
+          <div className="relative aspect-[10/7] rounded-2xl md:rounded-3xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 w-full scale-95 md:scale-100 group">
+            <Image 
+              src={post.image} 
+              alt={post.title}
+              fill
+              className="object-cover"
+            />
+            <div className="absolute inset-0 bg-transparent group-hover:bg-black/40 transition-all duration-300"></div>
+            <div className="absolute inset-0 flex flex-col justify-end items-center text-center p-3 sm:p-4 md:p-4 lg:p-5 xl:p-6">
+              <h3 className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl font-normal text-gray-100 mb-1.5 sm:mb-2 md:mb-2 lg:mb-2.5 xl:mb-3 line-clamp-2 leading-tight sm:leading-snug md:leading-snug lg:leading-normal px-1 md:px-2">
+                {post.title}
+              </h3>
+              <div className="text-[10px] sm:text-xs md:text-xs lg:text-sm xl:text-base text-gray-200 font-normal leading-tight md:leading-snug line-clamp-2 px-1 md:px-2">
+                {post.category}
+              </div>
             </div>
           </div>
-        </div>
-      </section>
+        </Link>
+      ))}
+    </div>
+  </div>
+</section>
+
+
+
+      {/* CTA Section */}
+      <CTASection extraSpacing={true} />
+
+
+
     </main>
   );
 }

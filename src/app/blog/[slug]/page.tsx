@@ -1,9 +1,10 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import Image from 'next/image';
 import Button from '@/components/ui/Button';
 import Card from '@/components/ui/Card';
-import { formatDate } from '@/lib/utils';
-import { BLOG_POSTS } from '@/constants/blog';
+import { BLOG_POSTS } from '@/lib/blog';
+import CTASection from '@/components/sections/CTASection';
 
 type Props = {
   params: Promise<{ slug: string }>;
@@ -16,7 +17,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   
   return {
     title: post ? `${post.title} - Geekonomy Blog` : 'Blog Post - Geekonomy',
-    description: post?.excerpt || 'Read our latest article',
+    description: post?.title || 'Read our latest article',
   };
 }
 
@@ -44,124 +45,56 @@ export default async function BlogPostPage({ params }: Props) {
     .filter(p => p.category === post.category && p.id !== post.id)
     .slice(0, 3);
 
+  // Find the next blog post in sequence
+  const currentIndex = BLOG_POSTS.findIndex(p => p.id === post.id);
+  const nextPost = currentIndex < BLOG_POSTS.length - 1 ? BLOG_POSTS[currentIndex + 1] : BLOG_POSTS[0];
+
   return (
-    <main>
-      {/* Hero Section */}
-      <section className="bg-gradient-to-br from-blue-600 to-blue-800 text-white py-20">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto">
-            <div className="text-sm text-blue-200 mb-4">
-              <Link href="/blog" className="hover:text-white">← Back to Blog</Link>
-            </div>
-            <div className="text-sm text-blue-200 font-semibold mb-4">
-              {post.category}
-            </div>
-            <h1 className="text-4xl md:text-5xl font-bold mb-6">
-              {post.title}
-            </h1>
-            <div className="flex items-center gap-4 text-blue-100">
-              <span>By {post.author}</span>
-              <span>•</span>
-              <span>{formatDate(post.date)}</span>
-            </div>
-          </div>
+    <main className="min-h-screen bg-black text-white">
+      {/* Hero Image */}
+      <section className="w-full px-8 sm:px-12 md:px-16 lg:px-20 xl:px-24 pt-8 md:pt-10 lg:pt-14 xl:pt-16">
+        <div className="relative aspect-[2/1] overflow-hidden max-w-[81rem] mx-auto">
+          <Image 
+            src={post.image} 
+            alt={post.title}
+            fill
+            className="object-cover"
+          />
         </div>
       </section>
 
       {/* Content */}
-      <section className="py-20">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto">
-            <div className="text-center mb-12">
-              <div className="text-8xl mb-8">{post.image}</div>
-            </div>
-            
-            <article className="prose prose-lg max-w-none">
-              <div 
-                dangerouslySetInnerHTML={{ __html: post.content }} 
-                className="text-gray-700 leading-relaxed space-y-6"
-                style={{
-                  fontSize: '1.125rem',
-                  lineHeight: '1.75rem'
-                }}
-              />
-            </article>
+      <section className="w-full px-8 sm:px-12 md:px-16 lg:px-20 xl:px-24 py-8 md:py-10 lg:py-12">
+        <div className="max-w-[81rem] mx-auto">
+          <div className="text-left md:text-center mb-8 md:mb-12">
+            <h1 className="text-2xl md:text-3xl lg:text-3xl xl:text-4xl font-bold leading-tight">
+              {post.title}
+            </h1>
+            <p className="text-2xl md:text-3xl lg:text-3xl xl:text-4xl font-bold leading-tight">
+              {post.detailPageCategory || post.category}
+            </p>
+          </div>
+          
+          <article className="w-full">
+            <div 
+              className="prose prose-invert max-w-none"
+              dangerouslySetInnerHTML={{ __html: post.content }}
+            />
+          </article>
 
-            {/* Tags */}
-            {post.tags && post.tags.length > 0 && (
-              <div className="mt-12 pt-8 border-t">
-                <h3 className="text-lg font-semibold text-gray-900 mb-4">
-                  Tags
-                </h3>
-                <div className="flex flex-wrap gap-2">
-                  {post.tags.map((tag, idx) => (
-                    <span
-                      key={idx}
-                      className="px-4 py-2 bg-blue-50 text-blue-600 rounded-full text-sm font-medium"
-                    >
-                      {tag}
-                    </span>
-                  ))}
-                </div>
-              </div>
-            )}
-
-            {/* Share Section */}
-            <div className="mt-12 pt-8 border-t">
-              <h3 className="text-xl font-semibold text-gray-900 mb-4">
-                Share this article
-              </h3>
-              <div className="flex gap-4">
-                <Button variant="outline" size="sm">
-                  Share on Twitter
-                </Button>
-                <Button variant="outline" size="sm">
-                  Share on LinkedIn
-                </Button>
-                <Button variant="outline" size="sm">
-                  Copy Link
-                </Button>
-              </div>
-            </div>
+          {/* Next Button */}
+          <div className="text-center mt-12 md:mt-16 lg:mt-20 mb-0">
+            <Link href={`/blog/${nextPost.slug}`}>
+              <button className="bg-[#facc15] text-gray-950 px-8 md:px-10 lg:px-12 py-2.5 sm:py-2 md:py-2 lg:py-2 rounded-full text-base md:text-lg lg:text-xlt hover:bg-[#eab308] transition-colors duration-300">
+                Next
+              </button>
+            </Link>
           </div>
         </div>
       </section>
 
-      {/* Related Posts */}
-      {relatedPosts.length > 0 && (
-        <section className="py-20 bg-gray-50">
-          <div className="container mx-auto px-4">
-            <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center">
-              Related Articles
-            </h2>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto mb-8">
-              {relatedPosts.map((relatedPost) => (
-                <Link key={relatedPost.id} href={`/blog/${relatedPost.slug}`}>
-                  <Card hover className="h-full flex flex-col">
-                    <div className="text-5xl mb-4 text-center">{relatedPost.image}</div>
-                    <div className="text-sm text-blue-600 font-semibold mb-2">
-                      {relatedPost.category}
-                    </div>
-                    <h3 className="text-xl font-bold text-gray-900 mb-3 hover:text-blue-600 transition-colors">
-                      {relatedPost.title}
-                    </h3>
-                    <p className="text-gray-600 text-sm flex-grow">
-                      {relatedPost.excerpt}
-                    </p>
-                  </Card>
-                </Link>
-              ))}
-            </div>
-            <div className="text-center">
-              <Link href="/blog">
-                <Button variant="primary">
-                  View All Articles
-                </Button>
-              </Link>
-            </div>
-          </div>
-        </section>
-      )}
+      {/* CTA Section */}
+      <CTASection />
     </main>
   );
 }
