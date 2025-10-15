@@ -10,9 +10,9 @@ export default function CTASection({ extraSpacing = false }: CTASectionProps) {
       <div className="max-w-full mx-auto px-4 sm:px-8 md:px-12 lg:px-14 xl:px-18">
         <div className="flex flex-col items-center">
           <div className="text-center mb-6 md:mb-10 lg:mb-8">
-            <h2 className="hero-headline whitespace-nowrap">
-              <span className="hero-text-yellow">Shaping Brands,</span>{' '}
-              <span className="hero-text-outline">Building Solutions.</span>
+            <h2 className="whitespace-nowrap font-extrabold leading-[1.1] mb-6 transition-all duration-300 ease-in-out md:mb-7 lg:mb-8 xl:mb-10 [&:has(.text-outline:hover)_.text-yellow]:text-black [&:has(.text-outline:hover)_.text-yellow]:[text-shadow:-1px_-1px_0_#ffffff,1px_-1px_0_#ffffff,-1px_1px_0_#ffffff,1px_1px_0_#ffffff] [&:has(.text-outline:hover)_.text-yellow]:brightness-100 [&:has(.text-outline:hover)_.text-yellow]:filter-none" style={{fontSize: 'clamp(1.2rem, 2.5vw, 3.5rem)'}}>
+              <span className="text-yellow inline-block text-[#facc15] cursor-pointer transition-all duration-300 ease-in-out hover:text-[#eab308] hover:brightness-90">Shaping Brands,</span>{' '}
+              <span className="text-outline inline-block text-black cursor-pointer transition-all duration-300 ease-in-out [text-shadow:-1px_-1px_0_#ffffff,1px_-1px_0_#ffffff,-1px_1px_0_#ffffff,1px_1px_0_#ffffff] hover:text-[#facc15] hover:[text-shadow:none]">Building Solutions.</span>
             </h2>
           </div>
           <div className="flex flex-col items-center">
