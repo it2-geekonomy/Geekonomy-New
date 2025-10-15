@@ -100,6 +100,30 @@ const socialMediaMarketingContent = [
   { type: 'paragraph', text: "At Geekonomy, we help our clients navigate the ever-changing world of social media marketing and develop campaigns that deliver real results. From influencer partnerships to ephemeral content to social commerce, we work closely with our clients to create campaigns that resonate with their audience and drive engagement." },
 ];
 
+const aiMarketingContent = [
+  { type: 'paragraph', text: "Artificial intelligence (AI) is transforming the field of marketing, enabling businesses to analyze data, automate tasks, and personalize customer experiences at scale. In today's competitive market, where consumers expect personalized and relevant interactions with brands, AI has become an indispensable tool for marketers looking to succeed." },
+  { type: 'paragraph', text: "One of the key ways that AI is being used in marketing is through data analysis. By analyzing large amounts of data, AI can help marketers identify patterns and trends that would be difficult or impossible to detect manually." },
+  { type: 'paragraph', text: "This can help businesses make more informed decisions and create more effective marketing campaigns. Another important use of AI in marketing is in automation. AI-powered tools can automate repetitive tasks such as email marketing, social media posting, and customer service, freeing up marketers to focus on more strategic initiatives." },
+  { type: 'paragraph', text: "This can help businesses save time and money while improving efficiency and productivity. Additionally, AI is enabling businesses to personalize customer experiences at scale. By analyzing customer data and behavior, AI can help businesses create personalized marketing messages and offers that resonate with individual customers, increasing engagement and driving conversions." },
+  { type: 'paragraph', text: "In conclusion, AI is playing an increasingly important role in marketing, enabling businesses to analyze data, automate tasks, and personalize customer experiences at scale. At Geekonomy, we understand the power of AI in marketing and work closely with our clients to leverage this technology for success. From data analysis to automation to personalization, we help our clients harness the power of AI to achieve their marketing goals and drive business growth." },
+];
+
+const responsiveWebDesignContent = [
+  { type: 'paragraph', text: "With the increasing use of mobile devices to access the Internet, having a responsive web design is essential for ensuring that your website is accessible and user-friendly on all devices. Responsive web design is a design approach that ensures that a website adapts to the screen size and device type of the user, providing an optimal viewing experience." },
+  { type: 'paragraph', text: "One of the key benefits of responsive web design is improved user experience. By ensuring that your website is responsive, you can provide users with a seamless browsing experience across all devices, which can help to increase engagement and reduce bounce rates." },
+  { type: 'paragraph', text: "Additionally, responsive web design can also have a positive impact on your website's SEO performance. Google has stated that responsive design is its recommended design pattern, and websites that are mobile-friendly are more likely to rank higher in search engine results pages. At Geekonomy, we understand the importance of responsive web design and work closely with our clients to ensure that their websites are optimized for mobile devices." },
+  { type: 'paragraph', text: "Our approach to mobile optimization includes designing flexible layouts, optimizing images and videos for mobile viewing, and ensuring fast loading times on mobile devices. In conclusion, responsive web design is essential for ensuring that your website is accessible and user-friendly on all devices." },
+  { type: 'paragraph', text: "At Geekonomy, we specialize in creating responsive websites that provide an optimal browsing experience for users on mobile devices, helping our clients to reach a wider audience and achieve their business goals. Web design is essential for ensuring that your website is accessible and user-friendly on all devices." },
+  { type: 'paragraph', text: "At Geekonomy, we specialize in creating responsive websites that provide an optimal browsing experience for users on mobile devices, helping our clients to reach a wider audience and achieve their business goals." },
+];
+
+const seoContent = [
+  { type: 'paragraph', text: "Search engine optimization (SEO) is a critical component of any digital marketing strategy, as it helps to improve a website's visibility in search engine results pages (SERP's) and drive organic traffic. In today's digital landscape, where consumers are increasingly turning to search engines to find products and services, having a strong SEO strategy is essential for businesses looking to succeed online." },
+  { type: 'paragraph', text: "One of the key benefits of SEO is that it can help to increase organic traffic to your website. By optimizing your website for relevant keywords and creating high-quality, informative content, you can improve your chances of appearing in search results for relevant queries, driving more traffic to your site and increasing brand awareness." },
+  { type: 'paragraph', text: "Additionally, SEO can help to improve the user experience on your website. By optimizing your site's navigation, improving page load times, and ensuring that your content is easy to read and navigate, you can create a better experience for your users and encourage them to spend more time on your site." },
+  { type: 'paragraph', text: "At Geekonomy, we understand the importance of SEO in today's digital landscape and work closely with our clients to develop SEO strategies that drive results. From keyword research to on-page optimization to link building, we use a holistic approach to SEO to help our clients improve their search engine rankings and drive organic traffic to their website." },
+];
+
 export const BLOG_POSTS: BlogPost[] = [
   {
     id: '1',
@@ -204,7 +228,7 @@ export const BLOG_POSTS: BlogPost[] = [
     image: '/images/AI_Marketing.webp',
     category: 'AI & Technology',
     excerpt: 'Explore how artificial intelligence is transforming marketing and enabling data-driven business decisions.',
-    content: '<p>Coming soon...</p>',
+    content: contentToHTML(aiMarketingContent),
     author: 'Geekonomy Team',
     date: '2025-02-28',
     tags: ['AI', 'Marketing', 'Technology'],
@@ -216,7 +240,7 @@ export const BLOG_POSTS: BlogPost[] = [
     image: '/images/Responsive_Web_Design.webp',
     category: 'Web Development',
     excerpt: 'Learn why responsive web design is critical for success in today\'s mobile-first digital landscape.',
-    content: '<p>Coming soon...</p>',
+    content: contentToHTML(responsiveWebDesignContent),
     author: 'Geekonomy Team',
     date: '2025-02-25',
     tags: ['Web Development', 'Responsive Design', 'Mobile'],
@@ -228,7 +252,7 @@ export const BLOG_POSTS: BlogPost[] = [
     image: '/images/Importance_of_SEO.webp',
     category: 'Data Analytics',
     excerpt: 'Understand how SEO and data analytics work together to drive organic traffic and business growth.',
-    content: '<p>Coming soon...</p>',
+    content: contentToHTML(seoContent),
     author: 'Geekonomy Team',
     date: '2025-02-20',
     tags: ['SEO', 'Data Analytics', 'Digital Marketing'],
