@@ -35,7 +35,7 @@ export default function ExpertiseSection() {
             height={400}
             className="w-full h-auto object-cover rounded-md"
           />
-          <div className="absolute bottom-2 left-1/2 -translate-x-1/2 bg-black/60 px-3 py-1 rounded-md text-sm font-semibold text-white">
+          <div className="absolute bottom-2 left-1/2 -translate-x-1/2 bg-black/60 px-3 py-1 rounded-md text-sm text-white">
             Branding
           </div>
         </Link>
@@ -49,7 +49,7 @@ export default function ExpertiseSection() {
             height={400}
             className="w-full h-auto object-cover rounded-md"
           />
-          <div className="absolute bottom-2 left-1/2 -translate-x-1/2 bg-black/60 px-3 py-1 rounded-md text-sm font-semibold text-white text-center">
+          <div className="absolute bottom-2 left-1/2 -translate-x-1/2 bg-black/60 px-3 py-1 rounded-md text-sm text-white">
             Custom Development
           </div>
         </Link>
@@ -63,7 +63,7 @@ export default function ExpertiseSection() {
             height={400}
             className="w-full h-auto object-cover rounded-md"
           />
-          <div className="absolute bottom-2 left-1/2 -translate-x-1/2 bg-black/60 px-3 py-1 rounded-md text-sm font-semibold text-white text-center">
+          <div className="absolute bottom-2 left-1/2 -translate-x-1/2 bg-black/60 px-3 py-1 rounded-md text-sm text-white">
             Digital Marketing
           </div>
         </Link>
@@ -77,7 +77,7 @@ export default function ExpertiseSection() {
             height={400}
             className="w-full h-auto object-cover rounded-md"
           />
-          <div className="absolute bottom-2 left-1/2 -translate-x-1/2 bg-black/60 px-3 py-1 rounded-md text-sm font-semibold text-white text-center">
+          <div className="absolute bottom-2 left-1/2 -translate-x-1/2 bg-black/60 px-3 py-1 rounded-md text-sm text-white">
             Customer Retention
           </div>
         </Link>

@@ -13,8 +13,8 @@ const HeroSection: React.FC<HeroSectionProps> = ({
   buttonLink = "/contact-us",
 }) => {
   return (
-    <div className="text-center py-16 bg-black">
-      <h3 className="text-white text-[1rem] sm:text-[1rem] md:text-[1.2rem] lg:text-[1.7rem] max-w-6xl mx-auto leading-relaxed text-center">
+    <div className="py-16 bg-black">
+      <h3 className="text-white text-[1rem] sm:text-[1rem] md:text-[1.2rem] lg:text-[2.1rem] max-w-7xl mx-auto leading-relaxed">
         {text}
       </h3>
 
