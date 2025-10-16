@@ -85,7 +85,7 @@ export default function Home() {
 
 
       {/* Values */}
-      <section className="py-10 sm:py-5 md:py-12 lg:py-20 xl:py-20  bg-black">
+      <section className="pt-10 sm:pt-5 md:pt-12 lg:pt-20 xl:pt-20 pb-0 bg-black">
         <div>
           <InfiniteScroll/>
         </div>
