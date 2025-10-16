@@ -32,7 +32,7 @@ export default function Home() {
   <div className="flex flex-col md:flex-row items-center md:items-start justify-between h-auto md:h-full">
 
     {/* Text Content */}
-    <div className="w-[90%] sm:w-[80%] md:w-[100%]  px-4 sm:px-6 md:px-20 lg:px-25 xl:px-25 relative z-10 flex flex-col gap-8 sm:gap-12 md:gap-20">
+     <div className="w-[90%] sm:w-[80%] md:w-[100%]  px-4 sm:px-6 md:px-20 lg:px-25 xl:px-25 relative z-10 flex flex-col gap-8 sm:gap-12 md:gap-20">
 
       {/* 1. We are A to Z */}
       <div>
@@ -64,10 +64,10 @@ export default function Home() {
           Our mission is to deliver unparalleled value by empowering businesses with data-driven insights and cutting-edge solutions, fostering sustainable growth and success.
         </p>
       </div>
-    </div>
+      </div>
 
-    {/* Image Section (hidden on small screens) */}
-    <div 
+     {/* Image Section (hidden on small screens) */}
+      <div 
       className="hidden md:block w-[42%] lg:w-[40%] xl:w-[30%] h-[80vh] bg-no-repeat bg-right bg-contain relative"
       style={{ 
         backgroundImage: "url('/about_us_circle.webp')",
@@ -75,13 +75,13 @@ export default function Home() {
         backgroundPosition: 'center right',
         filter: 'brightness(2)',
       }}
-    >
+     >
       {/* Overlay */}
       <div className="absolute inset-0 bg-gradient-to-l from-black/70 to-transparent"></div>
-    </div>
+      </div>
 
-  </div>
-</section>
+       </div>
+      </section>
 
 
       {/* Values */}

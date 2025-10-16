@@ -1,7 +1,13 @@
 import { BlogPost } from '@/types';
 
 // Helper function to convert content array to HTML string
-const contentToHTML = (contentArray: any[]): string => {
+interface ContentItem {
+  type: string;
+  text: string;
+  className?: string;
+}
+
+const contentToHTML = (contentArray: ContentItem[]): string => {
   return contentArray.map(item => {
     if (item.type === 'heading') {
       return `<h2 class="${item.className || ''}">${item.text}</h2>`;
