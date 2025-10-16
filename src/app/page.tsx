@@ -6,6 +6,7 @@ import InspirationStation from "@/components/sections/InspirationStation";
 import TerrificSection from "@/components/sections/TerrificSection";
 import { digitalMarketing } from "@/components/data/expertiseSections ";
 import ExpertiseSection from "@/components/home/Expertise";
+import CTASection from "@/components/sections/CTASection";
 
 
 export default function Home() {
@@ -22,6 +23,7 @@ export default function Home() {
             <TerrificSection />
 
     <InspirationStation/>
+    <CTASection />
     </div>
   );
 }
