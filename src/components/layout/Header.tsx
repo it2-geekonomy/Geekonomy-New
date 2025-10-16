@@ -144,7 +144,7 @@ export default function Header() {
               }`}
               onClick={handleNavLinkClick}
             >
-              Blog
+              Blogs
             </Link>
             <span className="absolute -bottom-3 left-0 h-[3px] w-0 bg-[#FFC700] transition-all duration-700 ease-in-out group-hover:w-full"></span>
           </li>
