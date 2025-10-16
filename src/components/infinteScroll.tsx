@@ -77,7 +77,8 @@ export default function InfiniteScroll() {
           </h2>
       {/* First Row - Left Direction */}
       <div className="scroll-container w-full inline-flex flex-nowrap overflow-hidden ">
-        <ul className="flex items-center justify-center md:justify-start [&_li]:mx-12 [&_img]:max-w-none animate-infinite-scroll">
+        <ul className="flex items-center justify-center md:justify-start [&_li]:mx-4 sm:[&_li]:mx-6 md:[&_li]:mx-8 lg:[&_li]:mx-12
+ [&_img]:max-w-none animate-infinite-scroll">
           {logosRow1.map((logo, i) => (
             // outer is fixed to keep spacing consistent; only inner controls logo size
             <li key={`row1-${i}`} className="relative w-36 h-28 flex-shrink-0 flex items-center justify-center">
@@ -90,7 +91,8 @@ export default function InfiniteScroll() {
 
         {/* Duplicate for seamless loop */}
         <ul
-  className="flex items-center justify-center md:justify-start [&_li]:mx-12 [&_img]:max-w-none animate-infinite-scroll"
+  className="flex items-center justify-center md:justify-start [&_li]:mx-4 sm:[&_li]:mx-6 md:[&_li]:mx-8 lg:[&_li]:mx-12
+ [&_img]:max-w-none animate-infinite-scroll"
   aria-hidden="true"
 >
           {logosRow1.map((logo, i) => (
@@ -105,7 +107,8 @@ export default function InfiniteScroll() {
 
       {/* Second Row - Right Direction */}
       <div className="scroll-container w-full inline-flex flex-nowrap overflow-hidden">
-        <ul className="flex items-center justify-center md:justify-start [&_li]:mx-12 [&_img]:max-w-none animate-infinite-scroll-reverse">
+        <ul className="flex items-center justify-center md:justify-start [&_li]:mx-4 sm:[&_li]:mx-6 md:[&_li]:mx-8 lg:[&_li]:mx-12
+ [&_img]:max-w-none animate-infinite-scroll-reverse">
           {logosRow2.map((logo, i) => (
             <li key={`row2-${i}`} className="relative w-36 h-28 flex-shrink-0 flex items-center justify-center">
               <div className="relative w-32 h-20">
@@ -117,7 +120,8 @@ export default function InfiniteScroll() {
 
         {/* Duplicate for seamless loop */}
        <ul
-  className="flex items-center justify-center md:justify-start [&_li]:mx-12 [&_img]:max-w-none animate-infinite-scroll-reverse"
+  className="flex items-center justify-center md:justify-start [&_li]:mx-4 sm:[&_li]:mx-6 md:[&_li]:mx-8 lg:[&_li]:mx-12
+ [&_img]:max-w-none animate-infinite-scroll-reverse"
   aria-hidden="true"
 >
           {logosRow2.map((logo, i) => (
