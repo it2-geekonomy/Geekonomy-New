@@ -88,11 +88,11 @@ a, button {
 }
 
 .animate-infinite-scroll {
-  animation: infinite-scroll 60s linear infinite;
+  animation: infinite-scroll 90s linear infinite;
 }
 
 .animate-infinite-scroll-reverse {
-  animation: infinite-scroll-reverse 60s linear infinite;
+  animation: infinite-scroll-reverse 90s linear infinite;
 }
 
 /* Pause on hover - parent container controls all children */
