@@ -9,7 +9,7 @@ export default function Solutionize() {
             <div className="flex justify-center items-center">
               <div className="w-36 h-36 sm:w-42 sm:h-42 md:w-72 md:h-72 lg:w-86 lg:h-86">
                 <img 
-                  src="/home/aboutUs_logo.webp" 
+                  src="/home/aboutUs.webp" 
                   alt="About Us Logo" 
                   className="w-full h-full object-contain"
                 />
