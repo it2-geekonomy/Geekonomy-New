@@ -32,13 +32,10 @@ export default function Footer() {
           {/* Outer Container for Columns 2 & 3 */}
           <div className="flex-1 flex flex-row gap-0">
             {/* Column 2: Services and Partners */}
-            <div className="flex-1 flex flex-col gap-8 px-1 sm:px-2 md:px-5 lg:px-20 xl:px-20
-">
+            <div className="flex-1 flex flex-col gap-8 px-5 md:px-10 2xl:px-20">
               {/* Services Section */}
               <div className="w-full flex flex-col items-start">
-                <h3 className="text-white text-[1.3rem] mb-4 text-left">
-  Services
-</h3>
+                <h3 className="text-white text-[1.3rem] mb-4 text-left">Services</h3>
 
                 <ul className="space-y-2 text-left">
                   {EXPERTISE_LINKS.map((link) => (
@@ -54,25 +51,29 @@ export default function Footer() {
                 </ul>
               </div>
 
+
+
+
+
               {/* Partners Section */}
               <div className="w-full flex flex-col items-start">
                 <h3 className="text-white text-[1.3rem] mb-4 text-left">Partners</h3>
-                <div className="flex flex-nowrap gap-1 sm:gap-2 justify-start">
+                <div className="flex flex-wrap gap-1 sm:gap-2 justify-start">
                   {/* Cloud Service Icon */}
                   {/* Partner logos from /public/images - swap filenames as needed */}
-                  <div className="w-6 h-6 sm:w-6 sm:h-6 md:w-6 md:h-6 lg:w-7 lg:h-7 relative">
-                    <Image src="/images/leadspotting.f44ee491ee208bf68bba.webp" alt="partner-1" fill style={{ objectFit: 'contain' }} />
+                  <div className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 relative">
+                    <Image src="/images/leadspotting.webp" alt="partner-1" fill style={{ objectFit: 'contain' }} />
                   </div>
-                  <div className="w-6 h-6 sm:w-6 sm:h-6 md:w-6 md:h-6 lg:w-7 lg:h-7 relative">
+                  <div className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 relative">
                     <Image src="/images/teraffic.1280028d6e80727f7c3b.webp" alt="partner-2" fill style={{ objectFit: 'contain' }} />
                   </div>
-                  <div className="w-6 h-6 sm:w-6 sm:h-6 md:w-6 md:h-6 lg:w-7 lg:h-7 relative">
+                  <div className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 relative">
                     <Image src="/images/google.9d3d6c7cde3f1f4a5591.webp" alt="partner-3" fill style={{ objectFit: 'contain' }} />
                   </div>
-                  <div className="w-6 h-6 sm:w-6 sm:h-6 md:w-6 md:h-6 lg:w-7 lg:h-7 relative">
+                  <div className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 relative">
                     <Image src="/images/amazon.af965e29b6fcd290c2e6.webp" alt="partner-4" fill style={{ objectFit: 'contain' }} />
                   </div>
-                  <div className="w-6 h-6 sm:w-6 sm:h-6 md:w-6 md:h-6 lg:w-7 lg:h-7 relative">
+                  <div className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 relative">
                     <Image src="/images/adobe.dedd8b5de418b59824b5.webp" alt="partner-5" fill style={{ objectFit: 'contain' }} />
                   </div>
                 </div>
@@ -80,7 +81,7 @@ export default function Footer() {
             </div>
 
             {/* Column 3: Company and Contact */}
-            <div className="flex-1 flex flex-col gap-10 px-10 2xl:px-10">
+            <div className="flex-1 flex flex-col gap-8 px-5 2xl:px-10">
               {/* Company Section */}
               <div className="w-full flex flex-col items-start">
                 <h3 className="text-white text-[1.3rem] mb-4 text-left">Company</h3>
@@ -107,12 +108,16 @@ export default function Footer() {
           <div className="flex-1">
             <h3 className="text-white text-[1.3rem] font-bold mb-4">Address</h3>
             <div className="text-gray-300 text-sm lg:text-base mb-4">
-              <p className="lg:hidden">No. 1357, Ground Floor, 9th Cross, ITI Layout, JP Nagar 1st Phase, Bengaluru, Karnataka - 560 078.</p>
-              <div className="hidden lg:block">
-                <p>No. 1357, Ground Floor, 9th Cross, ITI Layout,</p>
-                <p>JP Nagar 1st Phase, Bengaluru, Karnataka -</p>
-                <p>560 078.</p>
+              {/* Mobile and Desktop: 3 lines */}
+              <div className="md:hidden lg:block">
+                <p>No. 1357, Ground Floor, 9th Cross</p>
+                <p>ITI Layout, JP Nagar 1st Phase</p>
+                <p>Bengaluru, Karnataka - 560 078</p>
               </div>
+              {/* Tablet: 1 line */}
+              <p className="hidden md:block lg:hidden">
+                No. 1357, Ground Floor, 9th Cross, ITI Layout, JP Nagar 1st Phase, Bengaluru, Karnataka - 560 078
+              </p>
             </div>
             
             {/* Google Maps Embed */}
