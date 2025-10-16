@@ -1,176 +1,194 @@
 'use client';
 
-import { useState, FormEvent } from 'react';
-import Button from '@/components/ui/Button';
-import Input from '@/components/ui/Input';
-import Textarea from '@/components/ui/Textarea';
-import { validateEmail, validatePhone } from '@/lib/utils';
-import { ContactForm as ContactFormType } from '@/types';
+import '@/app/contact-us/contactUs.css'; 
+import '@/components/forms/contactUsForm.css';
+import { useState, useEffect } from "react";
+import { FormData, Errors } from "@/types/contactTypes";
+import { Contactinput } from "../ui";
+import { ContactPopup } from "../ui";
+import { ContactTextarea } from "../ui";
+import { validate, getUnderlineStyle } from "@/lib/contactFormUtils";
+import { SUBJECTS, subjectLabelMap } from "@/constants/contactConstants";
 
 export default function ContactForm() {
-  const [formData, setFormData] = useState<ContactFormType>({
-    name: '',
-    email: '',
-    phone: '',
-    company: '',
-    message: '',
-    service: '',
+  const [formData, setFormData] = useState<FormData>({
+    fname: "",
+    lname: "",
+    email: "",
+    pnum: "",
+    message: "",
   });
-
-  const [errors, setErrors] = useState<Partial<Record<keyof ContactFormType, string>>>({});
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
-
-  const validateForm = (): boolean => {
-    const newErrors: Partial<Record<keyof ContactFormType, string>> = {};
-
-    if (!formData.name.trim()) {
-      newErrors.name = 'Name is required';
+  const [touched, setTouched] = useState<Record<keyof FormData, boolean>>({
+    fname: false,
+    lname: false,
+    email: false,
+    pnum: false,
+    message: false,
+  });
+  const [selectedSubject, setSelectedSubject] = useState<typeof SUBJECTS[number]>(
+    "general"
+  );
+  const [errors, setErrors] = useState<Errors>({});
+  const [popup, setPopup] = useState<string | null>(null);
+  const [popupType, setPopupType] = useState<"error" | "success">("error");
+  const [popupKey, setPopupKey] = useState<number>(0);
+  useEffect(() => {
+    if (popup) {
+      const timer = setTimeout(() => setPopup(null), 3000);
+      return () => clearTimeout(timer);
     }
-
-    if (!formData.email.trim()) {
-      newErrors.email = 'Email is required';
-    } else if (!validateEmail(formData.email)) {
-      newErrors.email = 'Invalid email address';
-    }
-
-    if (formData.phone && !validatePhone(formData.phone)) {
-      newErrors.phone = 'Invalid phone number';
-    }
-
-    if (!formData.message.trim()) {
-      newErrors.message = 'Message is required';
-    }
-
-    setErrors(newErrors);
-    return Object.keys(newErrors).length === 0;
+  }, [popup]);
+  const handleChange =
+    (field: keyof FormData) =>
+    (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+      setFormData({ ...formData, [field]: e.target.value });
+      if (errors[field]) setErrors((prev) => ({ ...prev, [field]: undefined }));
+    };
+  const handleBlur = (field: keyof FormData) => () => {
+    setTouched((prev) => ({ ...prev, [field]: true }));
   };
-
-  const handleSubmit = async (e: FormEvent) => {
+  const showPopup = (msg: string, type: "error" | "success" = "error") => {
+    setPopupType(type);
+    setPopupKey((prev) => prev + 1);
+    setPopup(msg);
+  };
+  const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-
-    if (!validateForm()) {
+    const errs = validate(formData);
+    setErrors(errs);
+    (Object.keys(formData) as (keyof FormData)[]).forEach((key) =>
+      setTouched((prev) => ({ ...prev, [key]: true }))
+    );
+    if (Object.keys(errs).length > 0) {
+      if (errs.fname) showPopup("Please enter your first name", "error");
+      else if (errs.lname) showPopup("Please enter your last name", "error");
+      else if (errs.email) showPopup("Please enter your email", "error");
+      else if (errs.pnum) showPopup("Please enter your phone number", "error");
       return;
     }
-
-    setIsSubmitting(true);
-    setSubmitStatus('idle');
-
-    try {
-      // Here you would typically send the data to an API endpoint
-      // For now, we'll simulate a successful submission
-      await new Promise((resolve) => setTimeout(resolve, 1500));
-      
-      console.log('Form submitted:', formData);
-      setSubmitStatus('success');
-      setFormData({
-        name: '',
-        email: '',
-        phone: '',
-        company: '',
-        message: '',
-        service: '',
-      });
-    } catch (error) {
-      console.error('Form submission error:', error);
-      setSubmitStatus('error');
-    } finally {
-      setIsSubmitting(false);
-    }
+    showPopup(
+      "Message sent successfully! We will get back to you soon",
+      "success"
+    );
+    setFormData({
+      fname: "",
+      lname: "",
+      email: "",
+      pnum: "",
+      message: "",
+    });
+    setTouched({
+      fname: false,
+      lname: false,
+      email: false,
+      pnum: false,
+      message: false,
+    });
+    setErrors({});
   };
-
   return (
-    <form onSubmit={handleSubmit} className="space-y-6">
-      <Input
-        label="Name *"
-        type="text"
-        value={formData.name}
-        onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-        error={errors.name}
-        fullWidth
-        placeholder="John Doe"
-      />
-
-      <Input
-        label="Email *"
-        type="email"
-        value={formData.email}
-        onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-        error={errors.email}
-        fullWidth
-        placeholder="john@example.com"
-      />
-
-      <Input
-        label="Phone"
-        type="tel"
-        value={formData.phone}
-        onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-        error={errors.phone}
-        fullWidth
-        placeholder="+1 (555) 123-4567"
-      />
-
-      <Input
-        label="Company"
-        type="text"
-        value={formData.company}
-        onChange={(e) => setFormData({ ...formData, company: e.target.value })}
-        fullWidth
-        placeholder="Your Company"
-      />
-
-      <div className="flex flex-col gap-1 w-full">
-        <label className="text-sm font-medium text-gray-700">
-          Service Interested In
-        </label>
-        <select
-          value={formData.service}
-          onChange={(e) => setFormData({ ...formData, service: e.target.value })}
-          className="px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
-        >
-          <option value="">Select a service</option>
-          <option value="web">Web Development</option>
-          <option value="mobile">Mobile Development</option>
-          <option value="cloud">Cloud Solutions</option>
-          <option value="ai">AI & Machine Learning</option>
-          <option value="design">UI/UX Design</option>
-          <option value="consulting">Consulting</option>
-        </select>
-      </div>
-
-      <Textarea
-        label="Message *"
-        value={formData.message}
-        onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-        error={errors.message}
-        fullWidth
-        rows={6}
-        placeholder="Tell us about your project..."
-      />
-
-      {submitStatus === 'success' && (
-        <div className="p-4 bg-green-50 border border-green-200 rounded-lg text-green-800">
-          Thank you for your message! We&apos;ll get back to you soon.
-        </div>
+    <>
+      {popup && (
+        <ContactPopup
+          message={popup}
+          type={popupType}
+          onClose={() => setPopup(null)}
+          popupKey={popupKey}
+        />
       )}
-
-      {submitStatus === 'error' && (
-        <div className="p-4 bg-red-50 border border-red-200 rounded-lg text-red-800">
-          Something went wrong. Please try again later.
+      <form onSubmit={handleSubmit} noValidate>
+        <div className="fields-row">
+          <Contactinput
+            label="First Name"
+            value={formData.fname}
+            placeholder="First Name"
+            onChange={handleChange("fname")}
+            onBlur={handleBlur("fname")}
+            style={getUnderlineStyle("fname", formData, errors)}
+            error={errors.fname}
+            touched={touched.fname}/>
+          <Contactinput
+            label="Last Name"
+            value={formData.lname}
+            placeholder="Last Name"
+            onChange={handleChange("lname")}
+            onBlur={handleBlur("lname")}
+            style={getUnderlineStyle("lname", formData, errors)}
+            error={errors.lname}
+            touched={touched.lname}/>
         </div>
-      )}
-
-      <Button
-        type="submit"
-        size="lg"
-        fullWidth
-        disabled={isSubmitting}
-      >
-        {isSubmitting ? 'Sending...' : 'Send Message'}
-      </Button>
-    </form>
+        <div className="fields-row">
+          <Contactinput
+            label="Email"
+            type="email"
+            value={formData.email}
+            placeholder="example@gmail.com"
+            onChange={handleChange("email")}
+            onBlur={handleBlur("email")}
+            style={getUnderlineStyle("email", formData, errors)}
+            error={errors.email}
+            touched={touched.email}/>
+          <Contactinput
+            label="Phone Number"
+            value={formData.pnum}
+            placeholder="+91 1234567890"
+            onChange={handleChange("pnum")}
+            onBlur={handleBlur("pnum")}
+            style={getUnderlineStyle("pnum", formData, errors)}
+            error={errors.pnum}
+            touched={touched.pnum}/>
+        </div>
+        <div className="subject-group">
+          <label className="subject-label">Select Subject?</label>
+          <div className="subject-options">
+            {SUBJECTS.map((subj) => (
+              <label
+                key={subj}
+                className="subject-option"
+                onClick={() => setSelectedSubject(subj)}>
+                <div className={`radio-circle ${selectedSubject === subj ? "selected" : ""}`}>
+                  {selectedSubject === subj && <div className="checkmark">✓</div>}
+                </div>
+                <input
+                  type="radio"
+                  name="subject"
+                  value={subj}
+                  checked={selectedSubject === subj}
+                  onChange={() => setSelectedSubject(subj)}
+                  className="hidden"/>
+                <span className="subject-text">
+                  {subjectLabelMap[subj]}
+                </span>
+              </label>
+            ))}
+          </div>
+        </div>
+        <ContactTextarea
+          label="Message"
+          placeholder="Write your message.."
+          rows={1}
+          value={formData.message}
+          onChange={handleChange("message")}
+          onBlur={handleBlur("message")}
+          style={getUnderlineStyle("message", formData, errors)}
+          error={errors.message}
+          touched={touched.message}
+        />
+        <div className="submit-btn-wrapper">
+          <button type="submit" className="submit-btn">
+            Send Message
+          </button>
+        </div>
+      </form>
+      <style jsx>{`
+        .popup-timer-line {
+          height: 3px;
+          width: 100%;
+          margin-top: 12px;
+          transform-origin: left;
+          animation: shrinkLine 3s linear forwards;
+          background-color: ${popupType === "error" ? "#dc2626" : "#84cc16"};
+        }
+      `}</style></>
   );
 }
-
-
