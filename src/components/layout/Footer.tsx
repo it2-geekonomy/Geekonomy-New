@@ -133,7 +133,7 @@ export default function Footer() {
         </div>
 
         {/* Bottom Section */}
-        <div className="border-t border-gray-800 pt-6 w-full">
+        <div className="border-t border-gray-500 pt-6 w-full">
           <div className="flex flex-nowrap lg:flex-row justify-between items-start lg:items-center">
             {/* Left Side - Copyright and DMCA */}
             <div className="flex flex-col items-start space-y-2 lg:space-y-0 lg:space-x-4">
