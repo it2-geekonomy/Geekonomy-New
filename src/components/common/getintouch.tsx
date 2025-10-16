@@ -13,19 +13,20 @@ const HeroSection: React.FC<HeroSectionProps> = ({
   buttonLink = "/contact-us",
 }) => {
   return (
-    <div className="py-16 bg-black">
-      <h3 className="text-white text-[1rem] sm:text-[1rem] md:text-[1.2rem] lg:text-[2.1rem] max-w-7xl mx-auto leading-relaxed">
-        {text}
-      </h3>
+    <div className="py-12 sm:py-14 md:py-16 bg-black text-center">
+  <h3 className="text-white text-[0.9rem] sm:text-[1rem] md:text-[1.3rem] lg:text-[2.1rem] max-w-4xl md:max-w-6xl lg:max-w-7xl mx-auto leading-relaxed px-4">
+    {text}
+  </h3>
 
-      <div className="flex flex-col items-center mt-8">
-        <Link href={buttonLink}>
-          <button className="bg-yellow-400 text-gray-950 px-20 sm:px-30 md:px-40 lg:px-48 py-1 md:py-1 lg:py-1 rounded-full text-sm md:text-base lg:text-base hover:bg-yellow-300 transition-colors duration-300">
-            {buttonText}
-          </button>
-        </Link>
-      </div>
-    </div>
+  <div className="flex justify-center mt-6 sm:mt-8">
+    <Link href={buttonLink}>
+      <button className="bg-yellow-400 text-gray-950 px-8 sm:px-12 md:px-20 lg:px-48 py-2 sm:py-2 md:py-2 rounded-full text-sm sm:text-base hover:bg-yellow-300 transition-colors duration-300">
+        {buttonText}
+      </button>
+    </Link>
+  </div>
+</div>
+
   );
 };
 
