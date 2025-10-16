@@ -249,7 +249,7 @@ export default function Header() {
                 className={`text-lg no-underline ${pathname === '/blog' ? 'text-[#FFC700]' : 'text-white'} hover:text-[#FFC700] transition-colors`}
                 onClick={handleNavLinkClick}
               >
-                Blog
+                Blogs
               </Link>
             </div>
 
