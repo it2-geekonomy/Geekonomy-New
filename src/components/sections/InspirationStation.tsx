@@ -120,8 +120,8 @@ export default function InspirationStation() {
   };
 
   return (
-    <section className="bg-black text-white py-8 px-2 md:px-12 flex flex-col items-center ">
-      <h2 className="text-3xl sm:text-4xl xl:text-[2.5rem] font-medium mb-8 text-center">
+    <section className="bg-black text-white sm:py-6 md:py-14 lg:py-16 px-4 flex flex-col items-center relative">
+      <h2 className="text-3xl sm:text-4xl font-medium mb-8 text-center ">
         Inspiration Station
       </h2>
 
