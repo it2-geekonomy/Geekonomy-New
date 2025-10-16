@@ -1,40 +1,19 @@
+import Image from "next/image";
 import React from "react";
 
 const Banner: React.FC = () => {
   return (
-    <section
-      className="
-        relative 
-        w-full 
-        min-h-[57vh] 
-        sm:min-h-[70vh] 
-        md:min-h-[80vh] 
-        lg:min-h-[90vh] 
-        xl:min-h-screen 
-        overflow-hidden
-      "
-    >
-      <picture>
-        {/* Optional: responsive images for better quality on larger screens */}
-        <source
-          srcSet="/expertise/Coming soon banner.webp"
-          media="(min-width: 1024px)"
-        />
-        <img
+    <section className="relative w-full overflow-hidden">
+      <div className="w-full relative">
+        <Image
           src="/expertise/Coming soon banner.webp"
-          alt="Banner Background"
-          className="
-            absolute inset-0 
-            w-full h-full 
-            object-cover 
-            object-center 
-            sm:object-[center_60%]
-          "
+          alt="Coming Soon Banner"
+          width={1920}       
+          height={1080}      
+          className="w-full h-auto object-contain"
+          priority
         />
-      </picture>
-
-      {/* Optional: overlay for readability or branding */}
-      {/* <div className="absolute inset-0 bg-black/30"></div> */}
+      </div>
     </section>
   );
 };
