@@ -66,7 +66,7 @@ export default async function BlogPostPage({ params }: Props) {
       {/* Content */}
       <section className="w-full px-8 sm:px-12 md:px-16 lg:px-20 xl:px-24 py-8 md:py-10 lg:py-12">
         <div className="max-w-[81rem] mx-auto">
-          <div className="text-left md:text-center mb-8 md:mb-12">
+          <div className="text-left mb-8 md:mb-12">
             <h1 className="text-2xl md:text-3xl lg:text-3xl xl:text-4xl font-bold leading-tight">
               <span className="block md:inline">{post.title}</span>
               <span className="block md:inline md:ml-2">{post.detailPageCategory || post.category}</span>
