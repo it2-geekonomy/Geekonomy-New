@@ -19,7 +19,7 @@ export default function CTASection({ extraSpacing = false }: CTASectionProps) {
   };
 
   return (
-    <section className={`bg-black ${extraSpacing ? 'pt-16 md:pt-24 lg:pt-32' : 'pt-4 md:pt-6 lg:pt-8'} pb-12 md:pb-28 lg:pb-36`}>
+    <section className={`bg-black ${extraSpacing ? 'pt-16 md:pt-24 lg:pt-32' : 'pt-4 md:pt-6 lg:pt-8'} pb-10 md:pb-20 lg:pb-26`}>
       <div className="max-w-full mx-auto px-4 sm:px-8 md:px-12 lg:px-14 xl:px-18">
         <div className="flex flex-col items-center">
           <div className="text-center mb-6 md:mb-10 lg:mb-8">

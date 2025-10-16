@@ -1,4 +1,4 @@
-import HeroSection from '@/components/common/getintouch';
+import GetInTouch from '@/components/common/getintouch';
 import InfiniteScroll from '@/components/infinteScroll';
 import Link from 'next/link';
 
@@ -90,7 +90,7 @@ export default function Home() {
           <InfiniteScroll/>
         </div>
 
-        <HeroSection
+        <GetInTouch
       text="Together, let's embark on a journey of creating an unforgettable brand legacy through thorough research, design, marketing and code."
       buttonText="Contact Us"
       buttonLink="/contact-us"

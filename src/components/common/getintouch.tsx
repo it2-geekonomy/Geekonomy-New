@@ -1,13 +1,13 @@
-// components/HeroSection.tsx
+// components/common/getintouch.tsx
 import Link from "next/link";
 
-interface HeroSectionProps {
+interface GetInTouchProps {
   text: string; // The text for the h3
   buttonText?: string; // Optional button text
   buttonLink?: string; // Optional button link
 }
 
-const HeroSection: React.FC<HeroSectionProps> = ({
+const GetInTouch: React.FC<GetInTouchProps> = ({
   text,
   buttonText = "Get In Touch",
   buttonLink = "/contact-us",
@@ -30,4 +30,4 @@ const HeroSection: React.FC<HeroSectionProps> = ({
   );
 };
 
-export default HeroSection;
+export default GetInTouch;
