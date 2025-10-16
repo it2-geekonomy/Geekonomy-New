@@ -140,7 +140,7 @@ export default function Footer() {
               <p className="text-gray-300 text-[0.7rem] sm:text-[1rem] lg:text-base">
                 © {currentYear} Geekonomy. All rights reserved
               </p>
-                  <a href="//www.dmca.com/Protection/Status.aspx?ID=eea71184-71ee-4c73-a959-5852051246f6" title="DMCA.com Protection Status" className="dmca-badge"> <img src="https://images.dmca.com/Badges/dmca_protected_sml_120n.png?ID=eea71184-71ee-4c73-a959-5852051246f6" alt="DMCA.com Protection Status" /></a> <script src="https://images.dmca.com/Badges/DMCABadgeHelper.min.js"> </script>
+                  <a href="//www.dmca.com/Protection/Status.aspx?ID=eea71184-71ee-4c73-a959-5852051246f6" title="DMCA.com Protection Status" className="dmca-badge"> <img src="https://images.dmca.com/Badges/dmca_protected_sml_120n.png?ID=eea71184-71ee-4c73-a959-5852051246f6" alt="DMCA.com Protection Status" /></a>
             </div>
             
             {/* Right Side - Social Media Icons */}
