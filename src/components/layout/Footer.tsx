@@ -15,24 +15,24 @@ export default function Footer() {
         <div className="w-full">
           <div className="flex flex-col lg:flex-row gap-8 lg:gap-2 mb-8 w-full">
           {/* Column 1: Company Info */}
-          <div className="flex-1">
+          <div className="flex-1 lg:max-w-[28%] xl:max-w-none">
             <div className="flex items-center mb-4">
               {/* Footer logo (replace decorative knot and text) */}
               <div className="w-64 h-10 mr-3 relative">
                 <Image src="/logo2.png" alt="Geekonomy logo" fill style={{ objectFit: 'contain' }} />
               </div>
             </div>
-            <p className="text-gray-300 text-sm lg:text-base mb-3 text-justify">
+            <p className="text-gray-300 text-sm lg:text-base mb-3 text-justify w-[95%]">
               Geekonomy is a team of driven and innovative individuals, blending passion with curiosity to deliver exceptional value through design.
             </p>
-            <p className="text-gray-300 text-sm lg:text-base text-justify">
+            <p className="text-gray-300 text-sm lg:text-base text-justify w-full sm:w-[90%] lg:w-full">
               In today&apos;s world, we embrace marketing as an integral part of life, crafting captivating experiences that seamlessly bridge the online and offline realms. Our expertise lies in empowering brands to share their unique narratives, fueling transformative growth.
             </p>
           </div>
           {/* Outer Container for Columns 2 & 3 */}
-          <div className="flex-1 flex flex-row gap-0">
+          <div className="flex-1 flex flex-row gap-0 lg:max-w-[42%] xl:max-w-none">
             {/* Column 2: Services and Partners */}
-            <div className="flex-1 flex flex-col gap-8 px-5 md:px-10 2xl:px-20">
+            <div className="flex-1 flex flex-col gap-8 px-5 md:px-10 lg:px-5 xl:px-10 2xl:px-20">
               {/* Services Section */}
               <div className="w-full flex flex-col items-start">
                 <h3 className="text-white text-[1.3rem] mb-4 text-left">Services</h3>
@@ -81,7 +81,7 @@ export default function Footer() {
             </div>
 
             {/* Column 3: Company and Contact */}
-            <div className="flex-1 flex flex-col gap-8 px-5 2xl:px-10">
+            <div className="flex-1 flex flex-col gap-8 px-5 lg:px-3 xl:px-5 2xl:px-10">
               {/* Company Section */}
               <div className="w-full flex flex-col items-start">
                 <h3 className="text-white text-[1.3rem] mb-4 text-left">Company</h3>
@@ -98,14 +98,14 @@ export default function Footer() {
                 <h3 className="text-white text-[1.3rem] mb-4 text-left">Contact</h3>
                 <ul className="space-y-2 text-left">
                   <li className="text-gray-300 text-xs sm:text-sm lg:text-base whitespace-nowrap">{COMPANY_INFO.phone}</li>
-                  <li className="text-gray-300 text-xs sm:text-sm lg:text-base whitespace-nowrap">{COMPANY_INFO.email}</li>
+                  <li className="text-gray-300 text-xs sm:text-sm lg:sm whitespace-nowrap">{COMPANY_INFO.email}</li>
                 </ul>
               </div>
             </div>
           </div>
 
           {/* Column 4: Address and Map */}
-          <div className="flex-1">
+          <div className="flex-1 lg:min-w-[30%] xl:min-w-0">
             <h3 className="text-white text-[1.3rem] font-bold mb-4">Address</h3>
             <div className="text-gray-300 text-sm lg:text-base mb-4">
               {/* Mobile and Desktop: 3 lines */}
@@ -121,7 +121,7 @@ export default function Footer() {
             </div>
             
             {/* Google Maps Embed */}
-            <div className="w-[80%] sm:w-[50%] lg:w-[100%] 2xl:w-[100%] h-60 lg:h-50 xl:h-60 bg-gray-800 rounded overflow-hidden">
+            <div className="w-[80%] sm:w-[50%] lg:w-[85%] xl:w-[100%] 2xl:w-[100%] h-60 lg:h-50 xl:h-60 bg-gray-800 rounded overflow-hidden">
               <iframe
                 src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d18452.258377573722!2d77.580541!3d12.910924!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae1681f9dec0e9%3A0xdaec705c2f2ff0ed!2sGeekonomy%20Technology%20Private%20Limited.!5e1!3m2!1sen!2sin!4v1760522719324!5m2!1sen!2sin"
                 width="100%"
