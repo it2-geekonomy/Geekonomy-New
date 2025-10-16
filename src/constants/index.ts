@@ -22,7 +22,7 @@ export const COMPANY_INFO = {
   name: 'Geekonomy',
   description: 'Transforming businesses through cutting-edge technology and innovative solutions.',
   email: 'info@geekonomytech.com',
-  phone: '+1 (555) 123-4567',
+  phone: '+91- 76248 18717',
   address: '123 Tech Street, Innovation City, IC 12345',
   website: 'https://geekonomytech.com',
   social: {
