@@ -13,6 +13,8 @@ const contentToHTML = (contentArray: ContentItem[]): string => {
       return `<h2 class="${item.className || ''}">${item.text}</h2>`;
     } else if (item.type === 'paragraph') {
       return `<p>${item.text}</p>`;
+    } else if (item.type === 'list') {
+      return item.text;
     }
     return '';
   }).join('\n');
@@ -138,11 +140,7 @@ const omnichannelMarketingContent = [
   { type: 'paragraph', text: "Today, consumers expect effortless personalization and an engaging experience with the brands they choose to interact with. Brands and organizations that embrace an omnichannel approach enjoy higher customer retention rates, increased revenue per transaction, and stronger brand loyalty. Building a complete and connected experience makes it easier for consumers to buy, while also developing an opportunity for deeper emotional engagement that results in more returns and advocacy." },
   { type: 'heading', text: 'Creating an Effective Omnichannel Strategy', className: 'mt-4 mb-3' },
   { type: 'paragraph', text: "To maintain an advantage, brands must move beyond channel-specific tactics and create a fully unified customer journey. Steps include:" },
-  { type: 'paragraph', text: "Leverage a single brand voice and message across all channels." },
-  { type: 'paragraph', text: "Invest in Customer Relationship Management (CRM) platforms and analytics for a complete 360° customer view." },
-  { type: 'paragraph', text: "Allow customers to move seamlessly between channels – for example, retrieve a shopping cart started on mobile when switching to desktop." },
-  { type: 'paragraph', text: "Prepare teams to personalize and provide consistent cross-channel support." },
-  { type: 'paragraph', text: "Use data-driven insights to design customer journeys that clarify needs and reduce friction." },
+  { type: 'list', text: '<ul><li>Leverage a single brand voice and message across all channels.</li><li>Invest in Customer Relationship Management (CRM) platforms and analytics for a complete 360° customer view.</li><li>Allow customers to move seamlessly between channels – for example, retrieve a shopping cart started on mobile when switching to desktop.</li><li>Prepare teams to personalize and provide consistent cross-channel support.</li><li>Use data-driven insights to design customer journeys that clarify needs and reduce friction.</li></ul>' },
   { type: 'heading', text: 'The Bottom Line', className: 'mt-4 mb-3' },
   { type: 'paragraph', text: "A connected world in 2025 means omnichannel strategies are no longer optional – they are essential to building meaningful relationships with customers. Brands that unite technology, storytelling, and data to produce a unified experience will build loyalty, trust, and long-term growth." },
 ];
