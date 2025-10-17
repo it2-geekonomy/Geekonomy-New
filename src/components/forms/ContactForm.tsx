@@ -56,31 +56,42 @@ export default function ContactForm() {
       };
     }
   }, []);
+
   useEffect(() => {
     if (popup) {
       const timer = setTimeout(() => setPopup(null), 3000);
       return () => clearTimeout(timer);
     }
   }, [popup]);
+
+  (window as any).onRecaptchaSuccess = (token: string) => {
+    recaptchaTokenRef.current = token;
+  };
+
   const handleChange = (field: keyof FormData) => (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setFormData({ ...formData, [field]: e.target.value });
     if (errors[field]) setErrors((prev) => ({ ...prev, [field]: undefined }));
   };
+
   const handleBlur = (field: keyof FormData) => () => {
     setTouched((prev) => ({ ...prev, [field]: true }));
   };
+
   const showPopup = (msg: string, type: "error" | "success" = "error") => {
     setPopupType(type);
     setPopupKey((prev) => prev + 1);
     setPopup(msg);
   };
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+
     const errs = validate(formData);
     setErrors(errs);
     (Object.keys(formData) as (keyof FormData)[]).forEach((key) =>
       setTouched((prev) => ({ ...prev, [key]: true }))
     );
+
     if (Object.keys(errs).length > 0) {
       if (errs.fname) showPopup("Please enter your first name", "error");
       else if (errs.lname) showPopup("Please enter your last name", "error");
@@ -89,35 +100,42 @@ export default function ContactForm() {
       else if (errs.message) showPopup("Please enter a message", "error");
       return;
     }
+
     if (!isCaptchaChecked) {
       showPopup("Please verify you're not a robot", "error");
       return;
     }
-    setIsSubmitting(true); 
+
+    setIsSubmitting(true);
+
+    const templateParams = {
+      firstName: formData.fname,
+      lastName: formData.lname,
+      email: formData.email,
+      phoneNumber: formData.pnum,
+      selectSubject: selectedSubject,
+      message: formData.message,
+    };
     try {
       await emailjs.send(
         "service_b9jpwod",
         "template_zweeaku",
-        {
-          from_name: `${formData.fname} ${formData.lname}`,
-          from_email: formData.email,
-          phone_number: formData.pnum,
-          subject: selectedSubject,
-          message: formData.message,
-        },
+        templateParams,
         "fqPzstZbWOYcNqmvB"
       );
       showPopup("Message sent successfully!", "success");
       setFormData({ fname: "", lname: "", email: "", pnum: "", message: "" });
       setTouched({ fname: false, lname: false, email: false, pnum: false, message: false });
       setErrors({});
+      setCaptchaChecked(false);
     } catch (error) {
-      console.error(error);
+      console.error("EmailJS Error:", error);
       showPopup("Failed to send message.", "error");
     } finally {
-      setIsSubmitting(false); 
+      setIsSubmitting(false);
     }
   };
+
   return (
     <>
       {popup && (
@@ -149,6 +167,7 @@ export default function ContactForm() {
             error={errors.lname}
             touched={touched.lname}/>
         </div>
+
         <div className="fields-row">
           <Contactinput
             label="Email"
@@ -171,6 +190,7 @@ export default function ContactForm() {
             error={errors.pnum}
             touched={touched.pnum}/>
         </div>
+
         <div className="subject-group">
           <label className="subject-label">Select Subject?</label>
           <div className="subject-options">
@@ -196,6 +216,7 @@ export default function ContactForm() {
             ))}
           </div>
         </div>
+
         <ContactTextarea
           label="Message"
           placeholder="Write your message.."
@@ -206,7 +227,7 @@ export default function ContactForm() {
           style={getUnderlineStyle("message", formData, errors)}
           error={errors.message}
           touched={touched.message}/>
-        {/* reCAPTCHA */}
+
         <div className="recaptcha-wrapper">
   <div className="g-recaptcha">
     <ReCAPTCHA
@@ -221,6 +242,7 @@ export default function ContactForm() {
           </button>
         </div>
       </form>
+
       <style jsx>{`
         .popup-timer-line {
           height: 3px;
