@@ -149,7 +149,7 @@ export const BLOG_POSTS: BlogPost[] = [
   {
     id: '1',
     title: 'The Future of Customer Experience:',
-    slug: 'omnichannel-marketing-2025',
+    slug: 'omnichannel-marketing',
     image: '/images/omni-channel-technology-online-retail-business-approach.045aab5fc2e885466ac3.webp',
     category: 'How Geekonomy Helps Brands Connect with Customers in an Omnichannel World',
     detailPageCategory: 'Omnichannel Marketing in 2025',
