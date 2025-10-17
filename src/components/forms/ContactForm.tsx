@@ -64,10 +64,6 @@ export default function ContactForm() {
     }
   }, [popup]);
 
-  (window as any).onRecaptchaSuccess = (token: string) => {
-    recaptchaTokenRef.current = token;
-  };
-
   const handleChange = (field: keyof FormData) => (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setFormData({ ...formData, [field]: e.target.value });
     if (errors[field]) setErrors((prev) => ({ ...prev, [field]: undefined }));
