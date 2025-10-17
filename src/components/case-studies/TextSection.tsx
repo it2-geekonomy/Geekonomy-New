@@ -17,9 +17,11 @@ const Section: React.FC = () => {
       </div>
 
       {/* Button */}
+      <Link href="/case-studies">
       <button className="mt-6 px-6 py-3 text-[clamp(0.9rem,2.5vw,1.1rem)] bg-amber-400 text-black rounded-xl shadow-md hover:bg-amber-200 transition">
         Explore Our Success Stories
       </button>
+      </Link>
 
       {/* Supporting text */}
       <p className="mt-8 text-gray-100  sm:px-2 sm:max-w-[clamp(55rem,90%,80rem)] text-[clamp(0.9rem,2.5vw,1.07rem)] text-justify md:text-center leading-relaxed">
@@ -31,7 +33,7 @@ Our approach focuses on understanding your unique challenges and crafting strat
       {/* Text with clickable link */}
       <div className="text-center  flex mt-4 sm:mt-6">
         <Link
-          href="/#"
+          href="/case-studies"
           className="
             text-[clamp(0.7rem,3vw,1rem)]
             font-extralight

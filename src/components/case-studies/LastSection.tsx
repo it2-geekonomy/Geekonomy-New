@@ -11,7 +11,7 @@ const LastSection: React.FC = () => {
 
   {/* Button */}
   <Link href="/contact-us ">
-  <button className="mt-6 px-6 py-3 text-[clamp(0.6rem,2vw,1rem)] border border-gray-300 text-white transition rounded-lg">
+  <button className="mt-6 px-6 py-3 text-[clamp(0.8rem,2vw,1rem)] border border-gray-300 text-white transition rounded-lg">
     Contact Us
   </button>
   </Link>
