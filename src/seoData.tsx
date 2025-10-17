@@ -41,16 +41,16 @@ const seoData: Record<string, SEOData> = {
   "blog/omnichannel-marketing-in-2025": {
     title: "The Future of Customer Experience: Omnichannel Marketing in 2025",
     description:
-      "From branding and digital marketing to full-stack development, Geekonomy builds unforgettable brand legacies powered by research, design, and code.",
+      "Discover how omnichannel marketing creates seamless customer experiences across all channels and drives brand loyalty in 2025.",
     url: "https://geekonomytech.com/blog/omnichannel-marketing-in-2025",
     canonical:
-      "https://geekonomytech.com/blog/the-future-of-customer-experience-omnichannel-marketing-2025",
-    image: "https://geekonomytech.com/assets/og-omnichannel.jpg",
+      "https://geekonomytech.com/blog/omnichannel-marketing-in-2025",
+    image: "https://geekonomytech.com/images/omni-channel-technology-online-retail-business-approach.045aab5fc2e885466ac3.webp",
     twitterHandle: "@GeekonomyTech",
   },
  // === Your White-Label PPC Blog ===
   "blog/white-label-ppc": {
-    title: "White Label PPC Services | Boost Your Agency’s ROI",
+    title: "White Label PPC Services | Boost Your Agency's ROI",
     description:
       "Learn how white-label PPC can help digital agencies scale faster, deliver better ROI, and strengthen their brand without extra overhead.",
     url: "https://geekonomy.in/blog/white-label-ppc",
@@ -59,110 +59,120 @@ const seoData: Record<string, SEOData> = {
     twitterHandle: "@geekonomy",
   },
 
+  "blog/white-label-ppc-digital-marketing": {
+    title: "White-Label PPC: Promoting Agencies to Be Smarter in Digital Marketing",
+    description:
+      "Discover how white-ldsdsabel PPC services enable agencies to provide high-performance campaigns, optimize ROI, and expand their digital marketing capabilities without overloading in-house teams.",
+    url: "https://geekonomytech.com/blog/white-label-ppc-digital-marketing",
+    canonical: "https://geekonomytech.com/blog/white-label-ppc-digital-marketing",
+    image: "https://geekonomytech.com/images/ppc.webp",
+    twitterHandle: "@GeekonomyTech",
+  },
+
   "blog/the-power-of-brand-storytelling": {
     title: "The Power of Brand Storytelling",
     description:
-      "From branding and digital marketing to full-stack development, Geekonomy builds unforgettable brand legacies powered by research, design, and code.",
+      "Discover how compelling brand narratives create emotional connections and help brands connect meaningfully with their customers.",
     url: "https://geekonomytech.com/blog/the-power-of-brand-storytelling",
     canonical:
       "https://geekonomytech.com/blog/the-power-of-brand-storytelling",
-    image: "https://geekonomytech.com/assets/og-storytelling.jpg",
+    image: "https://geekonomytech.com/images/Brand_Storytelling.webp",
     twitterHandle: "@GeekonomyTech",
   },
 
   "blog/ux-design-trends-for-creating-user-centric-experiences": {
     title: "UX Design Trends for 2025",
     description:
-      "From branding and digital marketing to full-stack development, Geekonomy builds unforgettable brand legacies powered by research, design, and code.",
+      "Stay ahead with the latest UX design trends and principles for creating exceptional user experiences.",
     url: "https://geekonomytech.com/blog/ux-design-trends-for-creating-user-centric-experiences",
     canonical:
       "https://geekonomytech.com/blog/ux-design-trends-for-creating-user-centric-experiences",
-    image: "https://geekonomytech.com/assets/og-ux.jpg",
+    image: "https://geekonomytech.com/images/UX_Design.webp",
     twitterHandle: "@GeekonomyTech",
   },
 
   "blog/why-responsive-web-design-is-essential": {
     title: "Why Responsive Web Design is Essential",
     description:
-      "From branding and digital marketing to full-stack development, Geekonomy builds unforgettable brand legacies powered by research, design, and code.",
+      "Learn why responsive web design is critical for success in today's mobile-first digital landscape.",
     url: "https://geekonomytech.com/blog/why-responsive-web-design-is-essential",
     canonical:
       "https://geekonomytech.com/blog/why-responsive-web-design-is-essential",
-    image: "https://geekonomytech.com/assets/og-responsive.jpg",
+    image: "https://geekonomytech.com/images/Responsive_Web_Design.webp",
     twitterHandle: "@GeekonomyTech",
   },
 
   "blog/geekonomy-ecommerce-strategies": {
     title: "The Future of E-Commerce",
     description:
-      "From branding and digital marketing to full-stack development, Geekonomy builds unforgettable brand legacies powered by research, design, and code.",
+      "Explore the latest e-commerce trends and strategies that will shape online business success in 2025 and beyond.",
     url: "https://geekonomytech.com/blog/geekonomy-ecommerce-strategies",
     canonical: "https://geekonomytech.com/blog/geekonomy-ecommerce-strategies",
-    image: "https://geekonomytech.com/assets/og-ecommerce.jpg",
+    image: "https://geekonomytech.com/images/E_Commerce.webp",
     twitterHandle: "@GeekonomyTech",
   },
 
   "blog/content-marketing-tips-for-engaging-content": {
     title: "Content Marketing in 2025",
     description:
-      "From branding and digital marketing to full-stack development, Geekonomy builds unforgettable brand legacies powered by research, design, and code.",
+      "Master the art of creating engaging content that resonates with your audience and drives meaningful results.",
     url: "https://geekonomytech.com/blog/content-marketing-tips-for-engaging-content",
     canonical:
       "https://geekonomytech.com/blog/content-marketing-tips-for-engaging-content",
-    image: "https://geekonomytech.com/assets/og-content-marketing.jpg",
+    image: "https://geekonomytech.com/images/Content_Marketing.webp",
     twitterHandle: "@GeekonomyTech",
   },
 
   "blog/social-media-marketing-trends-to-watch": {
     title: "Social Media Marketing Trends to Watch",
     description:
-      "From branding and digital marketing to full-stack development, Geekonomy builds unforgettable brand legacies powered by research, design, and code.",
+      "Discover effective social media strategies for building engaged communities and fostering brand loyalty.",
     url: "https://geekonomytech.com/blog/social-media-marketing-trends-to-watch",
     canonical:
       "https://geekonomytech.com/blog/social-media-marketing-trends-to-watch",
-    image: "https://geekonomytech.com/assets/og-social-media.jpg",
+    image: "https://geekonomytech.com/images/Social_Media_Marketing.webp",
     twitterHandle: "@GeekonomyTech",
   },
 
   "blog/the-importance-of-seo-in-todays-digital-landscape": {
-    title: "SEO Guide",
+    title: "The Importance of SEO in Today's Digital Landscape",
     description:
-      "From branding and digital marketing to full-stack development, Geekonomy builds unforgettable brand legacies powered by research, design, and code.",
+      "Understand how SEO and data analytics work together to drive organic traffic and business growth.",
     url: "https://geekonomytech.com/blog/the-importance-of-seo-in-todays-digital-landscape",
     canonical:
       "https://geekonomytech.com/blog/the-importance-of-seo-in-todays-digital-landscape",
-    image: "https://geekonomytech.com/assets/og-seo.jpg",
+    image: "https://geekonomytech.com/images/Importance_of_SEO.webp",
     twitterHandle: "@GeekonomyTech",
   },
 
   "blog/geekonomy-logo-strategies": {
-    title: "The Importance of SEO in Today's Digital Landscape",
+    title: "How Geekonomy Designs Stunning Logos that Stand Out",
     description:
-      "From branding and digital marketing to full-stack development, Geekonomy builds unforgettable brand legacies powered by research, design, and code.",
+      "Learn the principles and processes behind creating memorable logos that make brands stand out in crowded markets.",
     url: "https://geekonomytech.com/blog/geekonomy-logo-strategies",
     canonical: "https://geekonomytech.com/blog/geekonomy-logo-strategies",
-    image: "https://geekonomytech.com/assets/og-logo-strategies.jpg",
+    image: "https://geekonomytech.com/images/Stunning_Logos.webp",
     twitterHandle: "@GeekonomyTech",
   },
 
   "blog/digital-advertising-strategies-to-maximizing-roi": {
-    title: "How Geekonomy Designs Stunning Logos that Stand Out",
+    title: "Digital Marketing Strategies: Geekonomy's Approach to Maximizing ROI",
     description:
-      "From branding and digital marketing to full-stack development, Geekonomy builds unforgettable brand legacies powered by research, design, and code.",
+      "Learn proven digital marketing strategies that maximize ROI and drive sustainable business growth.",
     url: "https://geekonomytech.com/blog/digital-advertising-strategies-to-maximizing-roi",
     canonical:
       "https://geekonomytech.com/blog/digital-advertising-strategies-to-maximizing-roi",
-    image: "https://geekonomytech.com/assets/og-advertising.jpg",
+    image: "https://geekonomytech.com/images/Digital_Advertising_Strategies.webp",
     twitterHandle: "@GeekonomyTech",
   },
 
   "blog/ai-marketing-role": {
     title: "The Role of AI in Marketing",
     description:
-      "From branding and digital marketing to full-stack development, Geekonomy builds unforgettable brand legacies powered by research, design, and code.",
+      "Explore how artificial intelligence is transforming marketing and enabling data-driven business decisions.",
     url: "https://geekonomytech.com/blog/ai-marketing-role",
     canonical: "https://geekonomytech.com/blog/ai-marketing-role",
-    image: "https://geekonomytech.com/assets/og-ai-marketing.jpg",
+    image: "https://geekonomytech.com/images/AI_Marketing.webp",
     twitterHandle: "@GeekonomyTech",
   },
 

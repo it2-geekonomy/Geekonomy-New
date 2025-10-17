@@ -5,19 +5,63 @@ import Button from '@/components/ui/Button';
 import Card from '@/components/ui/Card';
 import { BLOG_POSTS } from '@/lib/blog';
 import CTASection from '@/components/sections/CTASection';
+import seoData from '@/seoData';
 
 type Props = {
   params: Promise<{ slug: string }>;
 };
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  // In a real application, fetch the post data
   const { slug } = await params;
   const post = BLOG_POSTS.find(p => p.slug === slug);
   
+  // Try to get SEO data from seoData first
+  const seoKey = `blog/${slug}`;
+  const seoInfo = seoData[seoKey];
+  
+  if (seoInfo) {
+    return {
+      title: seoInfo.title,
+      description: seoInfo.description,
+      openGraph: {
+        title: seoInfo.title,
+        description: seoInfo.description,
+        url: seoInfo.url,
+        siteName: "Geekonomy",
+        images: seoInfo.image ? [{ url: seoInfo.image }] : [],
+        type: "article",
+      },
+      twitter: {
+        card: "summary_large_image",
+        title: seoInfo.title,
+        description: seoInfo.description,
+        images: seoInfo.image ? [seoInfo.image] : [],
+        creator: seoInfo.twitterHandle,
+      },
+      alternates: {
+        canonical: seoInfo.canonical,
+      },
+      robots: {
+        index: true,
+        follow: true,
+      },
+    };
+  }
+  
+  // Fallback to post data if no SEO data found
   return {
     title: post ? `${post.title} - Geekonomy Blog` : 'Blog Post - Geekonomy',
-    description: post?.title || 'Read our latest article',
+    description: post?.excerpt || post?.title || 'Read our latest article',
+    openGraph: {
+      title: post ? `${post.title} - Geekonomy Blog` : 'Blog Post - Geekonomy',
+      description: post?.excerpt || post?.title || 'Read our latest article',
+      type: "article",
+      images: post?.image ? [{ url: post.image }] : [],
+    },
+    robots: {
+      index: true,
+      follow: true,
+    },
   };
 }
 
