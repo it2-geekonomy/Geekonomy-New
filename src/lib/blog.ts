@@ -1,7 +1,7 @@
 import { BlogPost } from '@/types';
 
 interface ContentItem {
-  type: 'heading' | 'paragraph';
+  type: 'heading' | 'paragraph' | 'list';
   text: string;
   className?: string;
 }
@@ -132,7 +132,7 @@ const seoContent: ContentItem[] = [
   { type: 'paragraph', text: "At Geekonomy, we understand the importance of SEO in today's digital landscape and work closely with our clients to develop SEO strategies that drive results. From keyword research to on-page optimization to link building, we use a holistic approach to SEO to help our clients improve their search engine rankings and drive organic traffic to their website." },
 ];
 
-const omnichannelMarketingContent = [
+const omnichannelMarketingContent: ContentItem[] = [
   { type: 'paragraph', text: "Consumers can move easily between online and offline interactions with businesses. Brands today are tasked with building integrated and seamless experiences. In 2025, it will be essential to tap into every interaction – be it digital, social, physical, or inbound – to create a cohesive and memorable customer experience." },
   { type: 'heading', text: 'What is Omnichannel Marketing?', className: 'mt-4 mb-3' },
   { type: 'paragraph', text: "Omnichannel marketing refers to creating a seamless and consistent brand experience across all channels and devices. You want to make sure every interaction the consumer, customer, or shopper has – digital or not – is aligned with the brand's identity, values, and promise – to create an intuitive and seamless transition between online and in-store experiences." },
