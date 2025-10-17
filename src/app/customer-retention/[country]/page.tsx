@@ -3,7 +3,7 @@ import Banner from "@/components/customer Retension/banner";
 import { notFound } from 'next/navigation';
 
 type Props = {
-  params: { country: string }
+  params: Promise<{ country: string }>
 }
 
 const countryData = {
@@ -39,7 +39,8 @@ export async function generateStaticParams() {
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const country = params.country.toLowerCase();
+  const { country: countryParam } = await params;
+  const country = countryParam.toLowerCase();
   const data = countryData[country as keyof typeof countryData];
 
   if (!data) {
@@ -81,8 +82,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   };
 }
 
-export default function CustomerRetentionCountry({ params }: Props) {
-  const country = params.country.toLowerCase();
+export default async function CustomerRetentionCountry({ params }: Props) {
+  const { country: countryParam } = await params;
+  const country = countryParam.toLowerCase();
   
   if (!countryData[country as keyof typeof countryData]) {
     notFound();
