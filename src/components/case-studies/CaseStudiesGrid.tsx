@@ -13,7 +13,7 @@ const CaseStudiesGrid: React.FC = () => {
           Success Stories
         </h2>
         <p className="mt-2 text-[clamp(0.9rem,2vw,1.35rem)] sm:max-w-[85%] lg:max-w-[65%] text-gray-300 text-justify-center mx-auto">
-          Explore how we've helped businesses across industries achieve their digital transformation goals
+          Explore how we&apos;ve helped businesses across industries achieve their digital transformation goals
         </p>
       </div>
 
