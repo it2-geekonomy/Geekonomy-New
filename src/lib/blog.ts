@@ -13,6 +13,8 @@ const contentToHTML = (contentArray: ContentItem[]): string => {
       return `<h2 class="${item.className || ''}">${item.text}</h2>`;
     } else if (item.type === 'paragraph') {
       return `<p>${item.text}</p>`;
+    } else if (item.type === 'list') {
+      return item.text;
     }
     return '';
   }).join('\n');
@@ -130,9 +132,35 @@ const seoContent: ContentItem[] = [
   { type: 'paragraph', text: "At Geekonomy, we understand the importance of SEO in today's digital landscape and work closely with our clients to develop SEO strategies that drive results. From keyword research to on-page optimization to link building, we use a holistic approach to SEO to help our clients improve their search engine rankings and drive organic traffic to their website." },
 ];
 
+const omnichannelMarketingContent = [
+  { type: 'paragraph', text: "Consumers can move easily between online and offline interactions with businesses. Brands today are tasked with building integrated and seamless experiences. In 2025, it will be essential to tap into every interaction – be it digital, social, physical, or inbound – to create a cohesive and memorable customer experience." },
+  { type: 'heading', text: 'What is Omnichannel Marketing?', className: 'mt-4 mb-3' },
+  { type: 'paragraph', text: "Omnichannel marketing refers to creating a seamless and consistent brand experience across all channels and devices. You want to make sure every interaction the consumer, customer, or shopper has – digital or not – is aligned with the brand's identity, values, and promise – to create an intuitive and seamless transition between online and in-store experiences." },
+  { type: 'heading', text: 'Why Omnichannel Marketing Will Matter in 2025?', className: 'mt-4 mb-3' },
+  { type: 'paragraph', text: "Today, consumers expect effortless personalization and an engaging experience with the brands they choose to interact with. Brands and organizations that embrace an omnichannel approach enjoy higher customer retention rates, increased revenue per transaction, and stronger brand loyalty. Building a complete and connected experience makes it easier for consumers to buy, while also developing an opportunity for deeper emotional engagement that results in more returns and advocacy." },
+  { type: 'heading', text: 'Creating an Effective Omnichannel Strategy', className: 'mt-4 mb-3' },
+  { type: 'paragraph', text: "To maintain an advantage, brands must move beyond channel-specific tactics and create a fully unified customer journey. Steps include:" },
+  { type: 'list', text: '<ul><li>Leverage a single brand voice and message across all channels.</li><li>Invest in Customer Relationship Management (CRM) platforms and analytics for a complete 360° customer view.</li><li>Allow customers to move seamlessly between channels – for example, retrieve a shopping cart started on mobile when switching to desktop.</li><li>Prepare teams to personalize and provide consistent cross-channel support.</li><li>Use data-driven insights to design customer journeys that clarify needs and reduce friction.</li></ul>' },
+  { type: 'heading', text: 'The Bottom Line', className: 'mt-4 mb-3' },
+  { type: 'paragraph', text: "A connected world in 2025 means omnichannel strategies are no longer optional – they are essential to building meaningful relationships with customers. Brands that unite technology, storytelling, and data to produce a unified experience will build loyalty, trust, and long-term growth." },
+];
+
 export const BLOG_POSTS: BlogPost[] = [
   {
     id: '1',
+    title: 'The Future of Customer Experience:',
+    slug: 'omnichannel-marketing-2025',
+    image: '/images/omni-channel-technology-online-retail-business-approach.045aab5fc2e885466ac3.webp',
+    category: 'How Geekonomy Helps Brands Connect with Customers in an Omnichannel World',
+    detailPageCategory: 'Omnichannel Marketing in 2025',
+    excerpt: 'Discover how omnichannel marketing creates seamless customer experiences across all channels and drives brand loyalty in 2025.',
+    content: contentToHTML(omnichannelMarketingContent),
+    author: 'Geekonomy Team',
+    date: '2025-02-18',
+    tags: ['Omnichannel', 'Customer Experience', 'Digital Marketing'],
+  },
+  {
+    id: '2',
     title: 'White-Label PPC: ',
     slug: 'white-label-ppc-digital-marketing',
     image: '/images/ppc.webp',
@@ -144,7 +172,7 @@ export const BLOG_POSTS: BlogPost[] = [
     tags: ['Digital Marketing', 'PPC', 'White-Label', 'Agency Growth'],
   },
   {
-    id: '2',
+    id: '3',
     title: 'The Future of E-Commerce:',
     slug: 'ecommerce-trends-shaping-2025',
     image: '/images/E_Commerce.webp',
@@ -156,7 +184,7 @@ export const BLOG_POSTS: BlogPost[] = [
     tags: ['E-Commerce', 'Online Business', 'Digital Strategy'],
   },
   {
-    id: '3',
+    id: '4',
     title: 'How Geekonomy Designs Stunning Logos that Stand Out in Crowded market.',
     slug: 'stunning-logos-design-guide',
     image: '/images/Stunning_Logos.webp',
@@ -168,7 +196,7 @@ export const BLOG_POSTS: BlogPost[] = [
     tags: ['Branding', 'Logo Design', 'Visual Identity'],
   },
   {
-    id: '4',
+    id: '5',
     title: 'The Power of Brand Storytelling',
     slug: 'the-power-of-brand-storytelling',
     image: '/images/Brand_Storytelling.webp',
@@ -180,7 +208,7 @@ export const BLOG_POSTS: BlogPost[] = [
     tags: ['Branding', 'Storytelling', 'Marketing'],
   },
   {
-    id: '5',
+    id: '6',
     title: 'Content Marketing in 2025:',
     slug: 'content-marketing-2025',
     image: '/images/Content_Marketing.webp',
@@ -192,7 +220,7 @@ export const BLOG_POSTS: BlogPost[] = [
     tags: ['Content Marketing', 'Digital Marketing', 'Strategy'],
   },
   {
-    id: '6',
+    id: '7',
     title: 'Digital Marketing Strategies:',
     slug: 'digital-marketing-strategies-that-convert',
     image: '/images/Digital_Advertising_Strategies.webp',
@@ -204,7 +232,7 @@ export const BLOG_POSTS: BlogPost[] = [
     tags: ['Digital Marketing', 'ROI', 'Strategy'],
   },
   {
-    id: '7',
+    id: '8',
     title: 'UX Design Trends for 2025:',
     slug: 'ux-design-principles-higher-conversions',
     image: '/images/UX_Design.webp',
@@ -216,7 +244,7 @@ export const BLOG_POSTS: BlogPost[] = [
     tags: ['UX Design', 'User Experience', 'Design Trends'],
   },
   {
-    id: '8',
+    id: '9',
     title: 'Social Media Marketing Trends to Watch:',
     slug: 'customer-retention-building-loyalty',
     image: '/images/Social_Media_Marketing.webp',
@@ -229,7 +257,7 @@ export const BLOG_POSTS: BlogPost[] = [
     tags: ['Social Media', 'Marketing', 'Community'],
   },
   {
-    id: '9',
+    id: '10',
     title: 'The Role of AI in Marketing:',
     slug: 'future-of-ai-in-business',
     image: '/images/AI_Marketing.webp',
@@ -241,7 +269,7 @@ export const BLOG_POSTS: BlogPost[] = [
     tags: ['AI', 'Marketing', 'Technology'],
   },
   {
-    id: '10',
+    id: '11',
     title: 'Why Responsive Web Design is Essential:',
     slug: 'mobile-first-development-2025',
     image: '/images/Responsive_Web_Design.webp',
@@ -253,7 +281,7 @@ export const BLOG_POSTS: BlogPost[] = [
     tags: ['Web Development', 'Responsive Design', 'Mobile'],
   },
   {
-    id: '11',
+    id: '12',
     title: 'The Importance of SEO in Today\'s Digital Landscape:',
     slug: 'data-analytics-turning-information-into-insights',
     image: '/images/Importance_of_SEO.webp',

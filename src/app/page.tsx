@@ -3,6 +3,10 @@ import Solutionize from "@/components/home/Solutionize";
 import InfiniteScroll from "@/components/infinteScroll";
 import ExpertiseData from "@/components/home/Expertise";
 import InspirationStation from "@/components/sections/InspirationStation";
+import TerrificSection from "@/components/sections/TerrificSection";
+import { digitalMarketing } from "@/components/data/expertiseSections ";
+import ExpertiseSection from "@/components/home/Expertise";
+import CTASection from "@/components/sections/CTASection";
 
 
 export default function Home() {
@@ -15,8 +19,11 @@ export default function Home() {
                 <InfiniteScroll/>
               </div>
             </section>
-            <ExpertiseData/>
+            <ExpertiseSection />
+            <TerrificSection />
+
     <InspirationStation/>
+    <CTASection />
     </div>
   );
 }

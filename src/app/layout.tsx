@@ -4,15 +4,10 @@ import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 
 export const metadata: Metadata = {
-  title: "Geekonomy - Innovative Technology Solutions",
-  description: "Transforming businesses through cutting-edge technology and innovative solutions. We specialize in web development, mobile apps, cloud solutions, AI, and more.",
-  keywords: "technology solutions, web development, mobile development, cloud services, AI, machine learning, UI/UX design, consulting",
-  authors: [{ name: "Geekonomy" }],
-  openGraph: {
-    title: "Geekonomy - Innovative Technology Solutions",
-    description: "Transforming businesses through cutting-edge technology and innovative solutions",
-    type: "website",
-    url: "https://geekonomytech.com",
+  title: "Geekonomy | Full-Service Branding, Marketing & Development",
+  description: "Transforming businesses through cutting-edge technology and innovative solutions.",
+  icons: {
+    icon: "/favicon.ico", // Path to your favicon in the public folder
   },
 };
 

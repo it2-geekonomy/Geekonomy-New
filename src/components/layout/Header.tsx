@@ -135,6 +135,18 @@ export default function Header() {
                 </div>
             </div>
           </li>
+          <li className="relative group">
+            <Link
+              href="/case-studies"
+              className={`text-xl font-light no-underline inline-block pb-2 ${
+                pathname === '/case-studies' ? 'text-[#FFC700]' : 'text-white hover:text-[#FFC700]'
+              }`}
+              onClick={handleNavLinkClick}
+            >
+              Case Studies
+            </Link>
+            <span className="absolute -bottom-3 left-0 h-[3px] w-0 bg-[#FFC700] transition-all duration-700 ease-in-out group-hover:w-full"></span>
+          </li>
 
           <li className="relative group">
             <Link
@@ -144,7 +156,7 @@ export default function Header() {
               }`}
               onClick={handleNavLinkClick}
             >
-              Blog
+              Blogs
             </Link>
             <span className="absolute -bottom-3 left-0 h-[3px] w-0 bg-[#FFC700] transition-all duration-700 ease-in-out group-hover:w-full"></span>
           </li>
@@ -240,6 +252,17 @@ export default function Header() {
                 </div>
               </div>
             </div>
+              <div className={`transition-all duration-300 ease-in-out ${
+              mobileExpertiseOpen ? 'opacity-30' : 'opacity-100'
+            }`}>
+              <Link
+                href="/case-studies"
+                className={`text-lg no-underline ${pathname === '/case-studies' ? 'text-[#FFC700]' : 'text-white'} hover:text-[#FFC700] transition-colors`}
+                onClick={handleNavLinkClick}
+              >
+                Case Studies
+              </Link>
+            </div>
 
             <div className={`transition-all duration-300 ease-in-out ${
               mobileExpertiseOpen ? 'opacity-30' : 'opacity-100'
@@ -249,7 +272,7 @@ export default function Header() {
                 className={`text-lg no-underline ${pathname === '/blog' ? 'text-[#FFC700]' : 'text-white'} hover:text-[#FFC700] transition-colors`}
                 onClick={handleNavLinkClick}
               >
-                Blog
+                Blogs
               </Link>
             </div>
 
@@ -265,6 +288,7 @@ export default function Header() {
                 Contact Us
               </Link>
             </div>
+            
           </div>
       </div>
     </nav>

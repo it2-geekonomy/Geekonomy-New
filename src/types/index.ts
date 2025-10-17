@@ -85,3 +85,12 @@ export interface CompanyStats {
   value: string;
   icon: string;
 }
+
+export interface CaseStudy {
+  id: number;
+  title: string;
+  subtitle: string;
+  image: string;
+  slug: string; 
+  content: string;
+}
