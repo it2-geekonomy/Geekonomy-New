@@ -1,13 +1,38 @@
+// src/app/page.tsx (Home Page)
 import Banner from "@/components/home/Banner";
 import Solutionize from "@/components/home/Solutionize";
 import InfiniteScroll from "@/components/infinteScroll";
-import ExpertiseData from "@/components/home/Expertise";
+import ExpertiseSection from "@/components/home/Expertise";
 import InspirationStation from "@/components/sections/InspirationStation";
 import TerrificSection from "@/components/sections/TerrificSection";
-import { digitalMarketing } from "@/components/data/expertiseSections ";
-import ExpertiseSection from "@/components/home/Expertise";
 import CTASection from "@/components/sections/CTASection";
+import SEOData from "@/seoData";
+import type { Metadata } from "next";
 
+const data = SEOData.home;
+
+export const metadata: Metadata = {
+  title: data.title,
+  description: data.description,
+  openGraph: {
+    title: data.title,
+    description: data.description,
+    url: data.url,
+    siteName: "Geekonomy",
+    images: data.image ? [{ url: data.image }] : [],
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: data.title,
+    description: data.description,
+    images: data.image ? [data.image] : [],
+    creator: data.twitterHandle,
+  },
+  alternates: {
+    canonical: data.canonical,
+  },
+};
 
 export default function Home() {
   return (
@@ -15,15 +40,12 @@ export default function Home() {
       <Banner />
       <Solutionize />
       <section className="py-20 bg-black">
-              <div>
-                <InfiniteScroll/>
-              </div>
-            </section>
-            <ExpertiseSection />
-            <TerrificSection />
-
-    <InspirationStation/>
-    <CTASection />
+        <InfiniteScroll />
+      </section>
+      <ExpertiseSection />
+      <TerrificSection />
+      <InspirationStation />
+      <CTASection />
     </div>
   );
 }

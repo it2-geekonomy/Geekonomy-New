@@ -19,8 +19,36 @@ const contentToHTML = (contentArray: ContentItem[]): string => {
     return '';
   }).join('\n');
 };
+import { Metadata } from "next";
+import seoData from "@/seoData";
 
-const whitelabelPPCContent = [
+const data = seoData["blog/white-label-ppc"];
+
+export const metadata: Metadata = {
+  title: data.title,
+  description: data.description,
+  openGraph: {
+    title: data.title,
+    description: data.description,
+    url: data.url,
+    siteName: "Geekonomy",
+    images: data.image ? [{ url: data.image }] : [],
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: data.title,
+    description: data.description,
+    images: data.image ? [data.image] : [],
+    creator: data.twitterHandle,
+  },
+  alternates: {
+    canonical: data.canonical,
+  },
+};
+
+// ✅ Blog content
+export const whitelabelPPCContent = [
   { type: 'paragraph', text: "In today's rapidly evolving digital-marketing landscape, agencies are also constantly looking for ways to optimize the results of their marketing campaigns, increase their ROI and expand the services they can offer online-marketing capabilities, without overloading their in-house marketer teams." },
   { type: 'paragraph', text: "White-label PPC (Pay-Per-Click) stands out as a strategic solution, enabling agencies to provide high performance PPC campaigns, conversion rate optimization and search engine marketing under their own brand - while expert partners run the work behind-the-scenes." },
   { type: 'heading', text: 'What are White Label PPC Services?', className: 'mt-4 mb-3' },
