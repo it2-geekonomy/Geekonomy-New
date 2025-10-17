@@ -152,6 +152,7 @@ export const BLOG_POSTS: BlogPost[] = [
     slug: 'omnichannel-marketing-2025',
     image: '/images/omni-channel-technology-online-retail-business-approach.045aab5fc2e885466ac3.webp',
     category: 'How Geekonomy Helps Brands Connect with Customers in an Omnichannel World',
+    detailPageCategory: 'Omnichannel Marketing in 2025',
     excerpt: 'Discover how omnichannel marketing creates seamless customer experiences across all channels and drives brand loyalty in 2025.',
     content: contentToHTML(omnichannelMarketingContent),
     author: 'Geekonomy Team',
