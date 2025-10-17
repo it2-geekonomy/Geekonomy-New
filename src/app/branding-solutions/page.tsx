@@ -13,6 +13,9 @@ const data = SEOData["branding-solutions"];
 export const metadata: Metadata = {
   title: data.title,
   description: data.description,
+  alternates: {
+    canonical: data.canonical,
+  },
   openGraph: {
     title: data.title,
     description: data.description,
@@ -27,9 +30,6 @@ export const metadata: Metadata = {
     description: data.description,
     creator: data.twitterHandle || "@GeekonomyTech",
     images: data.image ? [data.image] : undefined,
-  },
-  alternates: {
-    canonical: data.canonical,
   },
 };
 

@@ -8,6 +8,7 @@ const data = seoData["customer-retention"];
 export const metadata: Metadata = {
   title: data.title,
   description: data.description,
+  alternates: { canonical: data.canonical },
   openGraph: {
     title: data.title,
     description: data.description,
@@ -21,7 +22,6 @@ export const metadata: Metadata = {
     description: data.description,
     creator: "@GeekonomyTech",
   },
-  alternates: { canonical: data.canonical },
 };
 
 export default function CustomerRetentionPage() {

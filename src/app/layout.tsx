@@ -4,6 +4,7 @@ import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://geekonomytech.com'),
   title: "Geekonomy | Full-Service Branding, Marketing & Development",
   description: "Transforming businesses through cutting-edge technology and innovative solutions.",
   icons: {

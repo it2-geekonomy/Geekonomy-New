@@ -12,6 +12,9 @@ const data = seoData.blog;
 export const metadata: Metadata = {
   title: data.title,
   description: data.description,
+  alternates: {
+    canonical: data.canonical,
+  },
   openGraph: {
     title: data.title,
     description: data.description,
@@ -26,9 +29,6 @@ export const metadata: Metadata = {
     description: data.description,
     images: data.image ? [data.image] : [],
     creator: data.twitterHandle,
-  },
-  alternates: {
-    canonical: data.canonical,
   },
 };
 

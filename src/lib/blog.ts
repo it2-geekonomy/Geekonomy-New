@@ -19,33 +19,6 @@ const contentToHTML = (contentArray: ContentItem[]): string => {
     return '';
   }).join('\n');
 };
-import { Metadata } from "next";
-import seoData from "@/seoData";
-
-const data = seoData["blog/white-label-ppc"];
-
-export const metadata: Metadata = {
-  title: data.title,
-  description: data.description,
-  openGraph: {
-    title: data.title,
-    description: data.description,
-    url: data.url,
-    siteName: "Geekonomy",
-    images: data.image ? [{ url: data.image }] : [],
-    type: "website",
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: data.title,
-    description: data.description,
-    images: data.image ? [data.image] : [],
-    creator: data.twitterHandle,
-  },
-  alternates: {
-    canonical: data.canonical,
-  },
-};
 
 // ✅ Blog content
 export const whitelabelPPCContent = [

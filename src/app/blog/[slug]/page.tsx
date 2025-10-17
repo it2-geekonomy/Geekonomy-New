@@ -2,7 +2,6 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import Image from 'next/image';
 import Button from '@/components/ui/Button';
-import Card from '@/components/ui/Card';
 import { BLOG_POSTS } from '@/lib/blog';
 import CTASection from '@/components/sections/CTASection';
 import seoData from '@/seoData';
@@ -23,6 +22,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     return {
       title: seoInfo.title,
       description: seoInfo.description,
+      alternates: {
+        canonical: seoInfo.canonical,
+      },
       openGraph: {
         title: seoInfo.title,
         description: seoInfo.description,
@@ -38,9 +40,6 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
         images: seoInfo.image ? [seoInfo.image] : [],
         creator: seoInfo.twitterHandle,
       },
-      alternates: {
-        canonical: seoInfo.canonical,
-      },
       robots: {
         index: true,
         follow: true,
@@ -52,6 +51,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title: post ? `${post.title} - Geekonomy Blog` : 'Blog Post - Geekonomy',
     description: post?.excerpt || post?.title || 'Read our latest article',
+    alternates: {
+      canonical: `https://geekonomytech.com/blog/${slug}`,
+    },
     openGraph: {
       title: post ? `${post.title} - Geekonomy Blog` : 'Blog Post - Geekonomy',
       description: post?.excerpt || post?.title || 'Read our latest article',
@@ -83,11 +85,6 @@ export default async function BlogPostPage({ params }: Props) {
       </main>
     );
   }
-
-  // Get related posts (same category, excluding current post)
-  const relatedPosts = BLOG_POSTS
-    .filter(p => p.category === post.category && p.id !== post.id)
-    .slice(0, 3);
 
   // Find the next blog post in sequence
   const currentIndex = BLOG_POSTS.findIndex(p => p.id === post.id);
