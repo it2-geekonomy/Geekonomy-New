@@ -7,12 +7,12 @@ import { caseStudies } from "@/lib/caseStudies";
 import { CaseStudy } from "@/types";
 
 type Props = {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 };
 
 // Metadata generation
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const { slug } = params;
+  const { slug } = await params;
   const post = caseStudies.find((c) => c.slug === slug);
 
   return {
@@ -21,8 +21,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   };
 }
 
-export default function CaseStudyPage({ params }: Props) {
-  const { slug } = params;
+export default async function CaseStudyPage({ params }: Props) {
+  const { slug } = await params;
   const post = caseStudies.find((c) => c.slug === slug);
 
   if (!post) {
