@@ -56,7 +56,7 @@ export default function ContactForm() {
       return () => clearTimeout(timer);
     }
   }, [popup]);
-  (window as any).onRecaptchaSuccess = (token: string) => {
+  (window as Window & { onRecaptchaSuccess?: (token: string) => void }).onRecaptchaSuccess = (token: string) => {
     recaptchaTokenRef.current = token;
   };
   const handleChange = (field: keyof FormData) => (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
