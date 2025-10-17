@@ -28,7 +28,7 @@ export default function Solutionize() {
                 </p>
                 
                 <p className="text-lg xl:text-[clamp(5px,4vh,23px)] text-white leading-relaxed text-justify">
-                  In today's world, we embrace marketing as an integral part of life, crafting captivating experiences that seamlessly bridge the online and offline realms. Our expertise lies in empowering brands to share their unique narratives, fueling transformative growth.
+                  In today&apos;s world, we embrace marketing as an integral part of life, crafting captivating experiences that seamlessly bridge the online and offline realms. Our expertise lies in empowering brands to share their unique narratives, fueling transformative growth.
                 </p>
               </div>
               
