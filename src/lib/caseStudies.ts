@@ -123,7 +123,7 @@ export const caseStudies: CaseStudy[] = [
     title: "DataDash: Analytics Platform Redesign",
     subtitle: "Transformed complex data into intuitive visualizations with a comprehensive dashboard solution for marketing teams.",
     image: "/case-studies/4.webp",
-    slug: "/datadash",
+    slug: "datadash",
     content: contentToHTML(dataDashContent),
   },
   {
