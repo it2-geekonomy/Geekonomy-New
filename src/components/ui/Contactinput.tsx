@@ -16,7 +16,7 @@ const Input: React.FC<InputProps> = ({
 }) => {
   return (
     <div>
-      <label className="label">{label}</label>
+      <label className="input-label">{label}</label>
       <input {...rest} style={style} className="input" />
       {error && touched && <div className="error-text">{error}</div>}
     </div>

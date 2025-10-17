@@ -1,14 +1,27 @@
 'use client';
-
-import '@/app/contact-us/contactUs.css'; 
+import '@/app/contact-us/contactUs.css';
 import '@/components/forms/contactUsForm.css';
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from 'react';
+import ReCAPTCHA from 'react-google-recaptcha';
 import { FormData, Errors } from "@/types/contactTypes";
 import { Contactinput } from "../ui";
 import { ContactPopup } from "../ui";
 import { ContactTextarea } from "../ui";
 import { validate, getUnderlineStyle } from "@/lib/contactFormUtils";
 import { SUBJECTS, subjectLabelMap } from "@/constants/contactConstants";
+import emailjs from '@emailjs/browser';
+
+// Load the Google reCAPTCHA script
+const loadReCaptcha = () => {
+  if (!document.getElementById('recaptcha-script')) {
+    const script = document.createElement('script');
+    script.id = 'recaptcha-script';
+    script.src = "https://www.google.com/recaptcha/api.js";
+    script.async = true;
+    script.defer = true;
+    document.body.appendChild(script);
+  }
+};
 
 export default function ContactForm() {
   const [formData, setFormData] = useState<FormData>({
@@ -25,25 +38,31 @@ export default function ContactForm() {
     pnum: false,
     message: false,
   });
-  const [selectedSubject, setSelectedSubject] = useState<typeof SUBJECTS[number]>(
-    "general"
-  );
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isCaptchaChecked, setCaptchaChecked] = useState(false);
+  const recaptchaTokenRef = useRef<string | null>(null);
+  const [selectedSubject, setSelectedSubject] = useState<typeof SUBJECTS[number]>('general');
   const [errors, setErrors] = useState<Errors>({});
   const [popup, setPopup] = useState<string | null>(null);
   const [popupType, setPopupType] = useState<"error" | "success">("error");
   const [popupKey, setPopupKey] = useState<number>(0);
+
+  useEffect(() => {
+    loadReCaptcha();
+  }, []);
   useEffect(() => {
     if (popup) {
       const timer = setTimeout(() => setPopup(null), 3000);
       return () => clearTimeout(timer);
     }
   }, [popup]);
-  const handleChange =
-    (field: keyof FormData) =>
-    (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-      setFormData({ ...formData, [field]: e.target.value });
-      if (errors[field]) setErrors((prev) => ({ ...prev, [field]: undefined }));
-    };
+  (window as any).onRecaptchaSuccess = (token: string) => {
+    recaptchaTokenRef.current = token;
+  };
+  const handleChange = (field: keyof FormData) => (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    setFormData({ ...formData, [field]: e.target.value });
+    if (errors[field]) setErrors((prev) => ({ ...prev, [field]: undefined }));
+  };
   const handleBlur = (field: keyof FormData) => () => {
     setTouched((prev) => ({ ...prev, [field]: true }));
   };
@@ -52,7 +71,7 @@ export default function ContactForm() {
     setPopupKey((prev) => prev + 1);
     setPopup(msg);
   };
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     const errs = validate(formData);
     setErrors(errs);
@@ -64,27 +83,37 @@ export default function ContactForm() {
       else if (errs.lname) showPopup("Please enter your last name", "error");
       else if (errs.email) showPopup("Please enter your email", "error");
       else if (errs.pnum) showPopup("Please enter your phone number", "error");
+      else if (errs.message) showPopup("Please enter a message", "error");
       return;
     }
-    showPopup(
-      "Message sent successfully! We will get back to you soon",
-      "success"
-    );
-    setFormData({
-      fname: "",
-      lname: "",
-      email: "",
-      pnum: "",
-      message: "",
-    });
-    setTouched({
-      fname: false,
-      lname: false,
-      email: false,
-      pnum: false,
-      message: false,
-    });
-    setErrors({});
+    if (!isCaptchaChecked) {
+      showPopup("Please verify you're not a robot", "error");
+      return;
+    }
+    setIsSubmitting(true); 
+    try {
+      await emailjs.send(
+        "service_b9jpwod",
+        "template_zweeaku",
+        {
+          from_name: `${formData.fname} ${formData.lname}`,
+          from_email: formData.email,
+          phone_number: formData.pnum,
+          subject: selectedSubject,
+          message: formData.message,
+        },
+        "fqPzstZbWOYcNqmvB"
+      );
+      showPopup("Message sent successfully!", "success");
+      setFormData({ fname: "", lname: "", email: "", pnum: "", message: "" });
+      setTouched({ fname: false, lname: false, email: false, pnum: false, message: false });
+      setErrors({});
+    } catch (error) {
+      console.error(error);
+      showPopup("Failed to send message.", "error");
+    } finally {
+      setIsSubmitting(false); 
+    }
   };
   return (
     <>
@@ -93,8 +122,7 @@ export default function ContactForm() {
           message={popup}
           type={popupType}
           onClose={() => setPopup(null)}
-          popupKey={popupKey}
-        />
+          popupKey={popupKey}/>
       )}
       <form onSubmit={handleSubmit} noValidate>
         <div className="fields-row">
@@ -106,7 +134,8 @@ export default function ContactForm() {
             onBlur={handleBlur("fname")}
             style={getUnderlineStyle("fname", formData, errors)}
             error={errors.fname}
-            touched={touched.fname}/>
+            touched={touched.fname}
+          />
           <Contactinput
             label="Last Name"
             value={formData.lname}
@@ -127,7 +156,8 @@ export default function ContactForm() {
             onBlur={handleBlur("email")}
             style={getUnderlineStyle("email", formData, errors)}
             error={errors.email}
-            touched={touched.email}/>
+            touched={touched.email}
+          />
           <Contactinput
             label="Phone Number"
             value={formData.pnum}
@@ -145,7 +175,8 @@ export default function ContactForm() {
               <label
                 key={subj}
                 className="subject-option"
-                onClick={() => setSelectedSubject(subj)}>
+                onClick={() => setSelectedSubject(subj)}
+              >
                 <div className={`radio-circle ${selectedSubject === subj ? "selected" : ""}`}>
                   {selectedSubject === subj && <div className="checkmark">✓</div>}
                 </div>
@@ -155,10 +186,9 @@ export default function ContactForm() {
                   value={subj}
                   checked={selectedSubject === subj}
                   onChange={() => setSelectedSubject(subj)}
-                  className="hidden"/>
-                <span className="subject-text">
-                  {subjectLabelMap[subj]}
-                </span>
+                  className="hidden"
+                />
+                <span className="subject-text">{subjectLabelMap[subj]}</span>
               </label>
             ))}
           </div>
@@ -172,11 +202,19 @@ export default function ContactForm() {
           onBlur={handleBlur("message")}
           style={getUnderlineStyle("message", formData, errors)}
           error={errors.message}
-          touched={touched.message}
-        />
+          touched={touched.message}/>
+        {/* reCAPTCHA */}
+        <div className="recaptcha-wrapper">
+  <div className="g-recaptcha">
+    <ReCAPTCHA
+      sitekey="6LdcQOgrAAAAAKSitZmdFdtt28j-Evb8YR69olTj"
+      onChange={(value) => setCaptchaChecked(!!value)}
+    />
+  </div>
+</div>
         <div className="submit-btn-wrapper">
-          <button type="submit" className="submit-btn">
-            Send Message
+          <button type="submit" className="submit-btn" disabled={isSubmitting}>
+            {isSubmitting ? "Sending..." : "Send Message"}
           </button>
         </div>
       </form>
@@ -189,6 +227,11 @@ export default function ContactForm() {
           animation: shrinkLine 3s linear forwards;
           background-color: ${popupType === "error" ? "#dc2626" : "#84cc16"};
         }
-      `}</style></>
+        .submit-btn:disabled {
+          opacity: 0.6;
+          cursor: not-allowed;
+        }
+      `}</style>
+    </>
   );
 }

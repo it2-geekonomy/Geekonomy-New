@@ -16,7 +16,7 @@ const Textarea: React.FC<TextareaProps> = ({
 }) => {
   return (
     <div className="message-group">
-      <label className="label">{label}</label>
+      <label className="input-label">{label}</label>
       <textarea {...rest} style={style} className="textarea" />
       {error && touched && <div className="error-text">{error}</div>}
     </div>
