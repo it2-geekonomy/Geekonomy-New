@@ -210,7 +210,7 @@ export default function ContactForm() {
         <div className="recaptcha-wrapper">
   <div className="g-recaptcha">
     <ReCAPTCHA
-      sitekey="6LdcQOgrAAAAAKSitZmdFdtt28j-Evb8YR69olTj"
+      sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY || ''}
       onChange={(value) => setCaptchaChecked(!!value)}
     />
   </div>
