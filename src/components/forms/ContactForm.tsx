@@ -49,6 +49,12 @@ export default function ContactForm() {
 
   useEffect(() => {
     loadReCaptcha();
+    // Set up reCAPTCHA callback (client-side only)
+    if (typeof window !== 'undefined') {
+      (window as Window & { onRecaptchaSuccess?: (token: string) => void }).onRecaptchaSuccess = (token: string) => {
+        recaptchaTokenRef.current = token;
+      };
+    }
   }, []);
 
   useEffect(() => {
@@ -223,12 +229,13 @@ export default function ContactForm() {
           touched={touched.message}/>
 
         <div className="recaptcha-wrapper">
-          <ReCAPTCHA
-            sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY || ""}
-            onChange={(value) => setCaptchaChecked(!!value)}
-          />
-        </div>
-
+  <div className="g-recaptcha">
+    <ReCAPTCHA
+      sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY || ''}
+      onChange={(value) => setCaptchaChecked(!!value)}
+    />
+  </div>
+</div>
         <div className="submit-btn-wrapper">
           <button type="submit" className="submit-btn" disabled={isSubmitting}>
             {isSubmitting ? "Sending..." : "Send Message"}

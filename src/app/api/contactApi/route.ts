@@ -27,8 +27,9 @@ export async function POST(request: Request) {
       { success: true, message: "Form submitted and email sent successfully!" },
       { status: 200 }
     );
-  } catch (error: any) {
-    console.error("❌ Error in contact API:", error.response?.data || error.message);
+  } catch (error: unknown) {
+    const errorMessage = error instanceof Error ? error.message : 'Unknown error';
+    console.error("❌ Error in contact API:", errorMessage);
     return NextResponse.json(
       { success: false, message: "Failed to send email" },
       { status: 500 }
